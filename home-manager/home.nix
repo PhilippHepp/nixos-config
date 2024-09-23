@@ -1,14 +1,29 @@
 { config, pkgs, ... }: {
-	home = {
-		username = "donielmaker";
-		homeDirectory = "/home/donielmaker";
-		stateVersion = "24.05";
-	};
+    home = {
+        username = "donielmaker";
+        homeDirectory = "/home/donielmaker";
+        stateVersion = "24.05";
+    };
 
-	programs.neovim = {
-		enable = true;
-		defaultEditor = true;
-	};
+    programs.neovim = {
+        enable = true;
+        defaultEditor = true;
+    };
+
+    programs.gh = {
+        enable = true;
+        gitCredentialHelper.enable = true;
+        gitCredentialHelper.hosts = [
+            "https://github.com"
+        ];
+        settings.editor = "nvim";
+    };
+
+    programs.git = {
+        enable = true;
+        userName = "donielmaker";
+        userEmail = "daniel.schmidt0204@gmail.com";
+    };
 
     programs.zsh = {
         enable = true;
@@ -23,10 +38,4 @@
             eval "$(oh-my-posh init zsh --config $HOME/.config/zsh/oh-my-posh.yaml )"
         '';
     };
-
-	programs.git = {
-		enable = true;
-		userName = "donielmaker";
-		userEmail = "daniel.schmidt0204@gmail.com";
-	};
-		       }
+}
