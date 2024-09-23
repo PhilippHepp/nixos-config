@@ -10,30 +10,19 @@
 		defaultEditor = true;
 	};
 
-	programs.gh = {
-		enable = true;
-		gitCredentialHelper.enable = true;
-		gitCredentialHelper.hosts = [
-			"https://github.com"
-		];
-	};
-
-# programs.zsh = {
-#     enable = true;
-#     enableCompletion = true;
-#     autosuggestion.enable = true;
-#     dotDir = ".config/zsh";
-#     plugins = [
-#         {
-#             name = "oh-my-posh";
-#             src = pkgs.fetchFromGitHub {
-#                 owner = "JanDeDobbeleer";
-#                 repo = "oh-my-posh";
-#                 rev = "v23.3.0";
-#             };
-#         }
-#     ];
-# };
+    programs.zsh = {
+        enable = true;
+        enableCompletion = true;
+        autosuggestion.enable = true;
+        dotDir = ".config/zsh";
+        dirHashes = {
+            nvim = "$HOME/.config/nvim/";
+            nix = "$HOME/.config/nix/";
+        };
+        initExtra = ''
+            eval "$(oh-my-posh init zsh --config $HOME/.config/zsh/oh-my-posh.yaml )"
+        '';
+    };
 
 	programs.git = {
 		enable = true;
