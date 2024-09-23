@@ -30,10 +30,6 @@
         enableCompletion = true;
         autosuggestion.enable = true;
         dotDir = ".config/zsh";
-        dirHashes = {
-            nvim = "$HOME/.config/nvim/";
-            nix = "$HOME/.config/nix/";
-        };
         initExtra = ''
             eval "$(oh-my-posh init zsh --config $HOME/.config/zsh/oh-my-posh.yaml )"
         '';
