@@ -1,10 +1,13 @@
 {
-
 	description = "System configuration";
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-		nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+
+		nixos-wsl = {
+            url = "github:nix-community/NixOS-WSL/main";
+            inputs.nixpkgs.follows = "nixpkgs";
+        };
 
         home-manager = {
             url = "github:nix-community/home-manager/";
@@ -12,9 +15,12 @@
         };
 	};
 
-	outputs = { self, nixpkgs, nixos-wsl, home-manager, ...}: {
-		nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
+	outputs = { self, nixpkgs, nixos-wsl, home-manager, ...}:
+        let 
             system = "x86_64-linux";
+        in {
+		nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
+            inherit system;
 			modules = [
 				./nixos/configuration.nix
 				nixos-wsl.nixosModules.default {
@@ -23,9 +29,13 @@
 				}
 			];
 		};
+
         homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
-            pkgs = nixpkgs.legacyPackages."x86_64-linux";
-            modules = [./home-manager/home.nix];
+            pkgs = nixpkgs.legacyPackages.${system};
+            modules = [ 
+                ./home-manager/home.nix
+                #./home-manager/oh-my-posh.nix
+            ];
         };
     };
 }
