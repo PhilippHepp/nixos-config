@@ -121,7 +121,7 @@
                             foreground = "p:white";
                             background = "p:blue";
                             background_templates = [
-                                "{{ if gt .Code 0 }}p =red{{ end }}"
+                                "{{ if gt .Code 0 }}p:red{{ end }}"
                             ];
                             template = " {{ if gt .Code 0 }}{{ else }}{{ end }} ";
                             properties.always_enabled = true;
