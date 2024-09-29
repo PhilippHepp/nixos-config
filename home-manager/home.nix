@@ -52,7 +52,7 @@
                         {
                             type = "executiontime";
                             style = "plain";
-                            foreground = "yellow";
+                            foreground = "p:yellow";
                             background = "transparent";
                             properties.style = "roundrock";
                         }
@@ -99,6 +99,7 @@
                                 "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:white{{ end }}"
                                 "{{ if gt .Ahead 0 }}p:white{{ end }}"
                             ];
+                            background = "p:orange";
                             background_templates = [
                                 "{{ if or (.Working.Changed) (.Staging.Changed) }}p:yellow{{ end }}"
                                 "{{ if and (gt .Ahead 0) (gt .Behind 0) }}p:red{{ end }}"
