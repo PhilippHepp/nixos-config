@@ -48,7 +48,7 @@
 			unzip
 			neofetch
 # Programming doodads
-			gcc
+            zig
 			rustc
 			cargo
 			nodejs_22
