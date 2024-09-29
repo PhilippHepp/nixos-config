@@ -38,7 +38,7 @@
     programs.oh-my-posh = {
         enable = true;
         enableZshIntegration = true;
-        #settings = builtins.fromJSON(builtins.readFile(/home/donielmaker/.config/zsh/oh-my-posh.json));
-        settings = builtins.fromTOML(builtins.readFile(/home/donielmaker/.config/zsh/oh-my-posh.toml));
+        #settings = builtins.fromJSON(builtins.readFile(/home/donielmaker/.config/zsh/oh-my-posh/oh-my-posh.json));
+        settings = builtins.fromTOML(builtins.readFile(/home/donielmaker/.config/zsh/oh-my-posh/oh-my-posh.toml));
     };
 }
