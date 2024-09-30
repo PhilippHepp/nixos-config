@@ -61,7 +61,7 @@
                             style = "plain";
                             foreground = "p:blue";
                             background = "transparent";
-                            template = " {{if .WSL}} I use {{ .Icon }} btw {{ end }}";
+                            template = " {{if .WSL}} I use {{ .Icon }}  btw {{ end }}";
                         }
                     ];
                 }
