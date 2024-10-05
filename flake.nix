@@ -27,22 +27,16 @@
                         system.stateVersion = "24.05";
                         wsl.enable = true;
                     }
-                    home-manager.nixosModules.home-manager {
-                        home-manager.useGlobalPkgs = true;
-                        home-manager.useUserPackages = true;
-                        home-manager.users.donielmaker = import ./home-manager/home.nix;
-                    }
                 ];
                 inherit system;
             };
 
-            # homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
-            #     extraSpecialArgs = {inherit inputs;};
-            #     pkgs = nixpkgs.legacyPackages.${system};
-            #     modules = [ 
-            #         ./home-manager/home.nix
-            #         ./home-manager/oh-my-posh.nix
-            #     ];
-            # };
+            homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
+                extraSpecialArgs = {inherit inputs;};
+                pkgs = nixpkgs.legacyPackages.${system};
+                modules = [ 
+                    ./home-manager/home.nix
+                ];
+            };
         };
 }
