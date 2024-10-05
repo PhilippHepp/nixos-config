@@ -1,9 +1,4 @@
 {
-
-    imports = [
-        ./oh-my-posh.nix
-    ];
-
     home = {
         username = "donielmaker";
         homeDirectory = "/home/donielmaker";
@@ -35,6 +30,14 @@
         enableCompletion = true;
         autosuggestion.enable = true;
         dotDir = ".config/zsh";
+        shellAliases = let
+            flakeDir = "$HOME/.config/nix/";
+        in {
+            rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
+            hm = "home-manager switch --flake ${flakeDir}";
+            pkgs = "nvim ${flakeDir}/nixos/configuration.nix";
+            v = "nvim";
+        };
         # Old way of getting oh-my-posh enabled
         # initExtra = ''
         #     eval "$(oh-my-posh init zsh --config $HOME/.config/zsh/oh-my-posh.yaml )"
