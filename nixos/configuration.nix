@@ -39,11 +39,11 @@
         zsh
         oh-my-posh
         git
+        lazygit
         gh
         ripgrep
         fd
         fzf
-        zoxide
         chafa
         unzip
         fastfetch
@@ -55,10 +55,6 @@
         gnumake
         openssl
         pkg-config
-        # LSP
-        rust-analyzer
-        slint-lsp
-        lua-language-server
         # Other
         home-manager
     ];
