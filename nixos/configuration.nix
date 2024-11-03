@@ -8,6 +8,11 @@
 { config, lib, pkgs, ... }:
 
 {  
+    imports = [
+	./hardware-configuration.nix
+	./modules/bundle.nix
+    ];
+
 
     networking.networkmanager.enable = true;
     networking.hostName = "zenith"; # Define your hostname  
