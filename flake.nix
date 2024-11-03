@@ -10,7 +10,7 @@
         };
 
         home-manager = {
-            url = "github:nix-community/home-manager/release-24.05";
+            url = "github:nix-community/home-manager";
             inputs.nixpkgs.follows = "nixpkgs";
         };
     };
@@ -23,6 +23,7 @@
                 specialArgs = {inherit inputs;};
                 modules = [
                     ./nixos/configuration.nix
+		    ./nixos/wsl.nix
                     nixos-wsl.nixosModules.default {
                         system.stateVersion = "24.05";
                         wsl.enable = true;
@@ -31,12 +32,16 @@
                 inherit system;
             };
 
-            homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
-                extraSpecialArgs = {inherit inputs;};
-                pkgs = nixpkgs.legacyPackages.${system};
-                modules = [ 
-                    ./home-manager/home.nix
+            nixosConfigurations.zenith = nixpkgs.lib.nixosSystem {
+                specialArgs = {inherit inputs system;};
+                modules = [
+                    ./nixos/configuration.nix
                 ];
+            };
+
+            homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
+                pkgs = nixpkgs.legacyPackages.${system};
+                modules = [ ./home-manager/home.nix ];
             };
         };
 }

@@ -7,23 +7,18 @@
 
 { config, lib, pkgs, ... }:
 
-{
-    imports = [];
+{  
+    imports =
+      [ # Include the results of the hardware scan.
+        ./hardware-configuration.nix
+      ];
 
-    wsl.enable = true;
-    wsl.defaultUser = "donielmaker";
-
-    # services = {
-    #     xserver = {
-    #         enable = true;
-    #         xkb.layout = "us";
-    #         desktopManager.plasma5.enable = true;
-    #     }; 
-    #     displayManager.sddm.enable = true;
-    # };
+    # Use the systemd-boot EFI boot loader.
+    boot.loader.systemd-boot.enable = true;
+    boot.loader.efi.canTouchEfiVariables = true;
 
     networking.networkmanager.enable = true;
-    networking.hostName = "wsl"; # Define your hostname  
+    networking.hostName = "zenith"; # Define your hostname  
 
     time.timeZone = "Europe/Berlin";
 
@@ -37,7 +32,6 @@
         neovim
         # CLI Tools
         zsh
-        oh-my-posh
         git
         lazygit
         gh
