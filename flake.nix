@@ -22,8 +22,8 @@
             nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
                 specialArgs = {inherit inputs;};
                 modules = [
-                    ./nixos/configuration.nix
 		            ./nixos/wsl.nix
+                    ./nixos/configuration.nix
                     nixos-wsl.nixosModules.default {
                         system.stateVersion = "24.05";
                         wsl.enable = true;
@@ -36,8 +36,6 @@
                 specialArgs = {inherit inputs system;};
                 modules = [
                     ./nixos/configuration.nix
-                    ./nixos/bootloader.nix
-                    ./nixos/hardware-configuration.nix
                 ];
             };
 
