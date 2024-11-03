@@ -39,6 +39,8 @@
         unzip
         fastfetch
         # Programming doodads
+	wezterm
+	kitty
         zig
         rustc
         cargo
@@ -46,8 +48,19 @@
         gnumake
         openssl
         pkg-config
+	# wayland
+	waybar
+	rofi
+	xwayland
+	wl-clipboard
+	cliphist
         # Other
+	firefox
         home-manager
+    ];
+
+    fonts.packages = with pkgs; [
+	(nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];
 
     users.users.donielmaker = {
