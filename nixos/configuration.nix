@@ -23,45 +23,45 @@
 
     nixpkgs.config.allowUnfree = true;
 
-    environment.systemPackages = with pkgs; [
-        # Text Editors
-        vim
-        neovim
-        # CLI Tools
-        zsh
-        git
-        lazygit
-        gh
-        ripgrep
-        fd
-        fzf
-        chafa
-        unzip
-        fastfetch
-        # Programming doodads
-        wezterm
-        kitty
-        zig
-        rustc
-        cargo
-        nodejs_22
-        gnumake
-        openssl
-        pkg-config
-        # wayland
-        waybar
-        rofi
-        xwayland
-        wl-clipboard
-        cliphist
-            # Other
-        firefox
-        home-manager
-    ];
+    # environment.systemPackages = with pkgs; [
+    #     # Text Editors
+    #     vim
+    #     neovim
+    #     # CLI Tools
+    #     zsh
+    #     git
+    #     lazygit
+    #     gh
+    #     ripgrep
+    #     fd
+    #     fzf
+    #     chafa
+    #     unzip
+    #     fastfetch
+    #     # Programming doodads
+    #     wezterm
+    #     kitty
+    #     zig
+    #     rustc
+    #     cargo
+    #     nodejs_22
+    #     gnumake
+    #     openssl
+    #     pkg-config
+    #     # wayland
+    #     waybar
+    #     rofi
+    #     xwayland
+    #     wl-clipboard
+    #     cliphist
+    #         # Other
+    #     firefox
+    #     home-manager
+    # ];
 
-    fonts.packages = with pkgs; [
-	(nerdfonts.override { fonts = [ "FiraCode" ]; })
-    ];
+ #    fonts.packages = with pkgs; [
+	# (nerdfonts.override { fonts = [ "FiraCode" ]; })
+ #    ];
 
     users.users.donielmaker = {
         isNormalUser = true;
@@ -84,4 +84,3 @@
     # (e.g. man configuration.nix or on https://nixos.org/nixos/options.html).
     system.stateVersion = "24.05"; # Did you read the comment?
 }
-
