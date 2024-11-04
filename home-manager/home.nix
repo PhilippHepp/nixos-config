@@ -1,6 +1,6 @@
 {
     imports = [
-	./oh-my-posh.nix
+	./modules/bundle.nix
     ];
 
     home = {
