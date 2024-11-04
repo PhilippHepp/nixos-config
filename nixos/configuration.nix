@@ -9,8 +9,8 @@
 
 {  
     imports = [
-	./hardware-configuration.nix
-	./modules/bundle.nix
+        ./hardware-configuration.nix
+        ./modules/bundle.nix
     ];
 
 
