@@ -23,46 +23,6 @@
 
     nixpkgs.config.allowUnfree = true;
 
-    # environment.systemPackages = with pkgs; [
-    #     # Text Editors
-    #     vim
-    #     neovim
-    #     # CLI Tools
-    #     zsh
-    #     git
-    #     lazygit
-    #     gh
-    #     ripgrep
-    #     fd
-    #     fzf
-    #     chafa
-    #     unzip
-    #     fastfetch
-    #     # Programming doodads
-    #     wezterm
-    #     kitty
-    #     zig
-    #     rustc
-    #     cargo
-    #     nodejs_22
-    #     gnumake
-    #     openssl
-    #     pkg-config
-    #     # wayland
-    #     waybar
-    #     rofi
-    #     xwayland
-    #     wl-clipboard
-    #     cliphist
-    #         # Other
-    #     firefox
-    #     home-manager
-    # ];
-
- #    fonts.packages = with pkgs; [
-	# (nerdfonts.override { fonts = [ "FiraCode" ]; })
- #    ];
-
     users.users.donielmaker = {
         isNormalUser = true;
         description = "DonielMaker";
@@ -74,7 +34,23 @@
     environment.pathsToLink = [ "/share/zsh" ];
     programs.zsh.enable = true;
 
+    # Hyprland settings
+
     programs.hyprland.enable = true;
+
+    environment.sessionVariables = {
+	WLR_NO_HARDWARE_CURSORS = "1";
+	NIXOS_OZONE_WL = "1";
+    };
+
+    hardware = {
+	opengl.enable = true;
+
+	nvidia.modesetting.enable = true;
+    };
+
+    xdg.portal.enable = true;
+    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions

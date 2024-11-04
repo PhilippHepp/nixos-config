@@ -4,6 +4,8 @@
         vim
         neovim
         # CLI Tools
+        wezterm
+        kitty
         zsh
         git
         lazygit
@@ -15,8 +17,6 @@
         unzip
         fastfetch
         # Programming doodads
-        wezterm
-        kitty
         zig
         rustc
         cargo
@@ -27,6 +27,7 @@
         # wayland
         waybar
         rofi
+	dunst
         xwayland
         wl-clipboard
         cliphist
