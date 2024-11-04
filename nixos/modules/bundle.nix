@@ -1,6 +1,5 @@
 {
     imports = [
-	./bootloader.nix
-	./hyprland.nix
+        ./bootloader.nix
     ];
 }

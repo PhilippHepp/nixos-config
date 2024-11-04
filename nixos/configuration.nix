@@ -39,8 +39,8 @@
         unzip
         fastfetch
         # Programming doodads
-	wezterm
-	kitty
+        wezterm
+        kitty
         zig
         rustc
         cargo
@@ -48,14 +48,14 @@
         gnumake
         openssl
         pkg-config
-	# wayland
-	waybar
-	rofi
-	xwayland
-	wl-clipboard
-	cliphist
-        # Other
-	firefox
+        # wayland
+        waybar
+        rofi
+        xwayland
+        wl-clipboard
+        cliphist
+            # Other
+        firefox
         home-manager
     ];
 
@@ -73,6 +73,8 @@
     # For Zsh Auto Completion
     environment.pathsToLink = [ "/share/zsh" ];
     programs.zsh.enable = true;
+
+    programs.hyprland.enable = true;
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
