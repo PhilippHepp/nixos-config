@@ -2,8 +2,8 @@
 
 {
     disabledModules = [
-        ../nixos/modules/bootloader.nix;
-    ]
+        ../nixos/modules/bootloader.nix
+    ];
 
     wsl.enable = true;
     wsl.defaultUser = "donielmaker";
