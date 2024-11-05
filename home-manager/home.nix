@@ -40,7 +40,7 @@
         in {
             rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
             hm = "home-manager switch --flake ${flakeDir}";
-            pkgs = "nvim ${flakeDir}/nixos/configuration.nix";
+            pkgs = "nvim ${flakeDir}/nixos/modules/pkgs.nix";
             v = "nvim";
         };
     };
