@@ -5,6 +5,8 @@
 
     # Hyprland settings
 
+    services.xserver.videoDrivers = [ "nvidia" ];
+
     programs.hyprland.enable = true;
 
     environment.sessionVariables = {
@@ -15,14 +17,25 @@
     hardware = {
         opengl.enable = true;
 
-        nvidia.modesetting.enable = true;
+        nvidia = {
+            modesetting.enable = true;
+
+            powerManagement.enable = false;
+            powerManagement.finegrained = false;
+
+            open = false;
+
+            nvidiaSettings = true;
+
+            package = config.boot.kernelPackages.nvidiaPackages.stable;
+        };
     };
 
     xdg.portal.enable = true;
 
-    services.pipewire = {
-        enable = true;
-        audio.enable = true;
-        pulse.enable = true;
-    };
+    #services.pipewire = {
+    #    enable = true;
+    #    audio.enable = true;
+    #    pulse.enable = true;
+    #};
 }

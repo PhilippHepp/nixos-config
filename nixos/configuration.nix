@@ -30,35 +30,6 @@
     environment.pathsToLink = [ "/share/zsh" ];
     programs.zsh.enable = true;
 
-    # Audio
-    
-    # security.rtkit.enable = true;
-    # services.pipewire = {
-    #     enable = true;
-    #     alsa.enable = true;
-    #     alsa.support32Bit = true;
-    #     pulse.enable = true;
-    # };
-
-
-    programs.hyprland.enable = true;
-
-    environment.sessionVariables = {
-	WLR_NO_HARDWARE_CURSORS = "1";
-	NIXOS_OZONE_WL = "1";
-    };
-
-    hardware = {
-	opengl.enable = true;
-        #graphics.enable = true;
-
-	nvidia.modesetting.enable = true;
-    };
-
-    xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-    #xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
-
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
     # on your system were taken. It's perfectly fine and recommended to leave
