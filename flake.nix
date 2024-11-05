@@ -4,6 +4,8 @@
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
 
+        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+
         nixos-wsl = {
             url = "github:nix-community/NixOS-WSL/main";
             inputs.nixpkgs.follows = "nixpkgs";
@@ -15,15 +17,15 @@
         };
     };
 
-    outputs = { self, nixpkgs, nixos-wsl, home-manager, ...}@inputs:
+    outputs = { self, nixpkgs, nixpkgs-unstable, nixos-wsl, home-manager, ...}@inputs:
         let 
             system = "x86_64-linux";
         in {
             nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
                 specialArgs = {inherit inputs;};
                 modules = [
-		            ./nixos/wsl.nix
                     ./nixos/configuration.nix
+		            ./hosts/wsl.nix
                     nixos-wsl.nixosModules.default {
                         system.stateVersion = "24.05";
                         wsl.enable = true;
@@ -33,10 +35,12 @@
             };
 
             nixosConfigurations.zenith = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs system;};
+                specialArgs = {inherit inputs;};
                 modules = [
                     ./nixos/configuration.nix
+		            ./hosts/zenith.nix
                 ];
+                inherit system;
             };
 
             homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {

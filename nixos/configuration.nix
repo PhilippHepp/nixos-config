@@ -8,14 +8,10 @@
 { config, lib, pkgs, ... }:
 
 {  
-    imports = [
-        ./hardware-configuration.nix
-        ./modules/bundle.nix
-    ];
+    imports = [ ./modules/bundle.nix ];
 
 
     networking.networkmanager.enable = true;
-    networking.hostName = "zenith"; # Define your hostname  
 
     time.timeZone = "Europe/Berlin";
 
@@ -34,23 +30,6 @@
     environment.pathsToLink = [ "/share/zsh" ];
     programs.zsh.enable = true;
 
-    # Hyprland settings
-
-    programs.hyprland.enable = true;
-
-    environment.sessionVariables = {
-	WLR_NO_HARDWARE_CURSORS = "1";
-	NIXOS_OZONE_WL = "1";
-    };
-
-    hardware = {
-	opengl.enable = true;
-
-	nvidia.modesetting.enable = true;
-    };
-
-    xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions

@@ -2,11 +2,11 @@
 
 {
     disabledModules = [
-	./modules/bootloader.nix
-	./hardware-configuration.nix
-    ];
+        ../nixos/modules/bootloader.nix;
+    ]
 
     wsl.enable = true;
     wsl.defaultUser = "donielmaker";
+
     networking.hostName = lib.mkForce "wsl"; # Define your hostname  
 }
