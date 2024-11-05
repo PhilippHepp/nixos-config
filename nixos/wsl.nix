@@ -2,8 +2,8 @@
 
 {
     disabledModules = [
-	./modules/bootloader.nix
-	./hardware-configuration.nix
+        ./modules/bootloader.nix
+        ./hardware-configuration.nix
     ];
 
     wsl.enable = true;

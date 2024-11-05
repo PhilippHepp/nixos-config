@@ -39,18 +39,17 @@
     programs.hyprland.enable = true;
 
     environment.sessionVariables = {
-	WLR_NO_HARDWARE_CURSORS = "1";
-	NIXOS_OZONE_WL = "1";
+        WLR_NO_HARDWARE_CURSORS = "1";
+        NIXOS_OZONE_WL = "1";
     };
 
     hardware = {
-	opengl.enable = true;
+        opengl.enable = true;
 
-	nvidia.modesetting.enable = true;
+        nvidia.modesetting.enable = true;
     };
 
     xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
     # This value determines the NixOS release from which the default
     # settings for stateful data, like file locations and database versions
