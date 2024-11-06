@@ -6,6 +6,7 @@
     # Hyprland settings
 
     services.xserver.videoDrivers = [ "nvidia" ];
+    services.xserver.xkb.layout = "us";
 
     programs.hyprland.enable = true;
 
@@ -16,6 +17,7 @@
 
     hardware = {
         opengl.enable = true;
+        opengl.driSupport32Bit = true;
 
         nvidia = {
             modesetting.enable = true;

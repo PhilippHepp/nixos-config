@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ config, inputs, pkgs, ... }: {
     environment.systemPackages = with pkgs; [
         # Text Editors
         vim
