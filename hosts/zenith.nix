@@ -3,12 +3,15 @@
     
     networking.hostName = "zenith"; # Define your hostname  
 
-    # Hyprland settings
-
     services.xserver.videoDrivers = [ "nvidia" ];
     services.xserver.xkb.layout = "us";
 
     programs.hyprland.enable = true;
+
+    services.xserver.displayManager.gdm = {
+        enable = true;
+        # wayland = true;
+    };
 
     environment.sessionVariables = {
         WLR_NO_HARDWARE_CURSORS = "1";
