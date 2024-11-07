@@ -112,10 +112,15 @@
                 "float, ^(mpv)$"
             ];
 
+            exec-once = [
+                "swww init"
+                "swww img /home/donielmaker/.config/Background.png"
+            ];
+
             bind = [
                 #"$mainMod, V, exec, cliphist list | rofi --dmenu | cliphist decode | wl-copy"
 
-                "$mainMod, Return, exec, kitty"
+                "$mainMod, Return, exec, alacritty"
                 "$mainMod, Q, killactive,"
                 "$mainMod, M, exit,"
                 #"$mainMod, E, exec, dolphin"
