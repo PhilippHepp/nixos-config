@@ -34,7 +34,11 @@
         # wl-clipboard
         # cliphist
         # Other
+        inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+        pavucontrol
+        vesktop
         firefox
+        steam
         home-manager
     ];
 

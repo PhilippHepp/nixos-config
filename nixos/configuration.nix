@@ -22,7 +22,7 @@
     users.users.donielmaker = {
         isNormalUser = true;
         description = "DonielMaker";
-        extraGroups = ["networkmanager" "wheel" "input"];
+        extraGroups = ["networkmanager" "wheel" "input" "audio" ];
         shell = pkgs.zsh;
     };
 

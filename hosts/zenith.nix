@@ -6,12 +6,14 @@
     services.xserver.videoDrivers = [ "nvidia" ];
     services.xserver.xkb.layout = "us";
 
-    programs.hyprland.enable = true;
-
-    services.xserver.displayManager.gdm = {
+    services.xserver = {
         enable = true;
-        # wayland = true;
+        displayManager.gdm.enable = true;
+        displayManager.gdm.wayland = true;
+        # desktopManager.gnome.enable = true;
     };
+
+    programs.hyprland.enable = true;
 
     environment.sessionVariables = {
         WLR_NO_HARDWARE_CURSORS = "1";
@@ -19,6 +21,8 @@
     };
 
     hardware = {
+        pulseaudio.enable = true;
+
         opengl.enable = true;
         opengl.driSupport32Bit = true;
 
@@ -38,11 +42,11 @@
 
     xdg.portal.enable = true;
 
-    security.rtkit.enable = true;
-    services.pipewire = {
-       enable = true;
-       alsa.enable = true;
-       alsa.support32Bit = true;
-       pulse.enable = true;
-    };
+    # security.rtkit.enable = true;
+    # services.pipewire = {
+    #    enable = true;
+    #    alsa.enable = true;
+    #    alsa.support32Bit = true;
+    #    pulse.enable = true;
+    # };
 }
