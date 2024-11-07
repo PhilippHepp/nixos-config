@@ -23,7 +23,7 @@
             system = "x86_64-linux";
         in {
             nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
-                specialArgs = { inherit inputs; };
+                specialArgs = {inherit inputs;};
                 modules = [
                     ./nixos/configuration.nix
 		            ./hosts/wsl.nix
@@ -45,6 +45,7 @@
             };
 
             homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
+                # specialArgs = {inherit inputs;};
                 pkgs = nixpkgs.legacyPackages.${system};
                 modules = [ ./home-manager/home.nix ];
             };

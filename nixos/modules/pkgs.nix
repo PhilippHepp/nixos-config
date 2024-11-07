@@ -4,7 +4,6 @@
         vim
         neovim
         # CLI Tools
-        wezterm
         alacritty
         kitty
         zsh
@@ -31,14 +30,19 @@
         swww
         hyprcursor
         xwayland
+        inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
         # wl-clipboard
         # cliphist
-        # Other
-        inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
+        # Programs
         pavucontrol
         vesktop
+        discord
         firefox
         steam
+        gnome.nautilus
+        ffmpeg
+        # Other
+        tokyonight-gtk-theme
         home-manager
     ];
 
