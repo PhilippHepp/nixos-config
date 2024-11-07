@@ -29,6 +29,7 @@
         waybar
         rofi
         swww
+        hyprcursor
         xwayland
         # wl-clipboard
         # cliphist

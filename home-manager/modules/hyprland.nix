@@ -12,9 +12,10 @@
                 "XDG_CURRENT_DESKTOP,Hyprland"
                 "XDG_SESSION_TYPE,wayland"
                 "XDG_SESSION_DESKTOP,Hyprland"
+                "HYPRCURSOR_THEME,rose-pine-hyprcursor"
                 "XCURSOR_SIZE,36"
                 "QT_QPA_PLATFORM,wayland"
-                "XDG_SCREENSHOTS_DIR,~/screens"
+                "XDG_SCREENSHOTS_DIR,~/screenshots"
             ];
 
             debug = {
