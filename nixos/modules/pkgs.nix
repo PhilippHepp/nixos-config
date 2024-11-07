@@ -28,10 +28,10 @@
         # wayland
         waybar
         rofi
-	dunst
+        swww
         xwayland
-        wl-clipboard
-        cliphist
+        # wl-clipboard
+        # cliphist
         # Other
         firefox
         home-manager
