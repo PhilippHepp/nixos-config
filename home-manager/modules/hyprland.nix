@@ -12,8 +12,10 @@
                 "XDG_CURRENT_DESKTOP,Hyprland"
                 "XDG_SESSION_TYPE,wayland"
                 "XDG_SESSION_DESKTOP,Hyprland"
-                "HYPRCURSOR_THEME,rose-pine-hyprcursor"
-                "XCURSOR_SIZE,36"
+                # "XCURSOR_THEME,Bibata-Modern-Ice"
+                # "XCURSOR_SIZE, 24"
+                # "HYPRCURSOR_THEME,Bibata-Modern-Ice"
+                # "HYPRCURSOR_SIZE,24"
                 "QT_QPA_PLATFORM,wayland"
                 "XDG_SCREENSHOTS_DIR,~/screenshots"
             ];
@@ -22,6 +24,7 @@
                 disable_logs = false;
                 enable_stdout_logs = true;
             };
+
             input = {
                 kb_layout = "us";
                 # kb_variant = "lang";
@@ -111,9 +114,11 @@
             windowrule = [
                 "float, ^(imv)$"
                 "float, ^(mpv)$"
+                "float, ^(Rofi)$"
             ];
 
             exec-once = [
+                "hyprctl setcursor Bibata-Modern-Ice 24"
                 "swww init"
                 "swww img /home/donielmaker/.config/Background.png"
             ];
@@ -125,7 +130,7 @@
                 "$mainMod, Q, killactive,"
                 "$mainMod, M, exit,"
                 #"$mainMod, E, exec, dolphin"
-                #"$mainMod, F, togglefloating,"
+                "$mainMod, F, togglefloating,"
                 "$mainMod, R, exec, rofi -show drun -show-icons"
                 #"$mainMod, P, pseudo, # dwindle" #  WARN: what is this ??
                 #"$mainMod, J, togglesplit, # dwindle"

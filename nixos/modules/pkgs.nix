@@ -24,13 +24,12 @@
         gnumake
         openssl
         pkg-config
-        # wayland
+        # Wayland
         waybar
         rofi
         swww
         hyprcursor
         xwayland
-        inputs.rose-pine-hyprcursor.packages.${pkgs.system}.default
         # wl-clipboard
         # cliphist
         # Programs
