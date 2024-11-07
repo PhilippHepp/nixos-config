@@ -5,6 +5,7 @@
         neovim
         # CLI Tools
         wezterm
+        alacritty
         kitty
         zsh
         git
