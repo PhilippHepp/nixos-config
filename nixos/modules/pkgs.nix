@@ -30,8 +30,11 @@
         swww
         hyprcursor
         xwayland
-        # wl-clipboard
-        # cliphist
+        wl-clipboard
+        cliphist
+        # Audio
+        pipewire
+        wireplumber
         # Programs
         pavucontrol
         pamixer
@@ -44,7 +47,7 @@
         tokyonight-gtk-theme
         home-manager
     ];
-
+    
     fonts.packages = with pkgs; [
 	(nerdfonts.override { fonts = [ "FiraCode" ]; })
     ];

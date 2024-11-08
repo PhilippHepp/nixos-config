@@ -37,6 +37,8 @@
                 "waybar"
                 "swww init"
                 "swww img /home/donielmaker/.config/Background.png"
+                "wl-paste --type text --watch cliphist store"
+                "wl-paste --type image --watch cliphist store"
             ];
 
             debug = {
@@ -131,16 +133,16 @@
             };
 
             bind = [
-                #"$mainMod, V, exec, cliphist list | rofi --dmenu | cliphist decode | wl-copy"
+                "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
 
                 "$mainMod, Return, exec, alacritty"
                 "$mainMod, Q, killactive,"
                 "$mainMod, M, exit,"
                 "$mainMod, E, exec, nautilus"
                 "$mainMod, F, togglefloating,"
-                "$mainMod, R, exec, rofi -show drun -show-icons"
-                "$mainMod, P, pseudo, # dwindle" #  WARN: what is this ??
-                #"$mainMod, J, togglesplit, # dwindle"
+                "$mainMod, Space, exec, rofi -show drun -show-icons"
+                "$mainMod, P, pseudo, # dwindle"
+                "$mainMod, J, togglesplit, # dwindle"
 
                 # Move focus with mainMod + arrow keys
                 "$mainMod, left,  movefocus, l"
@@ -160,17 +162,18 @@
                 "$mainMod CTRL, up,    resizeactive,  0 -60"
                 "$mainMod CTRL, down,  resizeactive,  0  60"
 
+                # Volume and Media Control
+                # "$mainMod, Page_Up, exec, pamixer -i 5 "
+                # "$mainMod, Page_Down, exec, pamixer -d 5 "
+                # ", Shift_R, exec, pamixer --default-source -t && pamixer -t"
+                # ",Shift_R, exec, bash /home/donielmaker/.config/nix/home-manager/modules/togglemute.sh"
+                ", Control_R, exec, pamixer --default-source -t"
+
                 #  INFO: Currently unused
 
                 # Keyboard backlight
                 # "$mainMod, F3, exec, brightnessctl -d *::kbd_backlight set +33%"
                 # "$mainMod, F2, exec, brightnessctl -d *::kbd_backlight set 33%-"
-
-                # Volume and Media Control
-                # "$mainMod, Page_Up, exec, pamixer -i 5 "
-                # "$mainMod, Page_Down, exec, pamixer -d 5 "
-                ", Shift_R, exec, pamixer --default-source -t && pamixer -t"
-                ", Control_R, exec, pamixer --default-source -t"
 
                 # Brightness control
                 # ", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
