@@ -1,4 +1,4 @@
-{lib, ...}: {
+{
    wayland.windowManager.hyprland = {
         enable = true;
         xwayland.enable = true;
@@ -18,6 +18,25 @@
                 # "HYPRCURSOR_SIZE,24"
                 "QT_QPA_PLATFORM,wayland"
                 "XDG_SCREENSHOTS_DIR,~/screenshots"
+            ];
+
+            windowrule = [
+                "float, ^(imv)$"
+                "float, ^(mpv)$"
+
+                "float, ^(Rofi)$"
+                "stayfocused, ^(Rofi)$"
+                "noborder, ^(Rofi)$"
+                "rounding 25, ^(Rofi)$"
+
+                "float, ^(pavucontrol)$"
+            ];
+
+            exec-once = [
+                "hyprctl setcursor Bibata-Modern-Ice 24"
+                "waybar"
+                "swww init"
+                "swww img /home/donielmaker/.config/Background.png"
             ];
 
             debug = {
@@ -111,28 +130,16 @@
                 disable_hyprland_logo = true;
             };
 
-            windowrule = [
-                "float, ^(imv)$"
-                "float, ^(mpv)$"
-                "float, ^(Rofi)$"
-            ];
-
-            exec-once = [
-                "hyprctl setcursor Bibata-Modern-Ice 24"
-                "swww init"
-                "swww img /home/donielmaker/.config/Background.png"
-            ];
-
             bind = [
                 #"$mainMod, V, exec, cliphist list | rofi --dmenu | cliphist decode | wl-copy"
 
                 "$mainMod, Return, exec, alacritty"
                 "$mainMod, Q, killactive,"
                 "$mainMod, M, exit,"
-                #"$mainMod, E, exec, dolphin"
+                "$mainMod, E, exec, nautilus"
                 "$mainMod, F, togglefloating,"
                 "$mainMod, R, exec, rofi -show drun -show-icons"
-                #"$mainMod, P, pseudo, # dwindle" #  WARN: what is this ??
+                "$mainMod, P, pseudo, # dwindle" #  WARN: what is this ??
                 #"$mainMod, J, togglesplit, # dwindle"
 
                 # Move focus with mainMod + arrow keys
@@ -155,43 +162,15 @@
 
                 #  INFO: Currently unused
 
-                # Switch workspaces with mainMod + [0-9]
-                # "$mainMod, 1, workspace, 1"
-                # "$mainMod, 2, workspace, 2"
-                # "$mainMod, 3, workspace, 3"
-                # "$mainMod, 4, workspace, 4"
-                # "$mainMod, 5, workspace, 5"
-                # "$mainMod, 6, workspace, 6"
-                # "$mainMod, 7, workspace, 7"
-                # "$mainMod, 8, workspace, 8"
-                # "$mainMod, 9, workspace, 9"
-                # "$mainMod, 0, workspace, 10"
-
-                # Move active window to a workspace with mainMod + SHIFT + [0-9]
-                # "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
-                # "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
-                # "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
-                # "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
-                # "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
-                # "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
-                # "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
-                # "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
-                # "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
-                # "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
-
-                # Scroll through existing workspaces with mainMod + scroll
-                # "$mainMod, mouse_down, workspace, e+1"
-                # "$mainMod, mouse_up, workspace, e-1"
-
                 # Keyboard backlight
                 # "$mainMod, F3, exec, brightnessctl -d *::kbd_backlight set +33%"
                 # "$mainMod, F2, exec, brightnessctl -d *::kbd_backlight set 33%-"
 
                 # Volume and Media Control
-                # ", XF86AudioRaiseVolume, exec, pamixer -i 5 "
-                # ", XF86AudioLowerVolume, exec, pamixer -d 5 "
-                # ", XF86AudioMute, exec, pamixer -t"
-                # ", XF86AudioMicMute, exec, pamixer --default-source -m"
+                # "$mainMod, Page_Up, exec, pamixer -i 5 "
+                # "$mainMod, Page_Down, exec, pamixer -d 5 "
+                ", Shift_R, exec, pamixer --default-source -t && pamixer -t"
+                ", Control_R, exec, pamixer --default-source -t"
 
                 # Brightness control
                 # ", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
@@ -210,6 +189,12 @@
 
                 # Disable all effects
                 # "$mainMod Shift, G, exec, ~/.config/hypr/gamemode.sh "
+            ];
+
+            bindm = [
+                # Interact with Floating Windows
+                "$mainMod, mouse:272, movewindow"
+                "$mainMod, mouse:273, resizewindow"
             ];
         };
     };
