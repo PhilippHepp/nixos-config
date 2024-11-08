@@ -21,8 +21,6 @@
     };
 
     hardware = {
-        pulseaudio.enable = true;
-
         opengl.enable = true;
         opengl.driSupport32Bit = true;
 
@@ -40,15 +38,19 @@
         };
     };
 
-    # security.rtkit.enable = true;
-    # services.pipewire = {
-    #   enable = true;
-    #   alsa.enable = true;
-    #   alsa.support32Bit = true;
-    #   pulse.enable = true;
-    #   # If you want to use JACK applications, uncomment this
-    #   #jack.enable = true;
-    # };
+    hardware.pulseaudio.enable = false;
+    sound.enable = true;
+
+    security.rtkit.enable = true;
+    services.pipewire = {
+      enable = true;
+
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      pulse.enable = true;
+      # If you want to use JACK applications, uncomment this
+      #jack.enable = true;
+    };
 
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
