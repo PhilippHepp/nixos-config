@@ -4,5 +4,6 @@
         ./hyprland.nix
         ./alacritty.nix
         ./themes.nix
+        ./waybar.nix
     ];
 }

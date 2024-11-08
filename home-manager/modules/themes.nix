@@ -7,7 +7,6 @@
 
         theme.name = "Tokyonight-Storm-BL";
         theme.package = pkgs.tokyonight-gtk-theme;
-        
     };
 
 }
