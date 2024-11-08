@@ -34,8 +34,8 @@
         # cliphist
         # Programs
         pavucontrol
+        pamixer
         vesktop
-        discord
         firefox
         steam
         gnome.nautilus
