@@ -3,19 +3,13 @@
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
+        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
-        nixos-wsl = {
-            url = "github:nix-community/NixOS-WSL/main";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
+        nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+        nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
 
-        home-manager = {
-            url = "github:nix-community/home-manager";
-            inputs.nixpkgs.follows = "nixpkgs";
-        };
-        
-        rose-pine-hyprcursor.url = "github:ndom91/rose-pine-hyprcursor";
-
+        home-manager.url = "github:nix-community/home-manager";
+        home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 
     outputs = { self, nixpkgs, nixos-wsl, home-manager, ...}@inputs:
@@ -32,7 +26,6 @@
                         wsl.enable = true;
                     }
                 ];
-                inherit system;
             };
 
             nixosConfigurations.zenith = nixpkgs.lib.nixosSystem {
@@ -41,11 +34,10 @@
                     ./nixos/configuration.nix
 		            ./hosts/zenith.nix
                 ];
-                inherit system;
             };
 
             homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
-                # specialArgs = {inherit inputs;};
+                extraSpecialArgs = {inherit inputs;};
                 pkgs = nixpkgs.legacyPackages.${system};
                 modules = [ ./home-manager/home.nix ];
             };
