@@ -2,8 +2,8 @@
     description = "System configuration";
 
     inputs = {
-        nixpkgs.url = "github:nixos/nixpkgs/nixos-24.05";
-        nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+        nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
         nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
         nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
@@ -17,7 +17,7 @@
             system = "x86_64-linux";
         in {
             nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs;};
+                specialArgs = {inherit inputs system;};
                 modules = [
                     ./nixos/configuration.nix
 		            ./nixos/wsl.nix
@@ -29,7 +29,7 @@
             };
 
             nixosConfigurations.zenith = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs;};
+                specialArgs = {inherit inputs system;};
                 modules = [
                     ./nixos/configuration.nix
 		            ./nixos/zenith.nix
@@ -37,7 +37,7 @@
             };
 
             homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
-                extraSpecialArgs = {inherit inputs;};
+                extraSpecialArgs = {inherit inputs system;};
                 pkgs = nixpkgs.legacyPackages.${system};
                 modules = [ ./home-manager/home.nix ];
             };

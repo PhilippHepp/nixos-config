@@ -1,8 +1,8 @@
-{ config, inputs, pkgs, ... }: {
+{ inputs, config, pkgs, ... }: {
     environment.systemPackages = with pkgs; [
         # Text Editors
         vim
-        neovim
+        # neovim
         # CLI Tools
         alacritty
         kitty
@@ -42,7 +42,7 @@
         vesktop
         firefox
         steam
-        gnome.nautilus
+        nautilus
         ffmpeg
         # Other
         tokyonight-gtk-theme
