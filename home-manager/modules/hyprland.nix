@@ -29,6 +29,7 @@
                 "noborder, ^(Rofi)$"
                 "rounding 25, ^(Rofi)$"
 
+                # "float, ^(org.pulseaudio.pavucontrol)$"
                 "float, ^(pavucontrol)$"
             ];
 
@@ -40,6 +41,10 @@
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
             ];
+
+            cursor = {
+                no_hardware_cursors = true;
+            };
 
             debug = {
                 disable_logs = false;
