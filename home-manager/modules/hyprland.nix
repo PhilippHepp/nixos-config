@@ -138,14 +138,15 @@
             };
 
             bind = [
-                "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy"
+                "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images --normal-window --width 500 --height 500 | cliphist decode | wl-copy"
 
                 "$mainMod, Return, exec, alacritty"
+                # "$mainMod, Space, exec, rofi -show drun -show-icons"
+                "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500"
                 "$mainMod, Q, killactive,"
                 "$mainMod, M, exit,"
                 "$mainMod, E, exec, nautilus"
                 "$mainMod, F, togglefloating,"
-                "$mainMod, Space, exec, rofi -show drun -show-icons"
                 "$mainMod, P, pseudo, # dwindle"
                 "$mainMod, J, togglesplit, # dwindle"
 
