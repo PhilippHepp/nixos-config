@@ -141,13 +141,14 @@
                 "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images --normal-window --width 500 --height 500 | cliphist decode | wl-copy"
 
                 "$mainMod, Return, exec, alacritty"
+                "$mainMod, E, exec, nemo"
                 "$mainMod, B, exec, firefox"
                 # "$mainMod, Space, exec, rofi -show drun -show-icons"
                 "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500"
+
                 "$mainMod, Q, killactive,"
                 "$mainMod_Shift, Q, closewindow"
                 "$mainMod, M, exit,"
-                "$mainMod, E, exec, nautilus"
                 "$mainMod, F, togglefloating,"
                 "$mainMod, P, pseudo, # dwindle"
                 "$mainMod, J, togglesplit, # dwindle"
