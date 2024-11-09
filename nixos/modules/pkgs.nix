@@ -1,3 +1,6 @@
+#  WARN: Packages might be defined elsewhere via programs.<name>
+#  WARN: when defining config with home-manager make sure the pkgs in home-manager are the same
+
 { inputs, config, pkgs, ... }: {
     environment.systemPackages = with pkgs; [
         # Text Editors
