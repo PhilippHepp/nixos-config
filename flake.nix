@@ -5,28 +5,28 @@
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
-        nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
-        nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
+        # nixos-wsl.url = "github:nix-community/NixOS-WSL/main";
+        # nixos-wsl.inputs.nixpkgs.follows = "nixpkgs";
 
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = { self, nixpkgs, nixos-wsl, home-manager, ...}@inputs:
+    outputs = { self, nixpkgs, home-manager, ...}@inputs:
         let 
             system = "x86_64-linux";
         in {
-            nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs system;};
-                modules = [
-                    ./nixos/configuration.nix
-		            ./nixos/wsl.nix
-                    nixos-wsl.nixosModules.default {
-                        system.stateVersion = "24.05";
-                        wsl.enable = true;
-                    }
-                ];
-            };
+            # nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
+            #     specialArgs = {inherit inputs system;};
+            #     modules = [
+            #         ./nixos/configuration.nix
+		          #   ./nixos/wsl.nix
+            #         nixos-wsl.nixosModules.default {
+            #             system.stateVersion = "24.05";
+            #             wsl.enable = true;
+            #         }
+            #     ];
+            # };
 
             nixosConfigurations.zenith = nixpkgs.lib.nixosSystem {
                 specialArgs = {inherit inputs system;};
