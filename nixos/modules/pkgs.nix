@@ -16,6 +16,7 @@
         chafa
         unzip
         fastfetch
+        htop
         # Programming doodads
         zig
         rustc
