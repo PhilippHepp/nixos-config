@@ -45,6 +45,8 @@
             hm = "home-manager switch --flake ${flakeDir}";
             pkgs = "nvim ${flakeDir}/nixos/modules/pkgs.nix";
             v = "nvim";
+            z = "eza -a --icons";
+            zz = "eza -aTL 3 --icons";
         };
     };
 }

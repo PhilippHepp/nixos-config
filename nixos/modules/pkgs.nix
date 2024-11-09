@@ -20,6 +20,7 @@
         unzip
         fastfetch
         htop
+        eza
         # Programming doodads
         zig
         rustc
