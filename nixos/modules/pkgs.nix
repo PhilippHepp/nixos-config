@@ -2,7 +2,7 @@
     environment.systemPackages = with pkgs; [
         # Text Editors
         vim
-        # neovim
+        neovim
         # CLI Tools
         alacritty
         kitty

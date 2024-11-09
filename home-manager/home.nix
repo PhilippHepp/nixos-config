@@ -1,6 +1,6 @@
 {
     imports = [
-	    ./modules/bundle.nix
+        ./modules/bundle.nix
     ];
 
     home = {
@@ -9,10 +9,10 @@
         stateVersion = "24.05";
     };
 
-    # programs.neovim = {
-    #     enable = true;
-    #     defaultEditor = true;
-    # };
+    programs.neovim = {
+        enable = true;
+        defaultEditor = true;
+    };
 
     programs.gh = {
         enable = true;
