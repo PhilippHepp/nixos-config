@@ -1,7 +1,10 @@
-{
+{ config, lib, ...}:{
     imports = [
         ./modules/bundle.nix
-    ];
+        
+    ]
+    # Looking for a Solution to this
+    #++ (if config.networking.hostName == "wsl" then ./wsl.nix else []);
 
     home = {
         username = "donielmaker";

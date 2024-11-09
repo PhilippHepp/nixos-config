@@ -1,6 +1,6 @@
-{ config, lib, pkgs, ... }: {
+{ config, ... }: {
     imports = [ ./hardware-configuration.nix ];
     
-    networking.hostName = "zenith"; # Define your hostname  
+    networking.hostName = "zenith";
 
 }

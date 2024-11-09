@@ -24,6 +24,14 @@
             pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
             pkgs-firefox = inputs.firefox-addons.packages.${system};
         in {
+            nixosConfigurations.zenith = nixpkgs.lib.nixosSystem {
+                specialArgs = {inherit inputs system pkgs-stable pkgs-firefox;};
+                modules = [
+                    ./nixos/configuration.nix
+		            ./nixos/zenith.nix
+                ];
+            };
+
             nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
                 specialArgs = {inherit inputs system pkgs-stable pkgs-firefox;};
                 modules = [
@@ -34,14 +42,7 @@
                         wsl.enable = true;
                     }
                 ];
-            };
-
-            nixosConfigurations.zenith = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs system pkgs-stable pkgs-firefox;};
-                modules = [
-                    ./nixos/configuration.nix
-		            ./nixos/zenith.nix
-                ];
+                inherit system;
             };
 
             homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {

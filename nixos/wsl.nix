@@ -1,12 +1,12 @@
-{ config, lib, pkgs, ... }:
-
-{
+{ config, ... }: {
     disabledModules = [
-        ../nixos/modules/bootloader.nix
+        ./modules/bootloader.nix
+        ./modules/graphics.nix
+        ./modules/sound.nix
     ];
 
     wsl.enable = true;
     wsl.defaultUser = "donielmaker";
-
-    networking.hostName = lib.mkForce "wsl"; # Define your hostname  
+        
+    networking.hostName = "wsl";
 }
