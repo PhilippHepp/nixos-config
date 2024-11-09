@@ -20,7 +20,7 @@
                 specialArgs = {inherit inputs;};
                 modules = [
                     ./nixos/configuration.nix
-		            ./hosts/wsl.nix
+		            ./nixos/wsl.nix
                     nixos-wsl.nixosModules.default {
                         system.stateVersion = "24.05";
                         wsl.enable = true;
@@ -32,7 +32,7 @@
                 specialArgs = {inherit inputs;};
                 modules = [
                     ./nixos/configuration.nix
-		            ./hosts/zenith.nix
+		            ./nixos/zenith.nix
                 ];
             };
 
