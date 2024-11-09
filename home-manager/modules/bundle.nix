@@ -5,5 +5,6 @@
         ./alacritty.nix
         ./themes.nix
         ./waybar.nix
+        ./firefox.nix
     ];
 }
