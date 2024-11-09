@@ -1,8 +1,8 @@
 { config, lib, ...}:{
     imports = [
         ./modules/bundle.nix
-        
-    ]
+        ./wsl.nix        
+    ];
     # Looking for a Solution to this
     #++ (if config.networking.hostName == "wsl" then ./wsl.nix else []);
 
@@ -46,7 +46,7 @@
             pkgs = "nvim ${flakeDir}/nixos/modules/pkgs.nix";
             v = "nvim";
             z = "eza -a --icons";
-            zz = "eza -aTL 3 --icons";
+            zz = "eza -aTL 2 --icons";
         };
     };
 }
