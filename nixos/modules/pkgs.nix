@@ -1,11 +1,11 @@
 #  WARN: Packages might be defined elsewhere via programs.<name>
 #  WARN: when defining config with home-manager make sure the pkgs in home-manager are the same
 
-{ inputs, config, pkgs, ... }: {
-    environment.systemPackages = with pkgs; [
+{ pkgs-stable, config, pkgs, ... }: {
+    environment.systemPackages = with pkgs-stable; [
         # Text Editors
         vim
-        neovim
+        pkgs.neovim
         # CLI Tools
         alacritty
         kitty
@@ -30,7 +30,7 @@
         pkg-config
         # Wayland
         waybar
-        rofi
+        wofi
         swww
         hyprcursor
         xwayland
@@ -39,14 +39,15 @@
         # Audio
         pipewire
         wireplumber
-        # Programs
         pavucontrol
         pamixer
+        # Programs
         vesktop
         firefox
-        steam
-        nautilus
+        pkgs.steam
+        pkgs.nemo
         ffmpeg
+        orca-slicer
         # Other
         tokyonight-gtk-theme
         home-manager
