@@ -1,4 +1,4 @@
-{
+{ config, pkgs, ... }: {
     services.xserver.videoDrivers = [ "nvidia" ];
     services.xserver.xkb.layout = "us";
 
@@ -19,19 +19,18 @@
     hardware.opengl.driSupport32Bit = true;
 
     hardware.nvidia = {
-            modesetting.enable = true;
+        modesetting.enable = true;
 
-            powerManagement.enable = false;
-            powerManagement.finegrained = false;
+        powerManagement.enable = false;
+        powerManagement.finegrained = false;
 
-            open = false;
+        open = false;
 
-            nvidiaSettings = true;
+        nvidiaSettings = true;
 
-            package = config.boot.kernelPackages.nvidiaPackages.stable;
-        };
+        package = config.boot.kernelPackages.nvidiaPackages.stable;
     };
-
 
     xdg.portal.enable = true;
     xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+}
