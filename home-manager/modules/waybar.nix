@@ -8,7 +8,7 @@
         margin = "9 13 -10 18";
 
         # modules-left = ["hyprland/workspaces" "hyprland/language" "keyboard-state" "hyprland/submap"];
-        modules-center = ["clock" "custom/weather"];
+        modules-center = ["clock"];
         modules-right = ["pulseaudio" "custom/mem" "cpu" "backlight" "battery" "tray"];
 
         # "hyprland/workspaces" = {
@@ -32,9 +32,9 @@
         };
 
         "clock" = {
-            # timezone = "America/New_York";
+            timezone = "Europe/Berlin";
             tooltip-format = "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>";
-            format = "{:%a; %d %b, %I:%M %p}";
+            format = "{:%a %d %b, %H:%M }";
         };
 
         "custom/weather" = {
@@ -68,7 +68,7 @@
         };
 
     "custom/mem" = {
-        format = "{} ";
+        format = "{}  ";
         interval = 3;
         exec = "free -h | awk '/Mem:/{printf $3}'";
         tooltip = false;
