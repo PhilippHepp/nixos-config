@@ -1,4 +1,10 @@
-{ pkgs, ... }: {
+{ pkgs, pkgs-stable, inputs, ... }: {
+    qt = {
+        enable = true;
+        platformTheme.name = "gtk3";
+        style.name = "adwaita";
+    };
+
     gtk = {
         enable = true;
 
@@ -6,7 +12,7 @@
         cursorTheme.package = pkgs.bibata-cursors;
 
         theme.name = "Tokyonight-Storm-BL";
-        theme.package = pkgs.tokyonight-gtk-theme;
+        theme.package = pkgs-stable.tokyonight-gtk-theme;
     };
 
 }
