@@ -24,10 +24,9 @@
                 "float, ^(imv)$"
                 "float, ^(mpv)$"
 
-                "float, ^(Rofi)$"
-                "stayfocused, ^(Rofi)$"
-                "noborder, ^(Rofi)$"
-                "rounding 25, ^(Rofi)$"
+                "float, ^(wofi)$"
+                "stayfocused, ^(wofi)$"
+                "noborder, ^(wofi)$"
 
                 # "float, ^(org.pulseaudio.pavucontrol)$"
                 "float, ^(pavucontrol)$"
