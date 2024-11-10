@@ -34,7 +34,7 @@
 
             exec-once = [
                 "hyprctl setcursor Bibata-Modern-Ice 24"
-                "waybar"
+                "eww open bar"
                 "swww init"
                 "swww img /home/donielmaker/.config/Background.png"
                 "wl-paste --type text --watch cliphist store"
@@ -71,7 +71,7 @@
 
             general = {
                 gaps_in = 5;
-                gaps_out = 20;
+                gaps_out = "50, 20, 20, 20";
                 border_size = 3;
                 "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
                 "col.inactive_border" = "rgba(595959aa)";

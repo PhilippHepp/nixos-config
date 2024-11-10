@@ -1,7 +1,7 @@
 { config, lib, ...}:{
     imports = [
         ./modules/bundle.nix
-        ./wsl.nix        
+        #./wsl.nix
     ];
     # Looking for a Solution to this
     #++ (if config.networking.hostName == "wsl" then ./wsl.nix else []);
@@ -31,6 +31,9 @@
         userName = "donielmaker";
         userEmail = "daniel.schmidt0204@gmail.com";
     };
+
+    # programs.eww.enable = true;
+    # programs.eww.configDir = ./modules/eww;
 
     programs.zsh = {
         enable = true;

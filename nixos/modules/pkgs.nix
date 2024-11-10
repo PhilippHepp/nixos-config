@@ -21,6 +21,7 @@
         fastfetch
         htop
         eza
+        ffmpeg
         # Programming doodads
         zig
         rustc
@@ -32,6 +33,7 @@
         # Wayland
         waybar
         wofi
+        eww
         swww
         hyprcursor
         xwayland
@@ -45,10 +47,7 @@
         # Programs
         vesktop
         firefox
-        pkgs.steam
         pkgs.nemo
-        ffmpeg
-        orca-slicer
         # Other
         tokyonight-gtk-theme
         home-manager
