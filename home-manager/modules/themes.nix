@@ -11,7 +11,7 @@
         cursorTheme.name = "Bibata-Modern-Ice";
         cursorTheme.package = pkgs.bibata-cursors;
 
-        theme.name = "Tokyonight-Storm-BL";
+        theme.name = "Tokyonight-Storm-BL-LB";
         theme.package = pkgs-stable.tokyonight-gtk-theme;
     };
 
