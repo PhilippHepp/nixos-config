@@ -49,6 +49,8 @@
         firefox
         pkgs.nemo
         # Other
+        catppuccin-qt5ct
+        openrgb-with-all-plugins
         tokyonight-gtk-theme
         home-manager
     ];

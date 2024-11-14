@@ -4,6 +4,6 @@
         ./pkgs.nix
         ./sound.nix
         ./graphics.nix
-        # ./openrgb.nix
+        ./openrgb.nix
     ];
 }

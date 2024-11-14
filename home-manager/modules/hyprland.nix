@@ -37,6 +37,7 @@
                 "eww open -c /home/donielmaker/.config/eww/bar bar"
                 "swww init"
                 "swww img /home/donielmaker/.config/Background.png"
+                "openrgb -p /home/donielmaker/.config/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
             ];
@@ -115,18 +116,6 @@
                     "workspaces,  1, 6,  default"
                 ];
             };
-
-            # master = {
-            #     new_is_master = true;
-            # };
-
-            # gestures = {
-            #     workspace_swipe = true;
-            #     workspace_swipe_fingers = 3;
-            #     workspace_swipe_invert = false;
-            #     workspace_swipe_distance = 200;
-            #     workspace_swipe_forever = true;
-            # };
 
             misc = {
                 animate_manual_resizes = true;

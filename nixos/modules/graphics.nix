@@ -5,15 +5,15 @@
     # Display Manager
     services.xserver = {
         enable = true;
-        # displayManager.gdm.enable = true;
-        # displayManager.gdm.wayland = true;
+        displayManager.gdm.enable = true;
+        displayManager.gdm.wayland = true;
     };
 
-    services.displayManager.sddm = {
-        enable = true;
-        wayland.enable = true;
-        theme = "catppuccin-frappe";
-    };
+    # services.displayManager.sddm = {
+    #     enable = true;
+    #     wayland.enable = true;
+    #     theme = "catppuccin-frappe";
+    # };
 
     # Window Manager
     programs.hyprland.enable = true;
