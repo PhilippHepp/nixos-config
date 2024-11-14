@@ -34,7 +34,7 @@
 
             exec-once = [
                 "hyprctl setcursor Bibata-Modern-Ice 24"
-                "eww open bar"
+                "eww open -c /home/donielmaker/.config/eww/bar bar"
                 "swww init"
                 "swww img /home/donielmaker/.config/Background.png"
                 "wl-paste --type text --watch cliphist store"
