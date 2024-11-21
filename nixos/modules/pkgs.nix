@@ -48,6 +48,7 @@
         vesktop
         firefox
         pkgs.nemo
+        prismlauncher
         # Other
         catppuccin-qt5ct
         openrgb-with-all-plugins
