@@ -36,7 +36,7 @@
                 "hyprctl setcursor Bibata-Modern-Ice 24"
                 "eww open -c /home/donielmaker/.config/eww/bar bar"
                 "swww init"
-                "swww img /home/donielmaker/.config/Background.png"
+                "swww img /home/donielmaker/.config/nix/wallpapers/nix-wallpaper-binary-black.png"
                 "openrgb -p /home/donielmaker/.config/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
