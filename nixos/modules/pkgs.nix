@@ -1,7 +1,7 @@
 #  WARN: Packages might be defined elsewhere via programs.<name>
 #  WARN: when defining config with home-manager make sure the pkgs in home-manager are the same
 
-{ config, pkgs-stable, pkgs, ... }: {
+{ pkgs-stable, pkgs, ... }: {
     environment.systemPackages = with pkgs-stable; [
         # Text Editors
         vim
@@ -30,6 +30,7 @@
         gnumake
         openssl
         pkg-config
+        nixd
         # Wayland
         waybar
         wofi
@@ -50,6 +51,9 @@
         pkgs.nemo
         prismlauncher
         netbird
+        # Sddm
+        libsForQt5.qt5.qtgraphicaleffects
+        libsForQt5.qt5.qtquickcontrols2
         # Other
         catppuccin-qt5ct
         openrgb-with-all-plugins
