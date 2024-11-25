@@ -49,6 +49,7 @@
         firefox
         pkgs.nemo
         prismlauncher
+        netbird
         # Other
         catppuccin-qt5ct
         openrgb-with-all-plugins

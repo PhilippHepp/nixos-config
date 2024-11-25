@@ -5,5 +5,6 @@
         ./sound.nix
         ./graphics.nix
         ./openrgb.nix
+        ./netbird.nix
     ];
 }
