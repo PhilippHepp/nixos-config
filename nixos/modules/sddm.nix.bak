@@ -1,6 +1,0 @@
-{ pkgs }: {
-    services.xserver.displayManager.sddm = {
-        enable = true;
-        theme = "${import ./tokyonight-sddm.nix{inherit pkgs;}}";
-    };
-}

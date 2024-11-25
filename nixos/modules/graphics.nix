@@ -2,13 +2,6 @@
     services.xserver.videoDrivers = [ "nvidia" ];
     services.xserver.xkb.layout = "us";
 
-    # Display Manager
-    # services.xserver = {
-    #     enable = true;
-    #     displayManager.gdm.enable = true;
-    #     displayManager.gdm.wayland = true;
-    # };
-
     services.displayManager.sddm = {
         enable = true;
         theme = "${import ./tokyonight-sddm.nix{inherit pkgs;}}";
