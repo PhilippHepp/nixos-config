@@ -36,7 +36,7 @@
                 "hyprctl setcursor Bibata-Modern-Ice 24"
                 "eww open -c /home/donielmaker/.config/eww/bar bar"
                 "swww init"
-                "swww img /home/donielmaker/.config/nix/wallpapers/nix-wallpaper-binary-black.png"
+                "swww img /home/donielmaker/.config/nix/wallpapers/nixos-wallpaper-catppuccin-macchiato.png"
                 "openrgb -p /home/donielmaker/.config/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
@@ -72,7 +72,7 @@
 
             general = {
                 gaps_in = 5;
-                gaps_out = "50, 20, 20, 20";
+                gaps_out = "170, 20, 20, 20";
                 border_size = 3;
                 "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
                 "col.inactive_border" = "rgba(595959aa)";
