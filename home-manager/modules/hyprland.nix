@@ -133,7 +133,6 @@
                 "$mainMod, Return, exec, alacritty"
                 "$mainMod, E, exec, nemo"
                 "$mainMod, B, exec, firefox"
-                # "$mainMod, Space, exec, rofi -show drun -show-icons"
                 "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500"
 
                 "$mainMod, Q, killactive,"

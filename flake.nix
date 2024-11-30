@@ -5,7 +5,7 @@
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
-        stylix.url = "github:danth/stylix";
+        #stylix.url = "github:danth/stylix";
 
         firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
         firefox-addons.inputs.nixpkgs.follows = "nixpkgs";
