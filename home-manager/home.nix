@@ -47,6 +47,7 @@
             rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
             hm = "home-manager switch --flake ${flakeDir}";
             pkgs = "nvim ${flakeDir}/nixos/modules/pkgs.nix";
+            lg = "lazygit";
             v = "nvim";
             z = "eza -a --icons";
             zz = "eza -aTL 3 --icons";
