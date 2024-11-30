@@ -17,57 +17,66 @@
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = { self, nixpkgs, nixos-wsl, home-manager, ...}@inputs:
-        let 
-            # System settings #
-            system = "x86_64-linux";
-            hostname = "zenith"; # Default
-            username = "donielmaker";
-            mail = "daniel.schmidt0204@gmail.com";
-            dotfiles = "/home/${username}/.config";
+    outputs = { 
+        self, 
+        nixpkgs, 
+        nixpkgs-stable,
+        firefox-addons,
+        nixos-wsl, 
+        home-manager, 
+        ...
+    }@inputs:
 
-            # Package declaration #
-            pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
-            pkgs-stable = import inputs.nixpkgs-stable {inherit system; config.allowUnfree = true;};
-            pkgs-firefox = inputs.firefox-addons.packages.${system};
-        in {
-            nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit 
-                        inputs
-                        system username mail dotfiles
-                        pkgs pkgs-stable pkgs-firefox;
-                };
-                modules = [
-                    ./nixos/configuration.nix
-                    (import ./nixos/zenith.nix {inherit hostname;})
-                ];
-            };
+    let 
+        # System settings #
+        system = "x86_64-linux";
+        hostname = "zenith"; # Default
+        username = "donielmaker";
+        mail = "daniel.schmidt0204@gmail.com";
+        dotfiles = "/home/${username}/.config";
 
-            nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit
-                        inputs
-                        system username dotfiles mail
-                        pkgs pkgs-stable pkgs-firefox;
-                };
-                modules = [
-                    ./nixos/configuration.nix
-                    ./nixos/wsl.nix
-                    nixos-wsl.nixosModules.default {
-                        system.stateVersion = "24.05";
-                        wsl.enable = true;
-                    }
-                ];
-                inherit system;
+        # Package declaration #
+        pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
+        pkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true;};
+        pkgs-firefox = import firefox-addons;
+    in {
+        nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+            specialArgs = {
+                    inherit inputs
+                    system username mail dotfiles
+                    pkgs pkgs-stable pkgs-firefox;
             };
+            modules = [
+                ./nixos/configuration.nix
+                (import ./nixos/zenith.nix {inherit hostname;})
+            ];
+        };
 
-            homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
-                extraSpecialArgs = {inherit
-                        inputs
-                        system dotfiles username mail
-                        pkgs pkgs-stable pkgs-firefox;
-                };
-                modules = [ ./home-manager/home.nix ];
-                inherit pkgs;
+        nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
+            specialArgs = {
+                    inherit inputs
+                    system username dotfiles mail
+                    pkgs pkgs-stable pkgs-firefox;
             };
+            modules = [
+                ./nixos/configuration.nix
+                ./nixos/wsl.nix
+                nixos-wsl.nixosModules.default {
+                    system.stateVersion = "24.05";
+                    wsl.enable = true;
+                }
+            ];
+            inherit system;
+        };
+
+        homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+            extraSpecialArgs = {
+                    inherit inputs
+                    system dotfiles username mail
+                    pkgs pkgs-stable pkgs-firefox;
+            };
+            modules = [ ./home-manager/home.nix ];
+            inherit pkgs;
+        };
     };
 }
