@@ -51,9 +51,9 @@
         pkgs.nemo
         prismlauncher
         netbird
+        geeqie
         # Sddm
         libsForQt5.qt5.qtgraphicaleffects
-        libsForQt5.qt5.qtquickcontrols2
         # Other
         catppuccin-qt5ct
         openrgb-with-all-plugins
