@@ -1,4 +1,4 @@
-{
+{ dotfiles, ... }: {
    wayland.windowManager.hyprland = {
         enable = true;
         xwayland.enable = true;
@@ -34,10 +34,10 @@
 
             exec-once = [
                 "hyprctl setcursor Bibata-Modern-Ice 24"
-                "eww open -c /home/donielmaker/.config/eww/bar bar"
+                "eww open -c ${dotfiles}/eww/bar bar"
                 "swww init"
-                "swww img /home/donielmaker/.config/nix/wallpapers/nixos-wallpaper-catppuccin-macchiato.png"
-                "openrgb -p /home/donielmaker/.config/OpenRGB/Main.orp"
+                "swww img ${dotfiles}/nix/wallpapers/nixos-wallpaper-catppuccin-macchiato.png"
+                "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
             ];

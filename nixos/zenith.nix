@@ -1,6 +1,5 @@
-{ config, ... }: {
+{ hostname, ...}: {
     imports = [ ./hardware-configuration.nix ];
     
-    networking.hostName = "zenith";
-
+    networking.hostName = "${hostname}";
 }

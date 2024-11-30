@@ -19,24 +19,39 @@
 
     outputs = { self, nixpkgs, nixos-wsl, home-manager, ...}@inputs:
         let 
+            # System settings #
             system = "x86_64-linux";
-            pkgs = inputs.nixpkgs.legacyPackages.${system};
-            pkgs-stable = inputs.nixpkgs-stable.legacyPackages.${system};
+            hostname = "zenith"; # Default
+            username = "donielmaker";
+            mail = "daniel.schmidt0204@gmail.com";
+            dotfiles = "/home/${username}/.config";
+
+            # Package declaration #
+            pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
+            pkgs-stable = import inputs.nixpkgs-stable {inherit system; config.allowUnfree = true;};
             pkgs-firefox = inputs.firefox-addons.packages.${system};
         in {
-            nixosConfigurations.zenith = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs system pkgs-stable pkgs-firefox;};
+            nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+                specialArgs = {inherit 
+                        inputs
+                        system username mail dotfiles
+                        pkgs pkgs-stable pkgs-firefox;
+                };
                 modules = [
                     ./nixos/configuration.nix
-		            ./nixos/zenith.nix
+                    (import ./nixos/zenith.nix {inherit hostname;})
                 ];
             };
 
             nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
-                specialArgs = {inherit inputs system pkgs-stable pkgs-firefox;};
+                specialArgs = {inherit
+                        inputs
+                        system username dotfiles mail
+                        pkgs pkgs-stable pkgs-firefox;
+                };
                 modules = [
                     ./nixos/configuration.nix
-		            ./nixos/wsl.nix
+                    ./nixos/wsl.nix
                     nixos-wsl.nixosModules.default {
                         system.stateVersion = "24.05";
                         wsl.enable = true;
@@ -45,10 +60,14 @@
                 inherit system;
             };
 
-            homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
-                extraSpecialArgs = {inherit inputs system pkgs-stable pkgs-firefox;};
+            homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+                extraSpecialArgs = {inherit
+                        inputs
+                        system dotfiles username mail
+                        pkgs pkgs-stable pkgs-firefox;
+                };
                 modules = [ ./home-manager/home.nix ];
                 inherit pkgs;
             };
-        };
+    };
 }

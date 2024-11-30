@@ -5,5 +5,6 @@
         ./alacritty.nix
         ./themes.nix
         ./firefox.nix
+        ./zsh.nix
     ];
 }

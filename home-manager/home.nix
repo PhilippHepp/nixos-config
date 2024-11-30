@@ -1,14 +1,13 @@
-{ config, lib, ...}:{
+{ username, mail, ... }: {
     imports = [
         ./modules/bundle.nix
+        #  FIX: this should only be enabled with hostname = "wsl"
         #./wsl.nix
     ];
-    # Looking for a Solution to this
-    #++ (if config.networking.hostName == "wsl" then ./wsl.nix else []);
 
     home = {
-        username = "donielmaker";
-        homeDirectory = "/home/donielmaker";
+        username = username;
+        homeDirectory = "/home/${username}";
         stateVersion = "24.05";
     };
 
@@ -28,29 +27,11 @@
 
     programs.git = {
         enable = true;
-        userName = "donielmaker";
-        userEmail = "daniel.schmidt0204@gmail.com";
+        userName = username;
+        userEmail = mail;
     };
 
     # programs.eww.enable = true;
     # programs.eww.configDir = ./modules/eww;
 
-    programs.zsh = {
-        enable = true;
-        enableCompletion = true;
-        autosuggestion.enable = true;
-        dotDir = ".config/zsh";
-        shellAliases = 
-	let
-            flakeDir = "$HOME/.config/nix/";
-        in {
-            rb = "sudo nixos-rebuild switch --flake ${flakeDir}";
-            hm = "home-manager switch --flake ${flakeDir}";
-            pkgs = "nvim ${flakeDir}/nixos/modules/pkgs.nix";
-            lg = "lazygit";
-            v = "nvim";
-            z = "eza -a --icons";
-            zz = "eza -aTL 3 --icons";
-        };
-    };
 }

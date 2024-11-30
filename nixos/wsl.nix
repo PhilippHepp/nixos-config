@@ -1,4 +1,4 @@
-{ config, ... }: {
+{
     disabledModules = [
         ./modules/bootloader.nix
         ./modules/graphics.nix

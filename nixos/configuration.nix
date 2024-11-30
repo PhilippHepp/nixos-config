@@ -1,4 +1,4 @@
-{ config, lib, pkgs, ... }:
+{ pkgs, username, ...}:
 
 {  
     imports = [ ./modules/bundle.nix ];
@@ -11,9 +11,9 @@
 
     nixpkgs.config.allowUnfree = true;
 
-    users.users.donielmaker = {
+    users.users.${username} = {
         isNormalUser = true;
-        description = "DonielMaker";
+        description = "${username}";
         extraGroups = ["networkmanager" "wheel" "input" "audio" ];
         shell = pkgs.zsh;
     };
