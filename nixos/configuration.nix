@@ -6,6 +6,8 @@
         ./modules/bundle.nix
     ];
 
+    #services.openssh.enable = true;
+
     networking.networkmanager.enable = true;
     networking.hostName = hostname;
 
