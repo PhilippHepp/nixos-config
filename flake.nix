@@ -34,6 +34,7 @@
         username = "donielmaker";
         mail = "daniel.schmidt0204@gmail.com";
         dotfiles = "/home/${username}/.config";
+        gpu = "nvidia";
 
         # Package declaration #
         pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
@@ -43,7 +44,7 @@
     in {
         nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
             specialArgs = {
-                    inherit inputs
+                    inherit inputs gpu
                     system username mail dotfiles
                     pkgs pkgs-stable pkgs-firefox;
             };
@@ -55,7 +56,7 @@
 
         nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
             specialArgs = {
-                    inherit inputs
+                    inherit inputs gpu
                     system username dotfiles mail
                     pkgs pkgs-stable pkgs-firefox;
             };
@@ -72,7 +73,7 @@
 
         homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
             extraSpecialArgs = {
-                    inherit inputs
+                    inherit inputs gpu
                     system dotfiles username mail
                     pkgs pkgs-stable pkgs-firefox;
             };

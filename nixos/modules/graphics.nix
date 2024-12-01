@@ -1,7 +1,7 @@
-{ config, pkgs, ... }: 
+{ gpu, config, pkgs, ... }: 
 
 {
-    services.xserver.videoDrivers = [ "nvidia" ];
+    services.xserver.videoDrivers = if (gpu == "nvidia") then [ "nvidia" ] else [];
     services.xserver.xkb.layout = "us";
 
     # Requires some qt5.callpackage shit idk
@@ -47,7 +47,7 @@
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
 
-    hardware.nvidia = {
+    hardware.nvidia = if (gpu == "nvidia") then {
         # Enables Kernel Modesetting. Fixes Screen Tearing when using Optimus
         modesetting.enable = true;
 
@@ -63,5 +63,5 @@
 
         # The Package of the Nvidia Driver
         package = config.boot.kernelPackages.nvidiaPackages.stable;
-    };
+    } else {};
 }
