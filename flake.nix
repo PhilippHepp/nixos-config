@@ -38,7 +38,8 @@
         # Package declaration #
         pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
         pkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true;};
-        pkgs-firefox = import firefox-addons;
+        # pkgs-firefox = import firefox-addons { inherit system; };
+        pkgs-firefox = firefox-addons.packages.${system};
     in {
         nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
             specialArgs = {
@@ -48,7 +49,7 @@
             };
             modules = [
                 ./nixos/configuration.nix
-                (import ./nixos/zenith.nix {inherit hostname;})
+                (import ./nixos/${hostname}.nix {inherit hostname;})
             ];
         };
 
