@@ -17,24 +17,13 @@
         wayland = true;
     };
 
-    # services.xserver.enable = true;
-    # services.xserver.displayManager = {
-    #     lightdm.enable = true;
-    #     lightdm.greeters.gtk = {
-    #         cursorTheme.name = "Bibata-Modern-Ice";
-    #         cursorTheme.package = pkgs.bibata-cursors;
-    #
-    #         theme.name = "Tokyonight-Storm-BL-LB";
-    #         theme.package = pkgs.tokyonight-gtk-theme;
-    #     };
-    # };
-
     # Window Manager
     programs.hyprland.enable = true;
 
     environment.sessionVariables = {
         # Activate if Cursor keeps dissappearing
         # WLR_NO_HARDWARE_CURSORS = "1";
+
         # Required for Wayland
         NIXOS_OZONE_WL = "1";
     };
