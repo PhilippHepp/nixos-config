@@ -1,9 +1,13 @@
-{ pkgs, username, ...}:
+{ pkgs, hostname, username, ...}:
 
 {  
-    imports = [ ./modules/bundle.nix ];
+    imports = [ 
+        ./hardware-configuration.nix 
+        ./modules/bundle.nix
+    ];
 
     networking.networkmanager.enable = true;
+    networking.hostName = hostname;
 
     time.timeZone = "Europe/Berlin";
 
@@ -11,7 +15,7 @@
 
     users.users.${username} = {
         isNormalUser = true;
-        description = "${username}";
+        description = username;
         extraGroups = ["networkmanager" "wheel" "input" "audio" ];
         shell = pkgs.zsh;
     };
