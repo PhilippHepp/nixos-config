@@ -6,5 +6,8 @@
         ./themes.nix
         ./firefox.nix
         ./zsh.nix
+        ./neovim.nix
+        ./github.nix
+        ./git.nix
     ];
 }
