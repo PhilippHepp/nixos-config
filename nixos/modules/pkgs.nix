@@ -1,7 +1,9 @@
 #  WARN: Packages might be defined elsewhere via programs.<name>
 #  WARN: when defining config with home-manager make sure the pkgs in home-manager are the same
 
-{ pkgs-stable, pkgs, ... }: {
+{ pkgs-stable, pkgs, ... }: 
+
+{
     environment.systemPackages = with pkgs-stable; [
         # Text Editors
         vim

@@ -9,8 +9,6 @@
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
-    nixpkgs.config.allowUnfree = true;
-
     users.users.${username} = {
         isNormalUser = true;
         description = "${username}";

@@ -164,7 +164,7 @@
                 # "$mainMod, Page_Up, exec, pamixer -i 5 "
                 # "$mainMod, Page_Down, exec, pamixer -d 5 "
                 # ", Shift_R, exec, pamixer --default-source -t && pamixer -t"
-                # ",Shift_R, exec, bash /home/donielmaker/.config/nix/home-manager/modules/togglemute.sh"
+                # ",Shift_R, exec, bash /home/${username}/.config/nix/home-manager/modules/togglemute.sh"
                 ", Control_R, exec, pamixer --default-source -t"
 
                 #  INFO: Currently unused

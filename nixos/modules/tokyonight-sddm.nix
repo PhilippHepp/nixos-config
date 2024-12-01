@@ -1,11 +1,11 @@
 # Bullshit
 
 {
-    qtbase,
-    qtsvg,
-    qtgraphicaleffects,
-    qtquickcontrols2,
-    wrapQtAppsHook,
+    # qtbase,
+    # qtsvg,
+    # qtgraphicaleffects,
+    # qtquickcontrols2,
+    # wrapQtAppsHook,
     stdenvNoCC,
     fetchFromGitHub
 }:
@@ -20,18 +20,18 @@ stdenvNoCC.mkDerivation {
       hash = "sha256-JRVVzyefqR2L3UrEK2iWyhUKfPMUNUnfRZmwdz05wL0=";
     };
 
-    nativeBuildInputs = [
-        wrapQtAppsHook
-    ];
+    # nativeBuildInputs = [
+    #     wrapQtAppsHook
+    # ];
+    #
+    # propagatedUserEnvPkgs = [
+    #     qtbase
+    #     qtsvg
+    #     qtgraphicaleffects
+    #     qtquickcontrols2
+    # ];
 
-    propagatedUserEnvPkgs = [
-        qtbase
-        qtsvg
-        qtgraphicaleffects
-        qtquickcontrols2
-    ];
-
-    dontBuild = true;
+    # dontBuild = true;
 
     installPhase = ''
         mkdir -p $out/

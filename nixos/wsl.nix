@@ -1,4 +1,4 @@
-{
+{ username, ... }:{
     disabledModules = [
         ./modules/bootloader.nix
         ./modules/graphics.nix
@@ -7,7 +7,7 @@
     ];
 
     wsl.enable = true;
-    wsl.defaultUser = "donielmaker";
+    wsl.defaultUser = username;
         
     networking.hostName = "wsl";
 }
