@@ -54,7 +54,7 @@
         pkgs.nemo
         prismlauncher
         netbird
-        geeqie
+        steam
         # Sddm
         libsForQt5.qt5.qtgraphicaleffects
         # Other
