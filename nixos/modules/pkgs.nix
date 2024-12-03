@@ -26,13 +26,14 @@
         ffmpeg
         # Programming doodads
         zig
-        rustc
+        pkgs.rustc
         cargo
         nodejs_22
         gnumake
         openssl
         pkg-config
         nixd
+        gcc
         # Wayland
         waybar
         wofi
@@ -64,6 +65,6 @@
     ];
     
     fonts.packages = with pkgs; [
-	    (nerdfonts.override { fonts = [ "FiraCode" ]; })
+        nerd-fonts.fira-code
     ];
 }
