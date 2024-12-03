@@ -61,6 +61,8 @@
             inherit pkgs;
         };
 
+        devShells.${system}.default = (import ./shell.nix {inherit pkgs;});
+
         # nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         #     specialArgs = {
         #             inherit inputs gpu
