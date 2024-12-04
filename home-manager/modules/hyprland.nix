@@ -132,19 +132,19 @@
             };
 
             bind = [
-                "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images --normal-window --width 500 --height 500 | cliphist decode | wl-copy"
-
-                "$mainMod, Return, exec, alacritty"
-                "$mainMod, E, exec, nemo"
-                "$mainMod, B, exec, firefox"
-                "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500"
+                "$mainMod, Return, exec, alacritty" # Terminal
+                "$mainMod, E, exec, nemo" # File Manager
+                "$mainMod, B, exec, firefox" # Browser
+                "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500" #App Launcher
+                "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
 
                 "$mainMod, Q, killactive,"
-                "$mainMod_Shift, Q, closewindow"
+                # "$mainMod_Shift, Q, closewindow"
                 "$mainMod, M, exit,"
                 "$mainMod, F, togglefloating,"
-                "$mainMod, P, pseudo, # dwindle"
+                # "$mainMod, P, pseudo, # dwindle"
                 "$mainMod, J, togglesplit, # dwindle"
+                "$mainMod, G, fullscreen"
 
                 # Move focus with mainMod + arrow keys
                 "$mainMod, left,  movefocus, l"
@@ -164,11 +164,37 @@
                 "$mainMod CTRL, up,    resizeactive,  0 -60"
                 "$mainMod CTRL, down,  resizeactive,  0  60"
 
+                # Switch workspaces with mainMod + [0-9]
+                "$mainMod, 1, workspace, 1"
+                "$mainMod, 2, workspace, 2"
+                "$mainMod, 3, workspace, 3"
+                "$mainMod, 4, workspace, 4"
+                "$mainMod, 5, workspace, 5"
+                "$mainMod, 6, workspace, 6"
+                "$mainMod, 7, workspace, 7"
+                "$mainMod, 8, workspace, 8"
+                "$mainMod, 9, workspace, 9"
+                "$mainMod, 0, workspace, 10"
+
+                # Move active window to a workspace with mainMod + SHIFT + [0-9]
+                "$mainMod SHIFT, 1, movetoworkspacesilent, 1"
+                "$mainMod SHIFT, 2, movetoworkspacesilent, 2"
+                "$mainMod SHIFT, 3, movetoworkspacesilent, 3"
+                "$mainMod SHIFT, 4, movetoworkspacesilent, 4"
+                "$mainMod SHIFT, 5, movetoworkspacesilent, 5"
+                "$mainMod SHIFT, 6, movetoworkspacesilent, 6"
+                "$mainMod SHIFT, 7, movetoworkspacesilent, 7"
+                "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
+                "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
+                "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
+
                 # Volume and Media Control
                 # "$mainMod, Page_Up, exec, pamixer -i 5 "
                 # "$mainMod, Page_Down, exec, pamixer -d 5 "
                 # ", Shift_R, exec, pamixer --default-source -t && pamixer -t"
                 # ",Shift_R, exec, bash /home/${username}/.config/nix/home-manager/modules/togglemute.sh"
+
+                # Mute source
                 ", Control_R, exec, pamixer --default-source -t"
 
                 #  INFO: Currently unused
@@ -187,13 +213,6 @@
                 # ''$mainMod SHIFT, H, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/hyprland.nix"''
                 # ''$mainMod SHIFT, W, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/waybar.nix''
                 # '', Print, exec, grim -g "$(slurp)" - | swappy -f -''
-
-                # Waybar
-                # "$mainMod, B, exec, pkill -SIGUSR1 waybar"
-                # "$mainMod, W, exec, pkill -SIGUSR2 waybar"
-
-                # Disable all effects
-                # "$mainMod Shift, G, exec, ~/.config/hypr/gamemode.sh "
             ];
 
             bindm = [
