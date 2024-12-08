@@ -1,5 +1,10 @@
 { dotfiles, ... }: {
-   wayland.windowManager.hyprland = {
+   wayland.windowManager.hyprland = 
+        let
+            browser = "firefox";
+            terminal = "alacritty";
+            explorer = "nemo";
+        in {
         enable = true;
         xwayland.enable = true;
 
@@ -132,9 +137,9 @@
             };
 
             bind = [
-                "$mainMod, Return, exec, alacritty" # Terminal
-                "$mainMod, E, exec, nemo" # File Manager
-                "$mainMod, B, exec, firefox" # Browser
+                "$mainMod, Return, exec, ${terminal}"
+                "$mainMod, E, exec, ${explorer}"
+                "$mainMod, B, exec, ${browser}"
                 "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500" #App Launcher
                 "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
 
