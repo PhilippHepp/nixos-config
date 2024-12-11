@@ -35,7 +35,6 @@
         nixd
         gcc
         # Wayland #
-        waybar
         wofi
         eww
         swww
