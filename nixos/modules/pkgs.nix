@@ -5,10 +5,10 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
-        # Text Editors
+        # Text Editors #
         vim
         pkgs.neovim
-        # CLI Tools
+        # CLI Tools #
         alacritty
         kitty
         zsh
@@ -24,7 +24,7 @@
         htop
         eza
         ffmpeg
-        # Programming doodads
+        # Programming doodads #
         zig
         pkgs.rustc
         cargo
@@ -34,30 +34,30 @@
         pkg-config
         nixd
         gcc
-        # Wayland
+        # Wayland #
         waybar
         wofi
         eww
         swww
-        hyprcursor
+        # hyprcursor #
         xwayland
         wl-clipboard
         cliphist
-        # Audio
+        # Audio #
         pipewire
         wireplumber
         pavucontrol
         pamixer
-        # Programs
+        # Programs #
         vesktop
         firefox
         pkgs.nemo
         prismlauncher
         netbird
         steam
-        # Sddm
-        libsForQt5.qt5.qtgraphicaleffects
-        # Other
+        pkgs.hyprpicker
+        libsForQt5.qt5ct
+        # Other #
         catppuccin-qt5ct
         openrgb-with-all-plugins
         tokyonight-gtk-theme

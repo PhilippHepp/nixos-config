@@ -1,9 +1,10 @@
 { pkgs, ... }: {
-    # qt = {
-    #     enable = true;
-    #     platformTheme.name = "qt5ct";
-    #     # style.name = "catppuccin-frappe";
-    # };
+    qt = {
+        enable = true;
+        platformTheme.name = "gtk";
+        style.name = "Catppuccin-Frappe";
+        style.package = pkgs.libsForQt5.qt5ct;
+    };
 
     gtk = {
         enable = true;

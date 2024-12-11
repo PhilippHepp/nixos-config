@@ -142,12 +142,11 @@
                 "$mainMod, B, exec, ${browser}"
                 "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500" #App Launcher
                 "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
+                "$mainMod, P, exec, hyprpicker -a -f hex"
 
                 "$mainMod, Q, killactive,"
-                # "$mainMod_Shift, Q, closewindow"
                 "$mainMod, M, exit,"
                 "$mainMod, F, togglefloating,"
-                # "$mainMod, P, pseudo, # dwindle"
                 "$mainMod, J, togglesplit, # dwindle"
                 "$mainMod, G, fullscreen"
 
