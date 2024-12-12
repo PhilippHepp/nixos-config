@@ -30,11 +30,11 @@
     let 
         # System settings #
         system = "x86_64-linux";
-        hostname = "zenith"; # Default
+        hostname = "galaxia"; # Default
         username = "donielmaker";
         mail = "daniel.schmidt0204@gmail.com";
         dotfiles = "/home/${username}/.config";
-        gpu = "nvidia";
+        gpu = "";
 
         # Package declaration #
         pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
@@ -61,7 +61,7 @@
             inherit pkgs;
         };
 
-        devShells.${system}.default = (import ./shell.nix {inherit pkgs;});
+        #devShells.${system}.default = (import ./shell.nix {inherit pkgs;});
 
         # nixosConfigurations.wsl = nixpkgs.lib.nixosSystem {
         #     specialArgs = {

@@ -14,11 +14,11 @@
         zsh
         git
         lazygit
-        gh
+        #gh
         ripgrep
         fd
         fzf
-        chafa
+        #chafa
         unzip
         fastfetch
         htop
@@ -32,8 +32,6 @@
         gnumake
         openssl
         pkg-config
-        nixd
-        gcc
         # Wayland #
         wofi
         eww
@@ -48,19 +46,18 @@
         pavucontrol
         pamixer
         # Programs #
-        vesktop
+        #vesktop
         firefox
-        pkgs.nemo
-        prismlauncher
-        netbird
-        steam
+        #pkgs.nemo
+        #prismlauncher
+        #netbird
+        #steam
         pkgs.hyprpicker
-        libsForQt5.qt5ct
         # Other #
-        catppuccin-qt5ct
-        openrgb-with-all-plugins
+        #openrgb-with-all-plugins
         tokyonight-gtk-theme
         home-manager
+        fprintd
     ];
     
     fonts.packages = with pkgs; [

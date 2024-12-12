@@ -11,7 +11,7 @@
         settings = {
             "$mainMod" = "SUPER";
 
-            monitor = ",2560x1440@144hz,auto,1";
+            monitor = ",1920x1080@60hz,auto,1";
 
             env = [
                 "XDG_CURRENT_DESKTOP,Hyprland"
@@ -35,6 +35,8 @@
 
                 # "float, ^(org.pulseaudio.pavucontrol)$"
                 "float, ^(pavucontrol)$"
+
+                "float, ^(.blueman-manager-wrapped)"
             ];
 
             exec-once = [
@@ -57,14 +59,15 @@
             };
 
             input = {
-                kb_layout = "us";
+                kb_layout = "de";
                 # kb_variant = "lang";
                 # kb_options = "grp:caps_toggle";
 
                 follow_mouse = 1;
 
                 touchpad = {
-                    natural_scroll = false;
+                    natural_scroll = true;
+                    scroll_factor = 0.25;
                 };
 
                 sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
@@ -208,8 +211,8 @@
                 # "$mainMod, F2, exec, brightnessctl -d *::kbd_backlight set 33%-"
 
                 # Brightness control
-                # ", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
-                # ", XF86MonBrightnessUp, exec, brightnessctl set +5% "
+                ", XF86MonBrightnessDown, exec, brightnessctl set 5%- "
+                ", XF86MonBrightnessUp, exec, brightnessctl set +5% "
 
                 # Configuration files
                 # ''$mainMod SHIFT, N, exec, alacritty -e sh -c "rb"''
@@ -217,6 +220,10 @@
                 # ''$mainMod SHIFT, H, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/hyprland.nix"''
                 # ''$mainMod SHIFT, W, exec, alacritty -e sh -c "nvim ~/nix/home-manager/modules/wms/waybar.nix''
                 # '', Print, exec, grim -g "$(slurp)" - | swappy -f -''
+
+                # Laptop related
+                ", XF86AudioMute, exec, pamixer -t"
+                ", XF86AudioMute, exec, pamixer -t"
             ];
 
             bindm = [

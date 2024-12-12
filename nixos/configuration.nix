@@ -6,11 +6,14 @@
         ./modules/bundle.nix
     ];
 
+    # hardware.trackpoint.speed = 5;
+    # services.libinput.touchpad.naturalScrolling = true;
+
     boot.supportedFilesystems = [ "ntfs" ];
 
-    services.devmon.enable = true;
-    services.gvfs.enable = true; 
-    services.udisks2.enable = true;
+    # services.devmon.enable = true;
+    # services.gvfs.enable = true; 
+    # services.udisks2.enable = true;
 
     #services.openssh.enable = true;
 

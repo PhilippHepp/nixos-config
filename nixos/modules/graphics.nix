@@ -1,7 +1,7 @@
 { pkgs, ... }: 
 
 {
-    services.xserver.xkb.layout = "us";
+    services.xserver.xkb.layout = "de";
 
     # Requires some qt5.callpackage shit idk
     # services.displayManager.sddm = {
