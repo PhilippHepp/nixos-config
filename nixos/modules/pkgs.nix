@@ -47,7 +47,8 @@
         pamixer
         # Programs #
         #vesktop
-        firefox
+        #firefox
+        brave
         #pkgs.nemo
         #prismlauncher
         #netbird
