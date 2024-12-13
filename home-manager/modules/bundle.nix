@@ -4,10 +4,10 @@
         ./hyprland.nix
         ./alacritty.nix
         ./themes.nix
-        ./firefox.nix
+        # ./firefox.nix
         ./zsh.nix
         ./neovim.nix
-        ./github.nix
+        # ./github.nix
         ./git.nix
     ];
 }

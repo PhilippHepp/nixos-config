@@ -1,7 +1,7 @@
 { dotfiles, ... }: {
    wayland.windowManager.hyprland = 
         let
-            browser = "firefox";
+            browser = "brave";
             terminal = "alacritty";
             explorer = "nemo";
         in {
@@ -32,6 +32,8 @@
                 "float, ^(wofi)$"
                 "stayfocused, ^(wofi)$"
                 "noborder, ^(wofi)$"
+
+                # "float, title:^(Bitwarden)$"
 
                 # "float, ^(org.pulseaudio.pavucontrol)$"
                 "float, ^(pavucontrol)$"
@@ -223,7 +225,12 @@
 
                 # Laptop related
                 ", XF86AudioMute, exec, pamixer -t"
-                ", XF86AudioMute, exec, pamixer -t"
+                ", XF86AudioMicMute, exec, pamixer --default-source -t"
+
+                ", XF86AudioRaiseVolume, exec, pamixer -i 5"
+                ", XF86AudioLowerVolume, exec, pamixer -d 5"
+                "SHIFT, XF86AudioRaiseVolume, exec, pamixer --default-source -i 5"
+                "SHIFT, XF86AudioLowerVolume, exec, pamixer --default-source -d 5"
             ];
 
             bindm = [
