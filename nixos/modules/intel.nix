@@ -1,3 +1,0 @@
-{
-    servics.xserver.videoDriver = [ "intel" ]:
-}

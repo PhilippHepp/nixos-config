@@ -5,6 +5,7 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
+        # (import ../../testing/eww-bluetooth.nix {inherit pkgs;})
         # Text Editors #
         vim
         pkgs.neovim
@@ -22,6 +23,7 @@
         htop
         eza
         ffmpeg
+        # bash
         #chafa
         # Programming doodads #
         zig
@@ -35,11 +37,13 @@
         # cssls
         # html
         lua-language-server
-        rust-analyzer
+        pkgs.rust-analyzer
         tinymist
         yaml-language-server
         pkgs.typescript-language-server
         nil
+        pkgs.bash-language-server
+        vscode-langservers-extracted
         # Wayland #
         wofi
         eww
@@ -65,6 +69,7 @@
         # System Control #
         brightnessctl
         fprintd
+        geeqie
         # Other #
         #openrgb-with-all-plugins
         home-manager
