@@ -34,6 +34,7 @@
         username = "donielmaker";
         mail = "daniel.schmidt0204@gmail.com";
         dotfiles = "/home/${username}/.config";
+        kb = "de";
         monitor = ", 1920x1080@60hz, auto, 1";
 
         # Package declaration #
@@ -43,7 +44,7 @@
 
         # SpecialArgs #
         mainArgs = {
-            inherit inputs monitor
+            inherit inputs monitor kb
             system hostname username mail dotfiles
             pkgs pkgs-stable pkgs-firefox;
         };

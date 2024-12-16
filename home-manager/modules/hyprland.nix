@@ -1,4 +1,4 @@
-{ monitor, dotfiles, ... }: {
+{ kb, monitor, dotfiles, ... }: {
    wayland.windowManager.hyprland = 
         let
             browser = "brave";
@@ -61,7 +61,7 @@
             };
 
             input = {
-                kb_layout = "de";
+                kb_layout = kb;
                 # kb_variant = "lang";
                 # kb_options = "grp:caps_toggle";
 
