@@ -22,6 +22,7 @@
             rust
             regex
             slint
+            typst
         ];
     };
 
