@@ -1,4 +1,4 @@
-{ dotfiles, ... }: {
+{ monitor, dotfiles, ... }: {
    wayland.windowManager.hyprland = 
         let
             browser = "brave";
@@ -11,7 +11,7 @@
         settings = {
             "$mainMod" = "SUPER";
 
-            monitor = ",1920x1080@60hz,auto,1";
+            inherit monitor;
 
             env = [
                 "XDG_CURRENT_DESKTOP,Hyprland"

@@ -34,6 +34,7 @@
         username = "donielmaker";
         mail = "daniel.schmidt0204@gmail.com";
         dotfiles = "/home/${username}/.config";
+        monitor = ", 1920x1080@60hz, auto, 1";
 
         # Package declaration #
         pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
@@ -42,7 +43,7 @@
 
         # SpecialArgs #
         mainArgs = {
-            inherit inputs
+            inherit inputs monitor
             system hostname username mail dotfiles
             pkgs pkgs-stable pkgs-firefox;
         };
