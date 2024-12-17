@@ -75,6 +75,7 @@
                 ./nixos/user.nix
                 ./nixos/sound.nix
                 ./nixos/graphics.nix
+                ./nixos/gdm.nix
                 # ./nixos/netbird.nix
                 ./nixos/fingerprint.nix
                 ./nixos/bluethooth.nix
@@ -94,6 +95,7 @@
                 ./nixos/user.nix
                 ./nixos/sound.nix
                 ./nixos/graphics.nix
+                ./nixos/gdm.nix
                 ./nixos/openrgb.nix
                 ./nixos/netbird.nix
                 # ./nixos/fingerprint.nix

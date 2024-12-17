@@ -3,19 +3,7 @@
 {
     services.xserver.xkb.layout = "de";
 
-    # Requires some qt5.callpackage shit idk
-    # services.displayManager.sddm = {
-    #     enable = true;
-    #     # theme = "${import ./tokyonight-sddm.nix{inherit pkgs;}}";
-    #     theme = "${tokyonight-sddm}";
-    #     wayland.enable = true;
-    # };
 
-    services.displayManager.enable = true;
-    services.xserver.displayManager.gdm = {
-        enable = true;
-        wayland = true;
-    };
 
     # Window Manager
     programs.hyprland.enable = true;
