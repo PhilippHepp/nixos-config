@@ -34,8 +34,8 @@
         username = "donielmaker";
         mail = "daniel.schmidt0204@gmail.com";
         dotfiles = "/home/${username}/.config";
-        kb = "de";
-        monitor = ", 1920x1080@60hz, auto, 1";
+        kb = import ./nixos/keyboard.nix;
+        monitor = ", 2560x1440@144hz, auto, 1";
 
         # Package declaration #
         pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
