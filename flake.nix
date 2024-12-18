@@ -5,6 +5,8 @@
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
         nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.05";
 
+        # catppuccin.url = "github:catppuccin/nix";
+
         #stylix.url = "github:danth/stylix";
 
         firefox-addons.url = "gitlab:rycee/nur-expressions?dir=pkgs/firefox-addons";
@@ -24,6 +26,7 @@
         firefox-addons,
         # nixos-wsl, 
         home-manager, 
+        # catppuccin,
         ...
     }@inputs:
 
@@ -62,10 +65,12 @@
             inherit pkgs;
         };
 
-        #devShells.${system}.default = (import ./shell.nix {inherit pkgs;});
+        devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs;});
+
         nixosConfigurations."galaxia" = nixpkgs.lib.nixosSystem {
             specialArgs = mainArgs;
             modules = [ 
+                # catppuccin.nixosModules.catppuccin
                 # System Config
                 ./hosts/galaxia/configuration.nix 
 
@@ -75,10 +80,12 @@
                 ./nixos/user.nix
                 ./nixos/sound.nix
                 ./nixos/graphics.nix
+                ./nixos/gdm.nix
                 # ./nixos/netbird.nix
-                ./nixos/fingerprint.nix
+                # ./nixos/fingerprint.nix
                 ./nixos/bluethooth.nix
                 ./nixos/intel.nix
+                # ./nixos/catppuccin.nix
             ];
         };
 
@@ -94,6 +101,7 @@
                 ./nixos/user.nix
                 ./nixos/sound.nix
                 ./nixos/graphics.nix
+                ./nixos/gdm.nix
                 ./nixos/openrgb.nix
                 ./nixos/netbird.nix
                 # ./nixos/fingerprint.nix

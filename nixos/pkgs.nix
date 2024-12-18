@@ -16,6 +16,7 @@
         git
         lazygit
         ripgrep
+        bat
         fd
         fzf
         unzip
@@ -66,10 +67,16 @@
         # netbird
         # steam
         pkgs.hyprpicker
+        geeqie
+        kdePackages.sddm
+        (catppuccin-sddm.override {
+            flavor = "mocha";
+            background = ../wallpapers/nixos-wallpaper-catppuccin-macchiato.png;
+        })
+        pkgs.sddm-astronaut
         # System Control #
         brightnessctl
         fprintd
-        geeqie
         # Other #
         #openrgb-with-all-plugins
         home-manager
