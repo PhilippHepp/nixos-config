@@ -104,6 +104,7 @@
                 ./nixos/gdm.nix
                 ./nixos/openrgb.nix
                 ./nixos/netbird.nix
+                ./nixos/waydroid.nix
                 # ./nixos/fingerprint.nix
                 # ./nixos/bluethooth.nix
                 ./nixos/nvidia.nix
