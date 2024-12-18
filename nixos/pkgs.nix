@@ -16,6 +16,7 @@
         git
         lazygit
         ripgrep
+        bat
         fd
         fzf
         unzip
