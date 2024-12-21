@@ -13,6 +13,8 @@ pkgs.mkShell {
         at-spi2-atk
         atkmm
         cairo
+        trunk
+        lld
         gdk-pixbuf
         glib
         gtk3
