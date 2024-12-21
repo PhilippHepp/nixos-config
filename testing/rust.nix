@@ -1,4 +1,4 @@
-{pkgs}:
+{pkgs, pkgs-stable}:
 
 pkgs.mkShell {
     nativeBuildInputs = with pkgs; [
@@ -24,5 +24,12 @@ pkgs.mkShell {
         pango
         webkitgtk_4_1
         openssl
+
+        mesa
+        mesa.drivers
+        # libgbm
+        wayland
+        at-spi2-core
+        vulkan-tools
     ];
 }

@@ -65,7 +65,7 @@
             inherit pkgs;
         };
 
-        devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs;});
+        devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs pkgs-stable;});
 
         nixosConfigurations."galaxia" = nixpkgs.lib.nixosSystem {
             specialArgs = mainArgs;
