@@ -1,4 +1,4 @@
-{ kb, monitor, dotfiles, ... }: {
+{ pkgs, kb, monitor, dotfiles, ... }: {
    wayland.windowManager.hyprland = 
         let
             browser = "brave";
@@ -45,7 +45,7 @@
                 "hyprctl setcursor Bibata-Modern-Ice 24"
                 "eww open -c ${dotfiles}/eww/bar bar"
                 "swww init"
-                "swww img ${dotfiles}/nix/wallpapers/nixos-wallpaper-catppuccin-macchiato.png"
+                "swww img ${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath}"
                 "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
