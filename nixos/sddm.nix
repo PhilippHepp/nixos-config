@@ -1,10 +1,12 @@
 {
     # As of right now broken
-    services.displayManager.enable = true;
-    services.displayManager.sddm = {
+    services.displayManager = {
         enable = true;
-        wayland.enable = true;
-        theme = "Elegant";
+        defaultSession = "hyprland";
+        sddm = {
+            enable = true;
+            wayland.enable = true;
+            theme = "Elegant";
+        };
     };
-
 }
