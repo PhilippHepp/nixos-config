@@ -37,7 +37,7 @@
         username = "donielmaker";
         mail = "daniel.schmidt0204@gmail.com";
         dotfiles = "/home/${username}/.config";
-        kb = import ./nixos/keyboard.nix;
+        kb = "de";
         monitor = ", 2560x1440@144hz, auto, 1";
 
         # Package declaration #
