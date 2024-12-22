@@ -68,12 +68,15 @@
         # steam
         pkgs.hyprpicker
         geeqie
-        kdePackages.sddm
-        (catppuccin-sddm.override {
-            flavor = "mocha";
-            background = ../wallpapers/nixos-wallpaper-catppuccin-macchiato.png;
-        })
-        pkgs.sddm-astronaut
+
+        sddm
+        libsForQt5.qt5.qtgraphicaleffects
+        (pkgs.elegant-sddm.override {
+             themeConfig.General = {
+                 background = "${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath}";
+             };
+         })
+
         # System Control #
         brightnessctl
         fprintd

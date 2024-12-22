@@ -80,7 +80,8 @@
                 ./nixos/user.nix
                 ./nixos/sound.nix
                 ./nixos/graphics.nix
-                ./nixos/gdm.nix
+                # ./nixos/gdm.nix
+                ./nixos/sddm.nix
                 # ./nixos/netbird.nix
                 # ./nixos/fingerprint.nix
                 ./nixos/bluethooth.nix

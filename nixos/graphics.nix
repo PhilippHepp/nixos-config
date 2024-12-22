@@ -3,8 +3,6 @@
 {
     services.xserver.xkb.layout = "de";
 
-
-
     # Window Manager
     programs.hyprland.enable = true;
 
