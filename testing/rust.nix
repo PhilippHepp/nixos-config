@@ -32,4 +32,11 @@ pkgs.mkShell {
         at-spi2-core
         vulkan-tools
     ];
+
+    # Winit needs to know where the wayland backend config is located 
+    LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${ with pkgs; lib.makeLibraryPath [
+        wayland
+        libxkbcommon
+        fontconfig
+    ] }";
 }
