@@ -24,6 +24,8 @@
         htop
         eza
         ffmpeg
+        tmux
+        yazi
         # bash
         #chafa
         # Programming doodads #
@@ -45,6 +47,7 @@
         nil
         pkgs.bash-language-server
         vscode-langservers-extracted
+        slint-lsp
         # Wayland #
         wofi
         eww
@@ -76,6 +79,7 @@
                  background = "${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath}";
              };
          })
+
 
         # System Control #
         brightnessctl
