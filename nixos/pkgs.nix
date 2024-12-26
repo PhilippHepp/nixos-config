@@ -40,13 +40,13 @@
         # cssls
         # html
         lua-language-server
-        pkgs.rust-analyzer
+        rust-analyzer
         tinymist
         yaml-language-server
         pkgs.typescript-language-server
         nil
         pkgs.bash-language-server
-        vscode-langservers-extracted
+        pkgs.vscode-langservers-extracted
         slint-lsp
         # Wayland #
         wofi
