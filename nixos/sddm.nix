@@ -1,5 +1,3 @@
-{dotfiles, ...}:
-
 {
     services.displayManager = {
         enable = true;
@@ -7,11 +5,6 @@
             enable = true;
             wayland.enable = true;
             theme = "Elegant";
-            # settings = {
-            #     Theme = {
-            #         FacesDir = "${dotfiles}/sddm/faces";
-            #     };
-            # };
         };
     };
 }

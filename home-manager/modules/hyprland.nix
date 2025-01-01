@@ -1,17 +1,20 @@
-{ pkgs, config, ... }: {
-   wayland.windowManager.hyprland = 
-        let
-            browser = "brave";
-            terminal = "alacritty";
-            explorer = "nemo";
-        in {
+{ pkgs, config, ... }: with config.don;
+
+let
+    browser = "brave";
+    terminal = "alacritty";
+    explorer = "nemo";
+in 
+
+{
+   wayland.windowManager.hyprland = {
         enable = true;
         xwayland.enable = true;
 
         settings = {
             "$mainMod" = "SUPER";
 
-            monitor = config.don.monitor;
+            inherit monitor;
 
             env = [
                 "XDG_CURRENT_DESKTOP,Hyprland"
@@ -43,10 +46,10 @@
 
             exec-once = [
                 "hyprctl setcursor Bibata-Modern-Ice 24"
-                "eww open -c ${config.don.dotfiles}/eww/bar bar"
+                "eww open -c ${dotfiles}/eww/bar bar"
                 "swww init"
                 "swww img ${pkgs.nixos-artwork.wallpapers.catppuccin-macchiato.gnomeFilePath}"
-                "openrgb -p ${config.don.dotfiles}/OpenRGB/Main.orp"
+                "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
             ];
@@ -61,7 +64,7 @@
             };
 
             input = {
-                kb_layout = config.don.kb_layout;
+                inherit kb_layout;
                 # kb_variant = "lang";
                 # kb_options = "grp:caps_toggle";
 

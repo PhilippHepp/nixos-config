@@ -1,9 +1,9 @@
-{ config, ...}: 
+{ config, ...}: with config.don;
 
 {
     programs.git = {
         enable = true;
-        userName = config.don.username;
-        userEmail = config.don.mail;
+        userName = username;
+        userEmail = mail;
     };
 }

@@ -1,8 +1,5 @@
-{ config, ... }:
+{ config, ... }: with config.don;
 
-let 
-    dotfiles = config.don.dotfiles;
-in 
 {
     programs.zsh = {
         enable = true;

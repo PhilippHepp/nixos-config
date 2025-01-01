@@ -1,7 +1,7 @@
-{ pkgs, ... }: 
+{ config, pkgs, ... }: 
 
 {
-    services.xserver.xkb.layout = "de";
+    services.xserver.xkb.layout = config.don.kb_layout;
 
     # Window Manager
     programs.hyprland.enable = true;
