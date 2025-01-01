@@ -36,7 +36,13 @@ in
                 "stayfocused, ^(wofi)$"
                 "noborder, ^(wofi)$"
 
-                # "float, title:^(Bitwarden)$"
+                "float, title:^(Bitwarden)$"
+
+                "float, title:^(Picture in picture)$"
+                "pin, title:^(Picture in picture)$"
+                "size 678 384, title:^(Picture in picture)$"
+                "move 1214 671, title:^(Picture in picture)$"
+                "noinitialfocus, title:^(Picture in picture)$"
 
                 # "float, ^(org.pulseaudio.pavucontrol)$"
                 "float, ^(pavucontrol)$"
