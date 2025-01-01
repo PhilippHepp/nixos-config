@@ -1,11 +1,11 @@
-{ username, ... }: 
+{ config, ... }: 
 
 {
     imports = [ ./modules/bundle.nix ];
 
     home = {
-        username = username;
-        homeDirectory = "/home/${username}";
+        username = config.don.username;
+        homeDirectory = "/home/${config.don.username}";
         stateVersion = "24.05";
     };
 }

@@ -1,4 +1,4 @@
-{ pkgs, kb, monitor, dotfiles, ... }: {
+{ pkgs, config, ... }: {
    wayland.windowManager.hyprland = 
         let
             browser = "brave";
@@ -11,7 +11,7 @@
         settings = {
             "$mainMod" = "SUPER";
 
-            inherit monitor;
+            monitor = config.don.monitor;
 
             env = [
                 "XDG_CURRENT_DESKTOP,Hyprland"
@@ -43,10 +43,10 @@
 
             exec-once = [
                 "hyprctl setcursor Bibata-Modern-Ice 24"
-                "eww open -c ${dotfiles}/eww/bar bar"
+                "eww open -c ${config.don.dotfiles}/eww/bar bar"
                 "swww init"
                 "swww img ${pkgs.nixos-artwork.wallpapers.catppuccin-macchiato.gnomeFilePath}"
-                "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
+                "openrgb -p ${config.don.dotfiles}/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
             ];
@@ -61,7 +61,7 @@
             };
 
             input = {
-                kb_layout = kb;
+                kb_layout = config.don.kb_layout;
                 # kb_variant = "lang";
                 # kb_options = "grp:caps_toggle";
 

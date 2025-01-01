@@ -26,42 +26,30 @@
         firefox-addons,
         # nixos-wsl, 
         home-manager, 
-        # catppuccin,
         ...
     }@inputs:
 
     let 
-        # System settings #
         system = "x86_64-linux";
-        hostname = ""; # Default
-        username = "donielmaker";
-        mail = "daniel.schmidt0204@gmail.com";
-        dotfiles = "/home/${username}/.config";
-        kb = "de";
-        monitor = ", 2560x1440@144hz, auto, 1";
 
-        # Package declaration #
+        # Package declarations
         pkgs = import nixpkgs {inherit system; config.allowUnfree = true;};
         pkgs-stable = import nixpkgs-stable {inherit system; config.allowUnfree = true;};
         pkgs-firefox = firefox-addons.packages.${system};
 
-        # SpecialArgs #
-        mainArgs = {
-            inherit inputs monitor kb
-            system hostname username mail dotfiles
-            pkgs pkgs-stable pkgs-firefox;
-        };
-
+        # SpecialArgs
+        mainArgs = { inherit pkgs pkgs-stable pkgs-firefox; };
     in {
         # Default
-        nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-            specialArgs = mainArgs;
-            modules = [ ./hosts/default/configuration.nix ];
-        };
+        # nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
+        #     specialArgs = mainArgs;
+        #     modules = [ ./hosts/default/configuration.nix ];
+        # };
 
-        homeConfigurations.${username} = home-manager.lib.homeManagerConfiguration {
+        #  TODO:this should be defined by the don.username arg
+        homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
             extraSpecialArgs = mainArgs;
-            modules = [ ./home-manager/home.nix ];
+            modules = [ ./home-manager/home.nix ./nixos/options.nix];
             inherit pkgs;
         };
 
@@ -70,7 +58,6 @@
         nixosConfigurations."galaxia" = nixpkgs.lib.nixosSystem {
             specialArgs = mainArgs;
             modules = [ 
-                # catppuccin.nixosModules.catppuccin
                 # System Config
                 ./hosts/galaxia/configuration.nix 
 
@@ -80,13 +67,11 @@
                 ./nixos/user.nix
                 ./nixos/sound.nix
                 ./nixos/graphics.nix
-                # ./nixos/gdm.nix
                 ./nixos/sddm.nix
                 # ./nixos/netbird.nix
                 # ./nixos/fingerprint.nix
                 ./nixos/bluethooth.nix
                 ./nixos/intel.nix
-                # ./nixos/catppuccin.nix
             ];
         };
 
@@ -94,20 +79,22 @@
             specialArgs = mainArgs;
             modules = [ 
                 # System Config
-                ./hosts/zenith/configuration.nix 
+                ./hosts/zenith/config.nix
 
                 # Modules
+                ./nixos/settings.nix
+                ./nixos/networking.nix
                 ./nixos/bootloader.nix
+                ./nixos/zsh.nix
                 ./nixos/pkgs.nix
                 ./nixos/user.nix
                 ./nixos/sound.nix
                 ./nixos/graphics.nix
-                ./nixos/gdm.nix
+                ./nixos/sddm.nix
                 ./nixos/openrgb.nix
                 ./nixos/netbird.nix
-                # ./nixos/fingerprint.nix
-                # ./nixos/bluethooth.nix
                 ./nixos/nvidia.nix
+                ./nixos/options.nix
             ];
         };
 

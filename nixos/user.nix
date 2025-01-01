@@ -1,5 +1,8 @@
-{pkgs, username, ...}:
+{pkgs, config, ...}:
 
+let 
+    username = config.don.username;
+in
 {
     users.users.${username} = {
         isNormalUser = true;

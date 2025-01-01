@@ -1,4 +1,9 @@
-{ dotfiles, ... }: {
+{ config, ... }:
+
+let 
+    dotfiles = config.don.dotfiles;
+in 
+{
     programs.zsh = {
         enable = true;
         enableCompletion = true;
