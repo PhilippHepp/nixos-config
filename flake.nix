@@ -36,7 +36,12 @@
 
         homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
             extraSpecialArgs = mainArgs;
-            modules = [ ./home-manager/home.nix ./nixos/options.nix ./hosts/galaxia/galaxia.nix];
+            modules = [ 
+                # User Config
+                ./hosts/galaxia/galaxia.nix
+                ./home-manager/home.nix 
+                ./nixos/options.nix
+            ];
             inherit pkgs;
         };
 
@@ -49,7 +54,7 @@
                 ./hosts/galaxia/galaxia.nix
                 ./nixos/options.nix
 
-                ./hosts/galaxia/test.nix
+                ./hosts/galaxia/configuration.nix
 
                 # Modules
                 ./nixos/settings.nix
