@@ -37,8 +37,6 @@
         openssl
         pkg-config
         # LSP #
-        # cssls
-        # html
         lua-language-server
         rust-analyzer
         tinymist
