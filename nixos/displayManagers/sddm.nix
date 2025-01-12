@@ -1,7 +1,7 @@
-{pkgs-stable, ...}:
+{pkgs, ...}:
 
 let
-    background = pkgs-stable.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath;
+    background = pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath;
 in 
 
 {
@@ -14,7 +14,7 @@ in
         };
     };
 
-    environment.systemPackages = with pkgs-stable; [
+    environment.systemPackages = with pkgs; [
         libsForQt5.qt5.qtgraphicaleffects
         (pkgs.elegant-sddm.override {themeConfig.General.background = background;})
     ];
