@@ -1,3 +1,5 @@
+{pkgs-stable, ...}:
+
 {
     security.rtkit.enable = true;
     services.pipewire = {
@@ -9,4 +11,11 @@
       # If you want to use JACK applications, uncomment this
       #jack.enable = true;
     };
+
+    environment.systemPackages = with pkgs-stable; [
+
+        wireplumber
+        pavucontrol
+        pamixer
+    ];
 }
