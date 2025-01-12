@@ -21,6 +21,7 @@
         # SpecialArgs
         mainArgs = { inherit pkgs pkgs-stable; };
     in 
+
     {
         # Default
         # nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
@@ -69,6 +70,8 @@
                 ./nixos/displayManagers/sddm.nix
 
                 ./nixos/gpu/intel.nix
+
+                ./nixos/hardware/ntfs.nix
             ];
         };
 
