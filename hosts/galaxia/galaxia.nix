@@ -1,3 +1,5 @@
+{pkgs-stable, ...}:
+
 {
     # This is where you define all options for the base system
     # if you want to change any of the configs you'll have to look into 
@@ -13,4 +15,12 @@
         monitor = ", 1920x1080@60hz, auto, 1";
         timezone = "Europe/Berlin";
     };
+
+    imports = [./hardware-configuration.nix];
+
+    system.stateVersion = "24.05"; # Just don't
+
+    environment.systemPackages = with pkgs-stable; [
+        brightnessctl
+    ];
 }
