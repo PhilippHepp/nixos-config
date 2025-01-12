@@ -39,7 +39,7 @@
             specialArgs = mainArgs;
             modules = [ 
                 # System Config
-                ./hosts/galaxia/galaxia.nix
+                ./hosts/galaxia
 
                 # Modules
                 ./nixos/system/settings.nix
