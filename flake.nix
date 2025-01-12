@@ -49,7 +49,7 @@
             modules = [ 
                 # System Config
                 ./hosts/galaxia/galaxia.nix
-                ./hosts/galaxia/configuration.nix
+                # ./hosts/galaxia/configuration.nix
 
                 # Modules
                 ./nixos/system/settings.nix
@@ -64,7 +64,7 @@
                 # ./nixos/netbird.nix
 
                 ./nixos/hardware/sound.nix
-                ./nixos/hardware/graphics.nix
+                ./nixos/hardware/hyprland.nix
                 ./nixos/hardware/bluethooth.nix
 
                 ./nixos/displayManagers/sddm.nix
