@@ -5,7 +5,6 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
-        # (import ../../testing/eww-bluetooth.nix {inherit pkgs;})
         # Text Editors #
         vim
         pkgs.neovim
@@ -52,6 +51,7 @@
         brave
         pkgs.nemo
         pkgs.hyprpicker
+        steam
         geeqie
         # Sddm
         libsForQt5.qt5.qtgraphicaleffects
