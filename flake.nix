@@ -23,18 +23,11 @@
     in 
 
     {
-        # Default
-        # nixosConfigurations.${hostname} = nixpkgs.lib.nixosSystem {
-        #     specialArgs = mainArgs;
-        #     modules = [ ./hosts/default/configuration.nix ];
-        # };
+        #  TODO:this should be defined by the don.username arg
 
-        # #  TODO:this should be defined by the don.username arg
-
-        homeConfigurations.donielmaker = home-manager.lib.homeManagerConfiguration {
+        homeConfigurations."donielmaker" = home-manager.lib.homeManagerConfiguration {
             extraSpecialArgs = mainArgs;
             modules = [ 
-                # User Config
                 ./hosts/galaxia/galaxia.nix
                 ./nixos/system/options.nix
                 ./home-manager/home.nix 
@@ -42,14 +35,11 @@
             inherit pkgs;
         };
 
-        devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs pkgs-stable;});
-
         nixosConfigurations."galaxia" = nixpkgs.lib.nixosSystem {
             specialArgs = mainArgs;
             modules = [ 
                 # System Config
                 ./hosts/galaxia/galaxia.nix
-                # ./hosts/galaxia/configuration.nix
 
                 # Modules
                 ./nixos/system/settings.nix
@@ -80,22 +70,29 @@
             modules = [ 
                 # System Config
                 ./hosts/zenith/zenith.nix
-                ./nixos/options.nix
 
                 # Modules
-                ./nixos/settings.nix
-                ./nixos/networking.nix
-                ./nixos/bootloader.nix
-                ./nixos/zsh.nix
-                ./nixos/pkgs.nix
-                ./nixos/user.nix
-                ./nixos/sound.nix
-                ./nixos/graphics.nix
-                ./nixos/sddm.nix
-                ./nixos/openrgb.nix
-                ./nixos/netbird.nix
-                ./nixos/nvidia.nix
+                ./nixos/system/settings.nix
+                ./nixos/system/networking.nix
+                ./nixos/system/bootloader.nix
+                ./nixos/system/user.nix
+                ./nixos/system/options.nix
+
+                ./nixos/programs/pkgs.nix
+                ./nixos/programs/neovim.nix
+                ./nixos/programs/zsh.nix
+                # ./nixos/netbird.nix
+
+                ./nixos/hardware/sound.nix
+                ./nixos/hardware/hyprland.nix
+                # ./nixos/hardware/bluethooth.nix
+
+                ./nixos/displayManagers/sddm.nix
+
+                ./nixos/gpu/nvidia.nix
             ];
         };
+
+        devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs pkgs-stable;});
     };
 }

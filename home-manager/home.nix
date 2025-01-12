@@ -4,7 +4,7 @@
     imports = [ ./modules/bundle.nix ];
 
     home = {
-        username = username;
+        inherit username;
         homeDirectory = "/home/${username}";
         stateVersion = "24.05";
     };

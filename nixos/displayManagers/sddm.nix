@@ -16,6 +16,6 @@ in
 
     environment.systemPackages = with pkgs-stable; [
         libsForQt5.qt5.qtgraphicaleffects
-        (pkgs.elegant-sddm.override {themeConfig.General = {inherit background;};})
+        (pkgs.elegant-sddm.override {themeConfig.General.background = background;})
     ];
 }
