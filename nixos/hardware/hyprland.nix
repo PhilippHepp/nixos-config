@@ -1,8 +1,6 @@
-{ config, pkgs, ... }: 
+{ pkgs-stable, ... }: 
 
 {
-    services.xserver.xkb.layout = config.don.kb_layout;
-
     # Window Manager
     programs.hyprland.enable = true;
 
@@ -16,8 +14,17 @@
 
     # Allows interoperabilty between Applications
     xdg.portal.enable = true;
-    xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
+    # xdg.portal.extraPortals = [ pkgs-stable.xdg-desktop-portal-hyprland ];
 
     hardware.graphics.enable = true;
     hardware.graphics.enable32Bit = true;
+
+    environment.systemPackages = with pkgs-stable; [
+        wofi
+        eww
+        swww
+        xwayland
+        wl-clipboard
+        cliphist
+    ];
 }
