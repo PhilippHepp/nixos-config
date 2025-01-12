@@ -1,3 +1,9 @@
+{pkgs-stable, ...}:
+
+let
+    background = pkgs-stable.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath;
+in 
+
 {
     services.displayManager = {
         enable = true;
@@ -7,4 +13,9 @@
             theme = "Elegant";
         };
     };
+
+    environment.systemPackages = with pkgs-stable; [
+        libsForQt5.qt5.qtgraphicaleffects
+        (pkgs.elegant-sddm.override {themeConfig.General = {inherit background;};})
+    ];
 }
