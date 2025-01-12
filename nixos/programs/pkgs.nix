@@ -7,7 +7,6 @@
     environment.systemPackages = with pkgs-stable; [
         # Text Editors #
         vim
-        pkgs.neovim
         # CLI Tools #
         alacritty
         kitty
@@ -25,27 +24,6 @@
         ffmpeg
         tmux
         yazi
-        # bash
-        #chafa
-        # Programming doodads #
-        zig
-        pkgs.rustc
-        cargo
-        nodejs_22
-        gnumake
-        openssl
-        pkg-config
-        # Wayland #
-        wofi
-        eww
-        swww
-        xwayland
-        wl-clipboard
-        cliphist
-        # Audio #
-        wireplumber
-        pavucontrol
-        pamixer
         # Programs #
         vesktop
         brave
@@ -53,15 +31,6 @@
         pkgs.hyprpicker
         steam
         geeqie
-        # Sddm
-        libsForQt5.qt5.qtgraphicaleffects
-        (pkgs.elegant-sddm.override {
-             themeConfig.General = {
-                 background = "${pkgs.nixos-artwork.wallpapers.nineish-dark-gray.gnomeFilePath}";
-             };
-         })
-        # System Control #
-        brightnessctl
         # Other #
         home-manager
     ];
