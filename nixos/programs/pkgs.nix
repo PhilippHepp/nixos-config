@@ -5,6 +5,7 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
+        # (pkgs.callPackage ../../testing/new-everest.nix {})
         # Text Editors #
         vim
         # CLI Tools #
@@ -24,6 +25,7 @@
         ffmpeg
         tmux
         yazi
+        nmap
         # Programs #
         vesktop
         brave
@@ -33,6 +35,7 @@
         geeqie
         # Other #
         home-manager
+        wireguard-tools
     ];
     
     fonts.packages = with pkgs; [
