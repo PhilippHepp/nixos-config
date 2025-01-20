@@ -1,7 +1,7 @@
-{config, ...}:
+{hostname, ...}:
 
 {
     networking.networkmanager.enable = true;
-    networking.hostName = config.don.hostname;
+    networking.hostName = hostname;
 
 }

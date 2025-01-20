@@ -1,13 +1,10 @@
-{pkgs, config, ...}:
+{pkgs, username, ...}:
 
-let 
-    username = config.don.username;
-in
 {
     users.users.${username} = {
         isNormalUser = true;
         description = username;
-        extraGroups = ["networkmanager" "wheel" "input" "audio" ];
+        extraGroups = ["networkmanager" "wheel" "input" "audio"];
         shell = pkgs.zsh;
         initialPassword = "Changeme";
         openssh.authorizedKeys.keys = [

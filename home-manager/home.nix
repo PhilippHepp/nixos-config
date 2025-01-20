@@ -1,4 +1,4 @@
-{ config, ... }: with config.don;
+{ username, ... }:
 
 {
     imports = [ ./modules/bundle.nix ];

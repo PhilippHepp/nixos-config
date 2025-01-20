@@ -1,4 +1,4 @@
-{ config, ... }: with config.don;
+{ dotfiles, ... }:
 
 {
     programs.zsh = {

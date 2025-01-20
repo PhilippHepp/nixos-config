@@ -1,4 +1,4 @@
-{ pkgs, config, ... }: with config.don;
+{ pkgs, monitor, dotfiles, kb_layout, ... }:
 
 let
     browser = "brave";

@@ -1,9 +1,9 @@
-{config, ...}:
+{kb_layout, timezone, ...}:
 
 {
-    services.xserver.xkb.layout = config.don.kb_layout;
+    services.xserver.xkb.layout = kb_layout;
 
-    time.timeZone = config.don.timezone;
+    time.timeZone = timezone;
 
     nix.settings.experimental-features = [ "nix-command" "flakes" ];
 }
