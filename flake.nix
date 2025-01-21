@@ -25,6 +25,8 @@
         nixosConfigurations.galaxia = mkSystem ./hosts/galaxia/galaxia.nix;
         nixosConfigurations.zenith = mkSystem ./hosts/zenith/zenith.nix;
 
+        # packages.${system}.catppuccin-sddm = pkgs.callPackage ./testing/catppuccin-sddm.nix {};
+
         # devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs pkgs-stable;});
     };
 }
