@@ -1,7 +1,7 @@
 {pkgs ? import <nixpkgs> {}, flavor ? "macchiato"}:
 
 pkgs.stdenv.mkDerivation {
-    name = "Catppuccin ${flavor}";
+    name = "catppuccin-sddm";
 
     src = pkgs.fetchzip {
         url = "https://github.com/catppuccin/sddm/releases/download/v1.0.0/catppuccin-${flavor}.zip";
@@ -11,8 +11,9 @@ pkgs.stdenv.mkDerivation {
     installPhase = ''
         runHook preInstall
 
-        mkdir -p $out/share/sddm/themes/"Catppuccin ${flavor}"
-        cp $src/* $out/share/sddm/themes/"Catppuccin ${flavor}" -r
+        sed -i 's/Catppuccin\ macchiato/catppuccin-sddm/' ./metadata.desktop
+        mkdir -p $out/share/sddm/themes/catppuccin-sddm
+        cp ./* $out/share/sddm/themes/catppuccin-sddm -r
 
         runHook postInstall
     '';

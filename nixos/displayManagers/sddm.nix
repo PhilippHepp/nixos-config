@@ -10,14 +10,14 @@ in
         sddm = {
             enable = true;
             wayland.enable = true;
-            theme = "Catppuccin\ macchiato";
+            theme = "catppuccin-sddm";
             package = pkgs.kdePackages.sddm;
         };
     };
 
     environment.systemPackages = with pkgs; [
         libsForQt5.qt5.qtgraphicaleffects
-        (pkgs.elegant-sddm.override {themeConfig.General.background = background;})
+        # (pkgs.elegant-sddm.override {themeConfig.General.background = background;})
         (pkgs.callPackage ../../testing/catppuccin-sddm.nix {})
     ];
 }
