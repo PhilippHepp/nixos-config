@@ -160,6 +160,8 @@ in
                 "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500" #App Launcher
                 "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
                 "$mainMod, P, exec, hyprpicker -a -f hex"
+                ''$mainMod, S, exec, grim -g "$(slurp -w 0)" - | wl-copy''
+                # ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" $XDG_SCREENSHOTS_DIR/$(date +'%s.png)''
 
                 "$mainMod, Q, killactive,"
                 "$mainMod, M, exit,"
