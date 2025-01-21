@@ -23,6 +23,7 @@
     {
 
         nixosConfigurations.galaxia = mkSystem ./hosts/galaxia/galaxia.nix;
+        nixosConfigurations.zenith = mkSystem ./hosts/zenith/zenith.nix;
 
         # devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs pkgs-stable;});
     };

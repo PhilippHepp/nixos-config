@@ -54,10 +54,13 @@ in
                 "hyprctl setcursor Bibata-Modern-Ice 24"
                 "eww open -c ${dotfiles}/eww/bar bar"
                 "swww init"
-                "swww img ${pkgs.nixos-artwork.wallpapers.catppuccin-macchiato.gnomeFilePath}"
                 "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
+            ];
+
+            exec = [
+                "swww img ${pkgs.nixos-artwork.wallpapers.catppuccin-macchiato.gnomeFilePath}"
             ];
 
             cursor = {
