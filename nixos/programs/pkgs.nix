@@ -5,6 +5,10 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
+        steam-run
+        # pkgs.everest-mons
+        # lutris
+        # wine
         # (pkgs.callPackage ../../testing/new-everest.nix {})
         # Text Editors #
         vim
