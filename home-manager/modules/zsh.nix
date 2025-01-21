@@ -11,7 +11,7 @@
             hm = "home-manager switch --flake ${dotfiles}/nix/";
             lg = "lazygit";
             v = "nvim";
-            ls = "eza -a --icons";
+            ls = "eza -a --icons=auto";
             # zz = "eza -aTL 3 --icons";
             rust = "nix develop ${dotfiles}/nix#rust -c zsh";
         };
