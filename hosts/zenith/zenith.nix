@@ -9,7 +9,7 @@ rec {
         username = "donielmaker";
         mail = "daniel.schmidt0204@gmail.com";
         dotfiles = "/home/${username}/.config";
-        kb_layout = "de";
+        kb_layout = "us";
         monitor = ", 2560x1440@144hz, auto, 1";
         timezone = "Europe/Berlin";
     };
