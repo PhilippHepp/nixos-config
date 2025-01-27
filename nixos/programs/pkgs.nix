@@ -9,7 +9,6 @@
         # pkgs.everest-mons
         # lutris
         # wine
-        # (pkgs.callPackage ../../testing/new-everest.nix {})
         # Text Editors #
         vim
         # CLI Tools #
