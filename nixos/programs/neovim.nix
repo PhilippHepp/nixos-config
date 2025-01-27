@@ -13,9 +13,9 @@
         zig
         pkgs.rustc
         cargo
-        nodejs_22
+        nodejs
         gnumake
-        #openssl
+        openssl
         pkg-config
 
         # LSP

@@ -4,9 +4,7 @@ pkgs.mkShell {
     nativeBuildInputs = with pkgs; [
         pkg-config
         gobject-introspection
-        cargo
-        cargo-tauri
-        nodejs
+        # cargo-tauri
     ];
 
     buildInputs = with pkgs;[
@@ -24,10 +22,9 @@ pkgs.mkShell {
         pango
         webkitgtk_4_1
         openssl
-
         mesa
         mesa.drivers
-        # libgbm
+        libgbm
         wayland
         at-spi2-core
         vulkan-tools
