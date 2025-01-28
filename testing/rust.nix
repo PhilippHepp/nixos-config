@@ -1,39 +1,22 @@
 {pkgs, pkgs-stable}:
 
-pkgs.mkShell {
-    nativeBuildInputs = with pkgs; [
-        pkg-config
-        gobject-introspection
-        # cargo-tauri
-    ];
-
+pkgs.mkShell rec {
     buildInputs = with pkgs;[
-        at-spi2-atk
-        atkmm
-        cairo
-        trunk
-        lld
-        gdk-pixbuf
-        glib
-        gtk3
-        harfbuzz
-        librsvg
-        libsoup_3
-        pango
-        webkitgtk_4_1
-        openssl
-        mesa
-        mesa.drivers
-        libgbm
+        rustc
+        cargo
+        pkg-config
         wayland
-        at-spi2-core
+        libxkbcommon
+        vulkan-headers
+        vulkan-loader
         vulkan-tools
+        vulkan-validation-layers
+        mesa
+        libdrm
     ];
 
     # Winit needs to know where the wayland backend config is located 
-    LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${ with pkgs; lib.makeLibraryPath [
-        wayland
-        libxkbcommon
-        fontconfig
-    ] }";
+    LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:${pkgs.lib.makeLibraryPath buildInputs}";
+
+    WGPU_BACKEND = "Vulkan";
 }
