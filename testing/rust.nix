@@ -9,8 +9,6 @@ pkgs.mkShell rec {
         libxkbcommon
         vulkan-headers
         vulkan-loader
-        vulkan-tools
-        vulkan-validation-layers
         mesa
         libdrm
     ];
