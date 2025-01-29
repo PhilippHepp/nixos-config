@@ -5,10 +5,11 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
+        vulkan-tools
         steam-run
         # pkgs.everest-mons
-        # lutris
-        # wine
+        lutris
+        wine
         # Text Editors #
         vim
         # CLI Tools #
