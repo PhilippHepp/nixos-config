@@ -25,6 +25,7 @@ rec {
         /programs/pkgs.nix
         /programs/neovim.nix
         /programs/zsh.nix
+        /programs/steam.nix
 
         # Modules
         /hardware/sound.nix
