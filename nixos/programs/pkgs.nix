@@ -13,6 +13,7 @@
         vim
         # CLI Tools #
         alacritty
+        jq
         kitty
         zsh
         git
