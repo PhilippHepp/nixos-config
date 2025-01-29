@@ -3,6 +3,7 @@
 {
     # Window Manager
     programs.hyprland.enable = true;
+    services.hypridle.enable = true;
 
     environment.sessionVariables = {
         # Activate if Cursor keeps dissappearing

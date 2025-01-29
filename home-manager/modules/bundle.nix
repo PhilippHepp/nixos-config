@@ -9,5 +9,6 @@
         ./neovim.nix
         # ./github.nix
         ./git.nix
+        ./hypridle.nix
     ];
 }
