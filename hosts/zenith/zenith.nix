@@ -29,10 +29,12 @@ rec {
         # Modules
         /hardware/sound.nix
         /hardware/graphics.nix
+        /hardware/openrgb.nix
         # /hardware/bluethooth.nix
         # /hardware/ntfs.nix
         /displayManagers/sddm.nix
-        /gpu/nvidia.nix
+        # /gpu/nvidia.nix
+        /gpu/amd.nix
     ];
 
     hmModules = [../../home-manager/home.nix];
