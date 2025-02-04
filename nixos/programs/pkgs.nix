@@ -6,7 +6,7 @@
 {
     environment.systemPackages = with pkgs-stable; [
         vulkan-tools
-        steam-run
+        # steam-run
         # pkgs.everest-mons
         lutris
         wine
@@ -29,7 +29,6 @@
         eza
         ffmpeg
         tmux
-        yazi
         nmap
         # Programs #
         vesktop
