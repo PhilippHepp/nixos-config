@@ -10,8 +10,12 @@
 
         inputs.nixpkgs.lib.nixosSystem {
             inherit specialArgs;
-            # Disgusting first module please  FIX:
-            modules = [(pkgs.lib.filterAttrs (n: v: n == "imports" || n == "system") systemConfig)] ++ systemConfig.nixosModules ++ [
+            modules = [
+                    {system.stateVersion = systemConfig.system.stateVersion;} # Just don't
+
+                    inputs.nixpkgs.nixosModules.readOnlyPkgs
+                    {nixpkgs.pkgs = pkgs;}
+                ] ++ systemConfig.imports ++ systemConfig.nixosModules ++ [
 
                 inputs.home-manager.nixosModules.home-manager {
                     home-manager = {

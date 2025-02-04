@@ -2,7 +2,7 @@ let
     Dlib = import ../../lib {};
 in
 
-rec {
+{
     settings = rec {
         hostname = "zenith";
         system = "x86_64-linux";
@@ -37,8 +37,18 @@ rec {
         /gpu/amd.nix
     ];
 
-    hmModules = [../../home-manager/home.nix];
-    # Packages only this device should have
+    hmModules = [../../home-manager/home.nix] ++ Dlib.withPath ../../home-manager/modules [
+        /oh-my-posh.nix
+        /hyprland.nix
+        /alacritty.nix
+        /themes.nix
+        #/firefox.nix
+        /zsh.nix
+        /neovim.nix
+        #/github.nix
+        /git.nix
+        /hypridle.nix
+    ];
 
     imports = [./hardware-configuration.nix];
     system.stateVersion = "24.05"; # Just don't
