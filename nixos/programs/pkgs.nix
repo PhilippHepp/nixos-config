@@ -5,11 +5,11 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
-        vulkan-tools
         # steam-run
         # pkgs.everest-mons
-        lutris
-        wine
+        # lutris
+        # wine
+
         # Text Editors #
         vim
         # CLI Tools #
@@ -39,7 +39,6 @@
         geeqie
         # Other #
         home-manager
-        wireguard-tools
     ];
     
     fonts.packages = with pkgs; [
