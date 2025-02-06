@@ -7,9 +7,19 @@
 
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
+
+        disko.url = "github:nixos-community/disko";
+        disko.inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    outputs = { self, nixpkgs, nixpkgs-stable, home-manager, ... }@inputs :
+    outputs = {
+        self,
+        nixpkgs,
+        nixpkgs-stable,
+        home-manager,
+        disko,
+        ... 
+    }@inputs :
 
     let 
         system = "x86_64-linux";
