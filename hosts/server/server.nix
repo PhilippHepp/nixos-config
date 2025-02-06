@@ -1,5 +1,5 @@
 let
-    Dlib = import ../../lib {};
+    withPath = import ../../lib/withPath.nix;
 in
 
 {
@@ -14,7 +14,7 @@ in
         # timezone = "Europe/Berlin";
     };
 
-    nixosModules = Dlib.withPath ../../nixos [
+    nixosModules = withPath ../../nixos [
         # System
         /system/settings.nix
         /system/networking.nix
@@ -38,7 +38,7 @@ in
         # /gpu/amd.nix
     ];
 
-    hmModules = [../../home-manager/home.nix] ++ Dlib.withPath ../../home-manager/modules [
+    hmModules = [../../home-manager/home.nix] ++ withPath ../../home-manager/modules [
         # /oh-my-posh.nix
         # /hyprland.nix
         # /alacritty.nix
