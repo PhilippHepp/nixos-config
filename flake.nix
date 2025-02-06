@@ -8,7 +8,7 @@
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-        disko.url = "github:nixos-community/disko";
+        disko.url = "github:nix-community/disko/latest";
         disko.inputs.nixpkgs.follows = "nixpkgs";
     };
 
@@ -27,8 +27,8 @@
         pkgs = import inputs.nixpkgs {inherit system; config.allowUnfree = true;};
         pkgs-stable = import inputs.nixpkgs-stable {inherit system; config.allowUnfree = true;};
 
-        Dlib = import ./lib {inherit inputs system pkgs pkgs-stable;};
-    in with Dlib;
+        mkSystem = import ./lib/mkSystem.nix {inherit inputs system pkgs pkgs-stable;};
+    in
 
     {
 
