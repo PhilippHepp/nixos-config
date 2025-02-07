@@ -166,26 +166,26 @@ in
                 "$mainMod, Q, killactive,"
                 "$mainMod, M, exit,"
                 "$mainMod, F, togglefloating,"
-                "$mainMod, J, togglesplit, # dwindle"
+                "$mainMod, C, togglesplit, # dwindle"
                 "$mainMod, G, fullscreen"
 
                 # Move focus with mainMod + arrow keys
-                "$mainMod, left,  movefocus, l"
-                "$mainMod, right, movefocus, r"
-                "$mainMod, up,    movefocus, u"
-                "$mainMod, down,  movefocus, d"
+                "$mainMod, h,  movefocus, l"
+                "$mainMod, l, movefocus, r"
+                "$mainMod, k,    movefocus, u"
+                "$mainMod, j,  movefocus, d"
 
                 # Moving windows
-                "$mainMod SHIFT, left,  swapwindow, l"
-                "$mainMod SHIFT, right, swapwindow, r"
-                "$mainMod SHIFT, up,    swapwindow, u"
-                "$mainMod SHIFT, down,  swapwindow, d"
+                "$mainMod SHIFT, h,  swapwindow, l"
+                "$mainMod SHIFT, l, swapwindow, r"
+                "$mainMod SHIFT, k,    swapwindow, u"
+                "$mainMod SHIFT, j,  swapwindow, d"
 
                 # Window resizing                     X  Y
-                "$mainMod CTRL, left,  resizeactive, -60 0"
-                "$mainMod CTRL, right, resizeactive,  60 0"
-                "$mainMod CTRL, up,    resizeactive,  0 -60"
-                "$mainMod CTRL, down,  resizeactive,  0  60"
+                "$mainMod CTRL, h,  resizeactive, -60 0"
+                "$mainMod CTRL, l, resizeactive,  60 0"
+                "$mainMod CTRL, k,    resizeactive,  0 -60"
+                "$mainMod CTRL, j,  resizeactive,  0  60"
 
                 # Switch workspaces with mainMod + [0-9]
                 "$mainMod, 1, workspace, 1"
