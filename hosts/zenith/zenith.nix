@@ -34,8 +34,8 @@ in
         # /hardware/bluethooth.nix
         # /hardware/ntfs.nix
         /displayManagers/sddm.nix
-        # /gpu/nvidia.nix
-        /gpu/amd.nix
+        /gpu/nvidia.nix
+        # /gpu/amd.nix
     ];
 
     hmModules = [../../home-manager/home.nix] ++ withPath ../../home-manager/modules [
