@@ -4,6 +4,8 @@
     programs.neovim = {
         enable = true;
         defaultEditor = true;
+        extraLuaPackages = ps: [ ps.magick ];
+        extraPackages = [ pkgs.imagemagick ];
         plugins = with pkgs.vimPlugins.nvim-treesitter-parsers; [
             json
             javascript

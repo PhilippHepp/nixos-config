@@ -5,7 +5,7 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
-        ghostty
+        imagemagick
         # steam-run
         # pkgs.everest-mons
         # lutris
