@@ -5,7 +5,7 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
-        imagemagick
+        (flameshot.override { enableWlrSupport = true; })
         # steam-run
         # pkgs.everest-mons
         # lutris
@@ -31,6 +31,7 @@
         ffmpeg
         tmux
         nmap
+        imagemagick
         # Programs #
         vesktop
         brave

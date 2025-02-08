@@ -49,6 +49,7 @@ in
         /git.nix
         /hypridle.nix
         /kitty.nix
+        /flameshot.nix
     ];
 
     imports = [./hardware-configuration.nix];
