@@ -2,7 +2,7 @@
 
 let
     browser = "brave";
-    terminal = "alacritty";
+    terminal = "kitty";
     explorer = "nemo";
 in 
 

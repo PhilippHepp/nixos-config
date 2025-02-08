@@ -49,6 +49,7 @@ in
         #/github.nix
         /git.nix
         /hypridle.nix
+        /kitty.nix
     ];
 
     imports = [./hardware-configuration.nix];
