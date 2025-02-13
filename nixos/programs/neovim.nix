@@ -17,8 +17,10 @@
         gnumake
         openssl
         pkg-config
+        texliveFull
 
         # LSP
+        texlab
         lua-language-server
         rust-analyzer
         tinymist

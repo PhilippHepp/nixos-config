@@ -5,6 +5,7 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
+        mupdf
         (flameshot.override { enableWlrSupport = true; })
         # steam-run
         # pkgs.everest-mons
