@@ -20,6 +20,7 @@
         texliveFull
 
         # LSP
+        marksman
         texlab
         lua-language-server
         rust-analyzer
