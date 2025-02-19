@@ -40,7 +40,7 @@ in
     hmModules = [../../home-manager/home.nix] ++ withPath ../../home-manager/modules [
         /oh-my-posh.nix
         /hyprland.nix
-        /alacritty.nix
+        # /alacritty.nix
         /themes.nix
         #/firefox.nix
         /zsh.nix
