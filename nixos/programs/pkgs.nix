@@ -5,6 +5,7 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
+        # Testing
         mupdf
         (flameshot.override { enableWlrSupport = true; })
         # steam-run
@@ -12,9 +13,11 @@
         # lutris
         # wine
 
-        # Text Editors #
+        # CLI Tools
         vim
-        # CLI Tools #
+        gcc
+        cargo
+        rustc
         alacritty
         jq
         kitty
@@ -33,14 +36,16 @@
         tmux
         nmap
         imagemagick
-        # Programs #
+        pkg-config
+
+        # Programs
         vesktop
         brave
         pkgs.nemo
         pkgs.hyprpicker
         steam
         geeqie
-        # Other #
+        # Other
         home-manager
     ];
     
