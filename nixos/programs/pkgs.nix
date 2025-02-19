@@ -6,6 +6,7 @@
 {
     environment.systemPackages = with pkgs-stable; [
         # Testing
+        ghostscript
         mupdf
         (flameshot.override { enableWlrSupport = true; })
         # steam-run
