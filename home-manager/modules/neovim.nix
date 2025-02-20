@@ -7,6 +7,7 @@
         extraLuaPackages = ps: [ ps.magick ];
         extraPackages = [ pkgs.imagemagick ];
         plugins = with pkgs.vimPlugins.nvim-treesitter-parsers; [
+            latex
             json
             javascript
             tsx

@@ -10,6 +10,7 @@
         pkgs.neovim
 
         # Programming Stuff
+        tree-sitter
         zig
         pkgs.rustc
         cargo
