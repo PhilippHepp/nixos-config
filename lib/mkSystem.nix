@@ -10,6 +10,7 @@ in
 inputs.nixpkgs.lib.nixosSystem {
     inherit specialArgs;
     modules = [
+        inputs.disko.nixosModules.disko
         {system.stateVersion = systemConfig.system.stateVersion;} # Just don't
     ] ++ systemConfig.imports ++ systemConfig.nixosModules ++ [
 
