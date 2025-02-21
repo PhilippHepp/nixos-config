@@ -11,7 +11,7 @@ in
         dotfiles = "/home/${username}/.config";
         # kb_layout = "us";
         # monitor = ", 2560x1440@144hz, auto, 1";
-        # timezone = "Europe/Berlin";
+        timezone = "Europe/Berlin";
     };
 
     nixosModules = withPath ../../nixos [
@@ -20,6 +20,7 @@ in
         /system/networking.nix
         /system/bootloader.nix
         /system/user.nix
+        /hardware/disko.nix
 
         # Programs
         /programs/pkgs.nix
