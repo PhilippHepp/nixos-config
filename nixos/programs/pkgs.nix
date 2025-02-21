@@ -7,6 +7,7 @@
     environment.systemPackages = with pkgs-stable; [
         # Testing
         ghostscript
+        mermaid-cli
         mupdf
         (flameshot.override { enableWlrSupport = true; })
         # steam-run
