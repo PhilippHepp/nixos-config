@@ -34,6 +34,7 @@
 
         nixosConfigurations.galaxia = mkSystem ./hosts/galaxia/galaxia.nix;
         nixosConfigurations.zenith = mkSystem ./hosts/zenith/zenith.nix;
+        nixosConfigurations.server = mkSystem ./hosts/server/server.nix;
 
         # packages.${system}.catppuccin-sddm = pkgs.callPackage ./testing/catppuccin-sddm.nix {};
 
