@@ -4,7 +4,7 @@ systemConfigPath:
 
 let
     systemConfig = import systemConfigPath;
-    specialArgs = {inherit pkgs pkgs-stable;} // systemConfig.settings;
+    specialArgs = {inherit pkgs pkgs-stable inputs;} // systemConfig.settings;
 in
 
 inputs.nixpkgs.lib.nixosSystem {
