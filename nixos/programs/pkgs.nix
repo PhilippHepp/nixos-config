@@ -6,10 +6,9 @@
 {
     environment.systemPackages = with pkgs-stable; [
         # Testing
-        ghostscript
-        mermaid-cli
+        # ghostscript
+        # mermaid-cli
         mupdf
-        (flameshot.override { enableWlrSupport = true; })
         # steam-run
         # pkgs.everest-mons
         # lutris
@@ -47,6 +46,7 @@
         pkgs.hyprpicker
         steam
         geeqie
+        (flameshot.override { enableWlrSupport = true; })
         # Other
         home-manager
     ];
