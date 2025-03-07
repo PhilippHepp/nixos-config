@@ -5,6 +5,7 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
+        obsidian
         # Testing
         # ghostscript
         # mermaid-cli
