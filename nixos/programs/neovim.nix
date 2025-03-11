@@ -27,7 +27,9 @@
         rust-analyzer
         tinymist
         yaml-language-server
-        nil
+        #nil
+        # Look into if nixd or nil would be better for LSP
+        nixd
         slint-lsp
         pkgs.typescript-language-server
         pkgs.bash-language-server
