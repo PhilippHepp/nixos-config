@@ -28,6 +28,7 @@
         tinymist
         yaml-language-server
         nil
+        # nixd
         slint-lsp
         pkgs.typescript-language-server
         pkgs.bash-language-server
