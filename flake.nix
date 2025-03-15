@@ -27,14 +27,14 @@
         pkgs = import inputs.nixpkgs {inherit system; config.allowUnfree = true;};
         pkgs-stable = import inputs.nixpkgs-stable {inherit system; config.allowUnfree = true;};
 
-        mkSystem = import ./lib/mkSystem.nix {inherit inputs system pkgs pkgs-stable;};
+        mkNixos = import ./lib/mkNixos.nix {inherit inputs system pkgs pkgs-stable;};
     in
 
     {
 
-        nixosConfigurations.galaxia = mkSystem ./hosts/galaxia/galaxia.nix;
-        nixosConfigurations.zenith = mkSystem ./hosts/zenith/zenith.nix;
-        nixosConfigurations.server = mkSystem ./hosts/server/server.nix;
+        nixosConfigurations.galaxia = mkNixos ./hosts/galaxia/galaxia.nix;
+        nixosConfigurations.zenith = mkNixos ./hosts/zenith/zenith.nix;
+        nixosConfigurations.server = mkNixos ./hosts/server/server.nix;
 
         # packages.${system}.catppuccin-sddm = pkgs.callPackage ./testing/catppuccin-sddm.nix {};
 
