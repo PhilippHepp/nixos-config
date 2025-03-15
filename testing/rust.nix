@@ -1,4 +1,4 @@
-{pkgs, pkgs-stable}:
+{pkgs}:
 
 pkgs.mkShell rec {
     buildInputs = with pkgs;[

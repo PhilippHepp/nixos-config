@@ -38,6 +38,6 @@
 
         # packages.${system}.catppuccin-sddm = pkgs.callPackage ./testing/catppuccin-sddm.nix {};
 
-        devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs pkgs-stable;});
+        devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs;});
     };
 }
