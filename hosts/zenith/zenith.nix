@@ -1,4 +1,3 @@
-inputs:
 let
     withPath = import ../../lib/withPath.nix;
 in
@@ -39,7 +38,7 @@ in
         # /gpu/amd.nix
     ];
 
-    hmModules = [../../home-manager/home.nix] ++ withPath ../../home-manager/modules [
+    hmModules = withPath ../../home-manager/modules [
         /oh-my-posh.nix
         /hyprland.nix
         # /alacritty.nix
@@ -52,8 +51,5 @@ in
         /hypridle.nix
         /kitty.nix
         /flameshot.nix
-    ];
-
-    imports = [./hardware-configuration.nix];
-    system.stateVersion = "24.05"; # Just don't
+    ] ++ [../../home-manager/home.nix];
 }

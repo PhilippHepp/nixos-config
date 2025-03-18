@@ -1,30 +1,28 @@
 {inputs, system, pkgs, pkgs-stable}:
 
-systemConfigPath: 
+settingsPath: 
 
 let
-    systemConfig = import systemConfigPath inputs; 
-    specialArgs = {inherit pkgs pkgs-stable inputs;} // systemConfig.settings;
+    settings = import settingsPath; 
+
+    specialArgs = {inherit pkgs pkgs-stable inputs;} // settings.settings;
+    # System specific nixos module
+    conf = import "${builtins.dirOf settingsPath}/configuration.nix" specialArgs;
 in
 
 inputs.nixpkgs.lib.nixosSystem {
     inherit specialArgs;
     modules = 
+
+    [conf] ++
+    settings.nixosModules ++
     [
-
-        inputs.disko.nixosModules.disko
-        {system.stateVersion = systemConfig.system.stateVersion;} # Just don't
-    ] 
-    ++ systemConfig.imports 
-    ++ systemConfig.nixosModules 
-    ++ [
-
         inputs.home-manager.nixosModules.home-manager {
             home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = specialArgs;
-                users.donielmaker.imports = systemConfig.hmModules;
+                users.donielmaker.imports = settings.homeModules;
             };
         }
     ];  

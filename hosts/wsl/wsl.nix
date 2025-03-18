@@ -1,4 +1,3 @@
-inputs:
 let
     withPath = import ../../lib/withPath.nix;
 in
@@ -25,11 +24,6 @@ in
         /programs/pkgs.nix
         /programs/neovim.nix
         /programs/zsh.nix
-    ] ++ [
-        inputs.wsl.nixosModules.default {
-            system.stateVersion = "24.11";
-            wsl.enable = true;
-	    }
     ];
 
     hmModules = [../../home-manager/home.nix] ++ withPath ../../home-manager/modules [
@@ -38,7 +32,4 @@ in
         /neovim.nix
         /git.nix
     ];
-
-    imports = [./hardware-configuration.nix];
-    system.stateVersion = "24.11"; # Just don't
 }
