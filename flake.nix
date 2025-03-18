@@ -10,16 +10,11 @@
 
         disko.url = "github:nix-community/disko/latest";
         disko.inputs.nixpkgs.follows = "nixpkgs";
+
+	    wsl.url = "github:nix-community/NixOS-WSL/main";
     };
 
-    outputs = {
-        self,
-        nixpkgs,
-        nixpkgs-stable,
-        home-manager,
-        disko,
-        ... 
-    }@inputs :
+    outputs = {self, ...}@inputs :
 
     let 
         system = "x86_64-linux";
@@ -35,8 +30,7 @@
         nixosConfigurations.galaxia = mkNixos ./hosts/galaxia/galaxia.nix;
         nixosConfigurations.zenith = mkNixos ./hosts/zenith/zenith.nix;
         nixosConfigurations.server = mkNixos ./hosts/server/server.nix;
-
-        # packages.${system}.catppuccin-sddm = pkgs.callPackage ./testing/catppuccin-sddm.nix {};
+        nixosConfigurations.wsl = mkNixos ./hosts/wsl/wsl.nix;
 
         devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs;});
     };

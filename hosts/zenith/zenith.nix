@@ -1,3 +1,4 @@
+inputs:
 let
     withPath = import ../../lib/withPath.nix;
 in
