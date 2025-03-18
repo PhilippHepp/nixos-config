@@ -25,6 +25,7 @@ in
         /programs/pkgs.nix
         /programs/neovim.nix
         /programs/zsh.nix
+        # /programs/wireguard.nix
 
         # Modules
         /hardware/sound.nix
