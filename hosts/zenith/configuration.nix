@@ -9,6 +9,7 @@
         networking
         bootloader
         user
+        # qt
 
         # Programs
         neovim
@@ -24,6 +25,7 @@
     ];
 
     environment.systemPackages = with pkgs; [
+        libsForQt5.qt5ct
         # Programs
         obsidian
         vesktop
