@@ -28,7 +28,7 @@
 
     {
         nixosModules = buildModules ./nixos;
-        homeManagerModules = buildModules ./home-manager/modules;
+        homeManagerModules = buildModules ./hm;
 
         nixosConfigurations.galaxia = mkNixos ./hosts/galaxia/galaxia.nix;
         nixosConfigurations.zenith = mkNixos ./hosts/zenith/zenith.nix;
