@@ -11,7 +11,6 @@
         user
 
         # Programs
-        pkgs
         neovim
         zsh
     ];
