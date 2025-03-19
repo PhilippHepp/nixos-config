@@ -30,10 +30,10 @@
         nixosModules = buildModules ./nixos;
         homeManagerModules = buildModules ./hm;
 
-        nixosConfigurations.galaxia = mkNixos ./hosts/galaxia/galaxia.nix;
-        nixosConfigurations.zenith = mkNixos ./hosts/zenith/zenith.nix;
-        nixosConfigurations.server = mkNixos ./hosts/server/server.nix;
-        nixosConfigurations.wsl = mkNixos ./hosts/wsl/wsl.nix;
+        nixosConfigurations.galaxia = mkNixos ./hosts/galaxia;
+        nixosConfigurations.zenith = mkNixos ./hosts/zenith;
+        nixosConfigurations.server = mkNixos ./hosts/server;
+        nixosConfigurations.wsl = mkNixos ./hosts/wsl;
 
         devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs;});
     };

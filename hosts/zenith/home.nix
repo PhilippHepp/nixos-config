@@ -6,6 +6,15 @@
         zsh
         neovim
         git
+        oh-my-posh
+        hyprland
+        themes
+        zsh
+        neovim
+        git
+        hypridle
+        kitty
+        flameshot
     ];
 
     home = {

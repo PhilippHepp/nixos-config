@@ -3,19 +3,16 @@
 settingsPath: 
 
 let
-    settings = import settingsPath; 
+    conf = import "${settingsPath}/configuration.nix" specialArgs;
+    home = import "${settingsPath}/home.nix";
+    settings = import "${settingsPath}/settings.nix"; 
 
-    specialArgs = {inherit pkgs pkgs-stable inputs;} // settings.settings;
-    # System specific nixos module
-    conf = import "${builtins.dirOf settingsPath}/configuration.nix" specialArgs;
-    home = import "${builtins.dirOf settingsPath}/home.nix";
+    specialArgs = {inherit pkgs pkgs-stable inputs ;} // settings;
 in
 
 inputs.nixpkgs.lib.nixosSystem {
     inherit specialArgs;
-    modules = 
-
-    [conf] ++
+    modules = [conf] ++
     [
         inputs.home-manager.nixosModules.home-manager {
             home-manager = {
