@@ -8,6 +8,7 @@ let
     specialArgs = {inherit pkgs pkgs-stable inputs;} // settings.settings;
     # System specific nixos module
     conf = import "${builtins.dirOf settingsPath}/configuration.nix" specialArgs;
+    home = import "${builtins.dirOf settingsPath}/home.nix";
 in
 
 inputs.nixpkgs.lib.nixosSystem {
@@ -21,7 +22,7 @@ inputs.nixpkgs.lib.nixosSystem {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = specialArgs;
-                users.donielmaker.imports = [../home-manager/home.nix] ++ settings.homeModules;
+                users.donielmaker.imports = [home];
             };
         }
     ];  
