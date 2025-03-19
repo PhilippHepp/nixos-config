@@ -5,11 +5,11 @@
 
 {
     environment.systemPackages = with pkgs-stable; [
-        obsidian
+        # obsidian
         # Testing
         # ghostscript
         # mermaid-cli
-        mupdf
+        # mupdf
         # steam-run
         # pkgs.everest-mons
         # lutris
@@ -41,13 +41,13 @@
         pkg-config
 
         # Programs
-        vesktop
-        brave
-        pkgs.nemo
-        pkgs.hyprpicker
-        steam
-        geeqie
-        (flameshot.override { enableWlrSupport = true; })
+        # vesktop
+        # brave
+        # pkgs.nemo
+        # pkgs.hyprpicker
+        # steam
+        # geeqie
+        # (flameshot.override { enableWlrSupport = true; })
         # Other
         home-manager
     ];

@@ -14,28 +14,6 @@ in
         timezone = "Europe/Berlin";
     };
 
-    nixosModules = withPath ../../nixos [
-        # System
-        /system/settings.nix
-        /system/networking.nix
-        /system/bootloader.nix
-        /system/user.nix
-
-        # Programs
-        /programs/pkgs.nix
-        /programs/neovim.nix
-        /programs/zsh.nix
-        # /programs/wireguard.nix
-
-        # Modules
-        /hardware/sound.nix
-        /hardware/graphics.nix
-        /hardware/bluethooth.nix
-        /displayManagers/sddm.nix
-        /gpu/intel.nix
-        /hardware/ntfs.nix
-    ];
-
     homeModules = withPath ../../home-manager/modules [
         /oh-my-posh.nix
         /hyprland.nix

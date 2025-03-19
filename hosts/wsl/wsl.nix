@@ -14,22 +14,10 @@ in
         timezone = "Europe/Berlin";
     };
 
-    nixosModules = withPath ../../nixos [
-        # System
-        /system/settings.nix
-        /system/networking.nix
-        /system/user.nix
-
-        # Programs
-        /programs/pkgs.nix
-        /programs/neovim.nix
-        /programs/zsh.nix
-    ];
-
-    hmModules = [../../home-manager/home.nix] ++ withPath ../../home-manager/modules [
-        /oh-my-posh.nix
-        /zsh.nix
-        /neovim.nix
-        /git.nix
+    homeModules = withPath ../../home-manager/modules [
+        # /oh-my-posh.nix
+        # /zsh.nix
+        # /neovim.nix
+        # /git.nix
     ];
 }

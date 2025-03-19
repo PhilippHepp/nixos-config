@@ -15,14 +15,13 @@ inputs.nixpkgs.lib.nixosSystem {
     modules = 
 
     [conf] ++
-    settings.nixosModules ++
     [
         inputs.home-manager.nixosModules.home-manager {
             home-manager = {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = specialArgs;
-                users.donielmaker.imports = settings.homeModules;
+                users.donielmaker.imports = [../home-manager/home.nix] ++ settings.homeModules;
             };
         }
     ];  

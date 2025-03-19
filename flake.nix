@@ -23,9 +23,12 @@
         pkgs-stable = import inputs.nixpkgs-stable {inherit system; config.allowUnfree = true;};
 
         mkNixos = import ./lib/mkNixos.nix {inherit inputs system pkgs pkgs-stable;};
+        buildModules = import ./lib/getModules.nix {lib = inputs.nixpkgs.lib;};
     in
 
     {
+        nixosModules = buildModules ./nixos;
+        homeManagerModules = buildModules ./home-manager/modules;
 
         nixosConfigurations.galaxia = mkNixos ./hosts/galaxia/galaxia.nix;
         nixosConfigurations.zenith = mkNixos ./hosts/zenith/zenith.nix;

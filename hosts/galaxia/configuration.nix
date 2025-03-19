@@ -1,9 +1,29 @@
 {inputs, ...}:
 
 {
-    imports = [
+    imports = with inputs.self.nixosModules; [
         ./hardware-configuration.nix
         inputs.disko.nixosModules.disko
+
+        # System
+        settings
+        networking
+        bootloader
+        user
+
+        # Programs
+        pkgs
+        neovim
+        zsh
+        # /programs/wireguard
+
+        # Modules
+        sound
+        graphics
+        bluethooth
+        sddm
+        intel
+        ntfs
     ];
 
     system.stateVersion = "24.05"; # Just don't
