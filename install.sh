@@ -8,6 +8,7 @@ while true; do
   fi
 done
 
-echo "doing evil"
+printf "doing evil\n"
 
-sudo nix run 'github:nix-community/disko/latest#disko-install' -- --flake ".#$1" --disk main "$2"
+sudo nix --experimental-features "nix-command flakes" run github:nix-community/disko/latest -- --mode destroy,format,mount --arg main "$2" ./nixos/disko.nix
+sudo nixos-install --flake ".#$1"
