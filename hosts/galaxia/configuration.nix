@@ -25,19 +25,19 @@
         ntfs
     ];
 
-    # environment.systemPackages = with pkgs; [
-    #     # Programs
-    #     obsidian
-    #     vesktop
-    #     brave
-    #     nemo
-    #     hyprpicker
-    #     # steam
-    #     geeqie
-    #     (flameshot.override { enableWlrSupport = true; })
-    #     # Other
-    #     home-manager
-    # ];
+    environment.systemPackages = with pkgs; [
+        # Programs
+        obsidian
+        vesktop
+        brave
+        nemo
+        hyprpicker
+        # steam
+        geeqie
+        (flameshot.override { enableWlrSupport = true; })
+        # Other
+        home-manager
+    ];
 
     system.stateVersion = "24.05"; # Just don't
 
