@@ -1,4 +1,4 @@
-{drive, lib, ...}:
+{drive ? "/dev/nvme1n1", lib, ...}:
 
 {
     disko.devices.disk.main = {

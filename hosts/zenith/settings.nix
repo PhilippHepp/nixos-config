@@ -7,5 +7,5 @@ rec {
     kb_layout = "us";
     monitor = ", 2560x1440@144hz, auto, 1";
     timezone = "Europe/Berlin";
-    drive = "";
+    drive = "/dev/nvme1n1";
 }
