@@ -3,11 +3,13 @@
 {
     imports = with inputs.self.nixosModules; [
         ./hardware-configuration.nix
+        inputs.disko.nixosModules.disko
 
         # System
         settings
         networking
         bootloader
+        disko
         user
         # qt
 
@@ -21,13 +23,12 @@
         graphics
         openrgb
         sddm
-        nvidia
+        amd
     ];
 
     environment.systemPackages = with pkgs; [
         libsForQt5.qt5ct
         # Programs
-        obsidian
         vesktop
         brave
         nemo
@@ -39,5 +40,5 @@
         home-manager
     ];
 
-    system.stateVersion = "24.05"; # Just don't
+    system.stateVersion = "24.11"; # Just don't
 }
