@@ -45,8 +45,7 @@ in
                 "move 1214 671, title:^(Picture in picture)$"
                 "noinitialfocus, title:^(Picture in picture)$"
 
-                # "float, ^(org.pulseaudio.pavucontrol)$"
-                "float, ^(pavucontrol)$"
+                "float, ^(org.pulseaudio.pavucontrol)$"
 
                 "float, ^(.blueman-manager-wrapped)"
             ];
@@ -158,8 +157,11 @@ in
                 "$mainMod, Return, exec, ${terminal}"
                 "$mainMod, E, exec, ${explorer}"
                 "$mainMod, B, exec, ${browser}"
+                # Application Launcher
                 "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500" #App Launcher
+                # Clipboard History
                 "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
+                # Color Picker
                 "$mainMod, P, exec, hyprpicker -a -f hex"
                 ''$mainMod, S, exec, ${screenshot}
                 # ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" $XDG_SCREENSHOTS_DIR/$(date +'%s.png)''
@@ -167,26 +169,26 @@ in
                 "$mainMod, Q, killactive,"
                 "$mainMod, M, exit,"
                 "$mainMod, F, togglefloating,"
-                "$mainMod, C, togglesplit, # dwindle"
+                "$mainMod, J, togglesplit, # dwindle"
                 "$mainMod, G, fullscreen"
 
                 # Move focus with mainMod + arrow keys
-                "$mainMod, h,  movefocus, l"
-                "$mainMod, l, movefocus, r"
-                "$mainMod, k,    movefocus, u"
-                "$mainMod, j,  movefocus, d"
+                "$mainMod, left,  movefocus, l"
+                "$mainMod, right, movefocus, r"
+                "$mainMod, up,    movefocus, u"
+                "$mainMod, down,  movefocus, d"
 
                 # Moving windows
-                "$mainMod SHIFT, h,  swapwindow, l"
-                "$mainMod SHIFT, l, swapwindow, r"
-                "$mainMod SHIFT, k,    swapwindow, u"
-                "$mainMod SHIFT, j,  swapwindow, d"
+                "$mainMod SHIFT, left,  swapwindow, l"
+                "$mainMod SHIFT, right, swapwindow, r"
+                "$mainMod SHIFT, up,    swapwindow, u"
+                "$mainMod SHIFT, down,  swapwindow, d"
 
                 # Window resizing                     X  Y
-                "$mainMod CTRL, h,  resizeactive, -60 0"
-                "$mainMod CTRL, l, resizeactive,  60 0"
-                "$mainMod CTRL, k,    resizeactive,  0 -60"
-                "$mainMod CTRL, j,  resizeactive,  0  60"
+                "$mainMod CTRL, left,  resizeactive, -60 0"
+                "$mainMod CTRL, right, resizeactive,  60 0"
+                "$mainMod CTRL, up,    resizeactive,  0 -60"
+                "$mainMod CTRL, down,  resizeactive,  0  60"
 
                 # Switch workspaces with mainMod + [0-9]
                 "$mainMod, 1, workspace, 1"
@@ -211,12 +213,6 @@ in
                 "$mainMod SHIFT, 8, movetoworkspacesilent, 8"
                 "$mainMod SHIFT, 9, movetoworkspacesilent, 9"
                 "$mainMod SHIFT, 0, movetoworkspacesilent, 10"
-
-                # Volume and Media Control
-                # "$mainMod, Page_Up, exec, pamixer -i 5 "
-                # "$mainMod, Page_Down, exec, pamixer -d 5 "
-                # ", Shift_R, exec, pamixer --default-source -t && pamixer -t"
-                # ",Shift_R, exec, bash /home/${username}/.config/nix/home-manager/modules/togglemute.sh"
 
                 # Mute source
                 ", Control_R, exec, pamixer --default-source -t"
