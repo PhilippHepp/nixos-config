@@ -7,7 +7,7 @@ let
     home = import "${settingsPath}/home.nix";
     settings = import "${settingsPath}/settings.nix"; 
 
-    specialArgs = {inherit pkgs pkgs-stable inputs ;} // settings;
+    specialArgs = {inherit system pkgs pkgs-stable inputs;} // settings;
 in
 
 inputs.nixpkgs.lib.nixosSystem {

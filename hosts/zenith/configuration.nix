@@ -1,9 +1,10 @@
-{inputs, pkgs, ...}:
+{system, inputs, pkgs, ...}:
 
 {
     imports = with inputs.self.nixosModules; [
         ./hardware-configuration.nix
         inputs.disko.nixosModules.disko
+        inputs.self.packages.${system}.rofi-catppuccin
 
         # System
         settings

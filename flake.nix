@@ -35,6 +35,8 @@
         nixosConfigurations.server = mkNixos ./hosts/server;
         nixosConfigurations.wsl = mkNixos ./hosts/wsl;
 
+        packages.${system}.rofi-catppuccin = pkgs.callPackage ./testing/rofi-catppuccin.nix;
+
         devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs;});
     };
 }
