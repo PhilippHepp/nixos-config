@@ -11,34 +11,48 @@
         bootloader
         disko
         user
-        # qt
 
         # Programs
         neovim
-        zsh
         steam
+        zsh
 
         # Modules
         sound
         graphics
         openrgb
-        sddm
+        # sddm
+        gdm
         amd
     ];
 
     environment.systemPackages = with pkgs; [
         libsForQt5.qt5ct
+        alsa-scarlett-gui
+
         # Programs
+        wine
+        lutris
+        prismlauncher
+        steam
+
         vesktop
         brave
         nemo
         hyprpicker
-        # steam
         geeqie
         (flameshot.override { enableWlrSupport = true; })
         # Other
         home-manager
     ];
+
+    boot.supportedFilesystems = [ "ntfs" ];
+
+    fileSystems."/mnt/games" = {
+        device = "/dev/nvme1n1p2";
+        fsType = "ntfs-3g";
+        options = [ "rw" "uid=1000" ];
+    };
 
     system.stateVersion = "24.11"; # Just don't
 }
