@@ -25,8 +25,6 @@
         eww
         swww
         xwayland
-        slurp 
-        grim 
         wl-clipboard
         cliphist
     ];
