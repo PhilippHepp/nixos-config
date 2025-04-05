@@ -31,7 +31,7 @@
         alsa-scarlett-gui
 
         # Programs
-        wine
+        protonup-qt
         lutris
         prismlauncher
         steam
