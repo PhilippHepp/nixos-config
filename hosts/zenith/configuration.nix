@@ -35,6 +35,9 @@
         lutris
         prismlauncher
         steam
+        everest-mons
+    
+        rofi-wayland
 
         vesktop
         brave
@@ -45,6 +48,16 @@
         # Other
         home-manager
     ];
+
+    fileSystems."/mnt/games" = {
+        device = "/dev/nvme1n1p1";
+        fsType = "ext4";
+        options = [
+            "users"
+            "nofail"
+            "exec"
+        ];
+    };
 
     system.stateVersion = "24.11"; # Just don't
 }
