@@ -30,14 +30,14 @@ in
             ];
 
             windowrule = [
-                "float, ^(imv)$"
-                "float, ^(mpv)$"
-
-                "float, ^(wofi)$"
-                "stayfocused, ^(wofi)$"
-                "noborder, ^(wofi)$"
-
-                "float, title:^(Bitwarden)$"
+                # "float, ^(imv)$"
+                # "float, ^(mpv)$"
+                #
+                # "float, ^(wofi)$"
+                # "stayfocused, ^(wofi)$"
+                # "noborder, ^(wofi)$"
+                #
+                # "float, title:^(Bitwarden)$"
 
                 "float, title:^(Picture in picture)$"
                 "pin, title:^(Picture in picture)$"

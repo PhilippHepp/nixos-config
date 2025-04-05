@@ -46,13 +46,5 @@
         home-manager
     ];
 
-    boot.supportedFilesystems = [ "ntfs" ];
-
-    fileSystems."/mnt/games" = {
-        device = "/dev/nvme1n1p2";
-        fsType = "ntfs-3g";
-        options = [ "rw" "uid=1000" ];
-    };
-
     system.stateVersion = "24.11"; # Just don't
 }
