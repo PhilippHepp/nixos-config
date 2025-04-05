@@ -45,9 +45,9 @@ in
                 "move 1214 671, title:^(Picture in picture)$"
                 "noinitialfocus, title:^(Picture in picture)$"
 
-                "float, ^(org.pulseaudio.pavucontrol)$"
+                #"float, ^(org.pulseaudio.pavucontrol)$"
 
-                "float, ^(.blueman-manager-wrapped)"
+                #"float, ^(.blueman-manager-wrapped)"
             ];
 
             exec-once = [
