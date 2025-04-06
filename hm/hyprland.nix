@@ -1,12 +1,5 @@
 { pkgs, monitor, dotfiles, kb_layout, ... }:
 
-let
-    browser = "brave";
-    terminal = "kitty";
-    explorer = "nemo";
-    screenshot = "flameshot gui";
-in 
-
 {
    wayland.windowManager.hyprland.enable = true;
    wayland.windowManager.hyprland = {
@@ -164,7 +157,7 @@ in
                 # Color Picker
                 "$mainMod, P, exec, hyprpicker -a -f hex"
 
-                "$mainMod, S, exec, ${screenshot}"
+                "$mainMod, S, exec, ${pkgs.flameshot}/bin/flameshot gui"
                 # ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" $XDG_SCREENSHOTS_DIR/$(date +'%s.png)''
 
                 "$mainMod, Q, killactive,"
