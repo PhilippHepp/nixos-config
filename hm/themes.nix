@@ -5,12 +5,12 @@ let
 in
 
 {
-    qt = {
-        enable = true;
-        platformTheme.name = "qt5ct";
-        style.name = "catppuccin-frappe-mauve";
-        style.package = pkgs-stable.catppuccin-qt5ct;
-    };
+    # qt = {
+    #     enable = true;
+    #     platformTheme.name = "qt5ct";
+    #     style.name = "catppuccin-frappe-mauve";
+    #     style.package = pkgs-stable.catppuccin-qt5ct;
+    # };
 
     gtk = {
         enable = true;
