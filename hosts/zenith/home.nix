@@ -11,7 +11,6 @@
         hyprland
         themes
         zsh
-        neovim
         git
         hypridle
         kitty
