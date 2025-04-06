@@ -8,14 +8,12 @@
         dotDir = ".config/zsh";
         shellAliases = {
             rb = "sudo nixos-rebuild switch --flake ${dotfiles}/nix";
-            hm = "home-manager switch --flake ${dotfiles}/nix/";
             lg = "lazygit";
             v = "nvim";
             ls = "eza -a --icons=auto";
-            z = "yazi";
             # zz = "eza -aTL 3 --icons";
             ff = "fastfetch";
-            rust = "nix develop ${dotfiles}/nix#rust -c zsh";
+            #rust = "nix develop ${dotfiles}/nix#rust -c zsh";
         };
     };
 }
