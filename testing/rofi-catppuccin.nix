@@ -1,15 +1,14 @@
 {
     flavor ? "macchiato", 
-    stdenv,
-    fetchFromGitHub,
+    pkgs ? import <nixpkgs> {},
     ...
 }: 
 
-stdenv.mkDerivation {
+pkgs.stdenv.mkDerivation {
     pname = "rofi-catppuccin";
     version = "0.0.1";
 
-    src = fetchFromGitHub {
+    src = pkgs.fetchFromGitHub {
         owner = "catppuccin";
         repo = "rofi";
         rev = "c24a212a6b07c2d45f32d01d7f10b4d88ddc9f45";
@@ -17,9 +16,9 @@ stdenv.mkDerivation {
     };
 
     installPhase = ''
-        #mkdir -p $out
+        mkdir -p $out
 
-        #cp $src/themes/catppuccin-${flavor}.rasi $out/
-        cp $src/themes/catppuccin-${flavor}.rasi $out
+        cp $src/catppuccin-default.rasi $src/themes/catppuccin-${flavor}.rasi $out/
+        sed -i "s/@import \"catppuccin-mocha\"/@import \".\/catppuccin-${flavor}.rasi\"/" $out/catppuccin-default.rasi
     '';
 }
