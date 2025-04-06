@@ -4,7 +4,7 @@
     imports = with inputs.self.nixosModules; [
         ./hardware-configuration.nix
         inputs.disko.nixosModules.disko
-        inputs.self.packages.${system}.rofi-catppuccin
+        inputs.nixpkgs.nixosModules.readOnlyPkgs
 
         # System
         settings
@@ -27,11 +27,14 @@
         amd
     ];
 
+    nixpkgs.pkgs = pkgs;
+
     environment.systemPackages = with pkgs; [
         libsForQt5.qt5ct
         alsa-scarlett-gui
 
         # Programs
+        mangohud
         protonup-qt
         lutris
         prismlauncher
@@ -50,7 +53,7 @@
         home-manager
     ];
 
-    fileSystems."/mnt/games" = {
+    fileSystems."/home/donielmaker/Games" = {
         device = "/dev/nvme1n1p1";
         fsType = "ext4";
         options = [

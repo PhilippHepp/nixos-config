@@ -57,6 +57,7 @@ in
                 "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
+                "mangohud steam"
             ];
 
             exec = [
@@ -158,9 +159,9 @@ in
                 "$mainMod, E, exec, ${explorer}"
                 "$mainMod, B, exec, ${browser}"
                 # Application Launcher
-                "$mainMod, Space, exec, wofi --show drun --normal-window  --allow-images --width 500 --height 500" #App Launcher
+                "$mainMod, Space, exec, wofi --show drun -i --normal-window  --allow-images --width 500 --height 500" #App Launcher
                 # Clipboard History
-                "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
+                "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images -i --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
                 # Color Picker
                 "$mainMod, P, exec, hyprpicker -a -f hex"
                 ''$mainMod, S, exec, ${screenshot}
