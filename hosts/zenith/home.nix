@@ -2,6 +2,7 @@
 
 {
     imports = with inputs.self.homeManagerModules; [
+        rofi
         oh-my-posh
         zsh
         neovim
