@@ -4,7 +4,6 @@
     imports = with inputs.self.nixosModules; [
         ./hardware-configuration.nix
         inputs.disko.nixosModules.disko
-        inputs.nixpkgs.nixosModules.readOnlyPkgs
 
         # System
         settings
@@ -26,8 +25,6 @@
         gdm
         amd
     ];
-
-    nixpkgs.pkgs = pkgs;
 
     environment.systemPackages = with pkgs; [
         libsForQt5.qt5ct
