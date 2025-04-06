@@ -9,7 +9,7 @@
         settings
         networking
         bootloader
-	    disko
+	disko
         user
 
         # Programs
@@ -19,10 +19,7 @@
         # Modules
         sound
         graphics
-        bluethooth
         sddm
-        intel
-        ntfs
     ];
 
     environment.systemPackages = with pkgs; [
@@ -30,6 +27,7 @@
         brave
         nemo
         hyprpicker
+	vesktop
         # steam
         geeqie
         (flameshot.override { enableWlrSupport = true; })

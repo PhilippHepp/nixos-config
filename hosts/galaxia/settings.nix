@@ -1,11 +1,11 @@
 rec {
-    hostname = "galaxia";
+    hostname = "nixos";
     system = "x86_64-linux";
-    username = "donielmaker";
-    mail = "daniel.schmidt0204@gmail.com";
+    username = "philipp";
+    mail = "philipp.hepp7@gmail.com";
     dotfiles = "/home/${username}/.config";
     kb_layout = "de";
-    monitor = ", 1920x1080@60hz, auto, 1";
+    monitor = [ "DVI-D-1, 1920x1080@60hz, auto, 1" "HDMI-A-1, 2560x1080@144hz, auto, 1" ]; 
     timezone = "Europe/Berlin";
     drive = "/dev/nvme0n1";
 }
