@@ -19,5 +19,6 @@ stdenv.mkDerivation {
         mkdir -p $out
 
         cp $src/themes/spotlight-dark.rasi $out/
+        sed -i 's/    fixed-height:   false;/    fixed-height:   true;/g' $out/spotlight-dark.rasi
     '';
 }

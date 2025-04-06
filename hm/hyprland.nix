@@ -163,7 +163,7 @@ in
                 "$mainMod, space, exec, rofi -show drun -show-icons"
                 # Clipboard History
                 # "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images -i --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
-                "$mainMod, V, exec, cliphist list | rofi -show drun | cliphist decode | wl-copy" # Clipboard
+                "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy" # Clipboard
                 # Color Picker
                 "$mainMod, P, exec, hyprpicker -a -f hex"
 
