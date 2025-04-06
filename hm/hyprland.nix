@@ -8,8 +8,8 @@ let
 in 
 
 {
+   wayland.windowManager.hyprland.enable = true;
    wayland.windowManager.hyprland = {
-        enable = true;
         xwayland.enable = true;
 
         settings = {
@@ -54,14 +54,11 @@ in
                 "hyprctl setcursor Bibata-Modern-Ice 24"
                 "eww open -c ${dotfiles}/eww/bar bar"
                 "swww init"
+                "swww img ${pkgs.nixos-artwork.wallpapers.catppuccin-macchiato.gnomeFilePath}"
                 "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
                 "wl-paste --type text --watch cliphist store"
                 "wl-paste --type image --watch cliphist store"
                 "mangohud steam"
-            ];
-
-            exec = [
-                "swww img ${pkgs.nixos-artwork.wallpapers.catppuccin-macchiato.gnomeFilePath}"
             ];
 
             cursor = {
@@ -155,9 +152,9 @@ in
             };
 
             bind = [
-                "$mainMod, Return, exec, ${terminal}"
-                "$mainMod, E, exec, ${explorer}"
-                "$mainMod, B, exec, ${browser}"
+                "$mainMod, Return, exec, ${pkgs.kitty}/bin/kitty"
+                "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
+                "$mainMod, B, exec, ${pkgs.brave}/bin/brave"
                 # Application Launcher
                 # "$mainMod, Space, exec, wofi --show drun -i --normal-window  --allow-images --width 500 --height 500" #App Launcher
                 "$mainMod, space, exec, rofi -show drun -show-icons"

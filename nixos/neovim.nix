@@ -1,10 +1,8 @@
 {pkgs, pkgs-stable, ...}:
 
 {
-    programs.neovim = {
-        enable = true;
-        defaultEditor = true;
-    };
+    programs.neovim.enable = true;
+    programs.neovim.defaultEditor = true;
 
     environment.systemPackages = with pkgs-stable; [
         pkgs.neovim
@@ -18,11 +16,11 @@
         gnumake
         openssl
         pkg-config
-        texliveFull
+        # texliveFull
 
         # LSP
         marksman
-        texlab
+        # texlab
         lua-language-server
         rust-analyzer
         tinymist
