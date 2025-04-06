@@ -19,7 +19,7 @@ inputs.nixpkgs.lib.nixosSystem {
                 useGlobalPkgs = true;
                 useUserPackages = true;
                 extraSpecialArgs = specialArgs;
-                users.donielmaker.imports = [home];
+                users.${settings.username}.imports = [home];
             };
         }
     ];  
