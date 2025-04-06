@@ -159,12 +159,15 @@ in
                 "$mainMod, E, exec, ${explorer}"
                 "$mainMod, B, exec, ${browser}"
                 # Application Launcher
-                "$mainMod, Space, exec, wofi --show drun -i --normal-window  --allow-images --width 500 --height 500" #App Launcher
+                # "$mainMod, Space, exec, wofi --show drun -i --normal-window  --allow-images --width 500 --height 500" #App Launcher
+                "$mainMod, space, exec, rofi -show drun -show-icons"
                 # Clipboard History
-                "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images -i --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
+                # "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images -i --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
+                "$mainMod, V, exec, cliphist list | rofi -show drun | cliphist decode | wl-copy" # Clipboard
                 # Color Picker
                 "$mainMod, P, exec, hyprpicker -a -f hex"
-                ''$mainMod, S, exec, ${screenshot}
+
+                "$mainMod, S, exec, ${screenshot}"
                 # ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" $XDG_SCREENSHOTS_DIR/$(date +'%s.png)''
 
                 "$mainMod, Q, killactive,"

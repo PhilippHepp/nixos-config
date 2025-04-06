@@ -1,5 +1,5 @@
 {
-    description = "System configuration";
+    description = "Please don't use!";
 
     inputs = {
         nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
@@ -35,7 +35,7 @@
         nixosConfigurations.server = mkNixos ./hosts/server;
         nixosConfigurations.wsl = mkNixos ./hosts/wsl;
 
-        packages.${system}.rofi-catppuccin = pkgs.callPackage ./testing/rofi-catppuccin.nix;
+        packages.${system}.rofi-spotlight = pkgs.callPackage ./nixos/rofi-spotlight.nix {};
 
         devShells.${system}.rust = (import ./testing/rust.nix {inherit pkgs;});
     };
