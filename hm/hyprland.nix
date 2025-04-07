@@ -92,8 +92,8 @@
                 border_size = 3;
                 # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
                 # "col.inactive_border" = "rgba(595959aa)";
-                "col.active_border" = "rgba(7dcfffee)";
-                "col.inactive_border" = "rgba(2F334Caa)";
+                "col.active_border" = "rgba(9ccfd8ee)";
+                "col.inactive_border" = "rgba(31748faa)";
 
                 layout = "dwindle";
 
@@ -104,7 +104,7 @@
                 rounding = 10;
 
                 dim_inactive = true;
-                dim_strength = 0.3;
+                dim_strength = 0.6;
 
                 blur = {
                     enabled = true;
