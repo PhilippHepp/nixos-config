@@ -29,6 +29,10 @@
         nemo
         hyprpicker
 	vesktop
+        spotify
+        prismlauncher
+        obsidian
+        google-chrome
         # steam
         geeqie
         (flameshot.override { enableWlrSupport = true; })
