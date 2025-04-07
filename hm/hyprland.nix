@@ -54,7 +54,7 @@
             ];
 
             exec = [
-                "swww img ./home/philipp/Downloads/Signalis-Wallpaper.jpg" 
+                "swww img ./home/philipp/Images/Signalis-Wallpaper.jpg" 
             ];
 
             cursor = {
