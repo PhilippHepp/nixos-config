@@ -28,18 +28,19 @@
         # Programs
         blender
         brave
-        steam
-        lutris
-        protonup-qt
         nemo
         hyprpicker
 	vesktop
         spotify
+	spotify-player
         prismlauncher
         obsidian
         google-chrome
         # steam
         geeqie
+	steam
+	lutris
+	protonup-qt
         (flameshot.override { enableWlrSupport = true; })
         # Other
         home-manager
