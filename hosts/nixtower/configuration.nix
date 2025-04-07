@@ -55,7 +55,7 @@
 	    ];
         };
         "/home/philipp/HDD" = {
-            device = "dev/sdb1";
+            device = "dev/sdc1";
             fsType = "ntfs-3g";
             options = [
                 "users"
