@@ -44,5 +44,15 @@
         home-manager
     ];
 
+    file.Systems."/home/philipp/Arch" = {
+        device = "dev/sda2";
+	fsType = "ext4";
+        options = [
+	    "users"
+	    "nofail"
+	    "exec"
+	];
+    };
+
     system.stateVersion = "24.11"; # Just don't
 }
