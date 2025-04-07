@@ -14,6 +14,7 @@
             # zz = "eza -aTL 3 --icons";
             ff = "fastfetch";
             #rust = "nix develop ${dotfiles}/nix#rust -c zsh";
+	    sp = "spotify_player";
         };
     };
 }

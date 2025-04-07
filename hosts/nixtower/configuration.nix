@@ -35,7 +35,8 @@
         prismlauncher
         obsidian
         geeqie
-	# steam
+	networkmanagerapplet
+        # steam
 	steam
 	lutris
 	protonup-qt
