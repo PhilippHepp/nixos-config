@@ -11,7 +11,8 @@
         bootloader
 	disko
         user
-
+        nvidia
+        
         # Programs
         neovim
         zsh
