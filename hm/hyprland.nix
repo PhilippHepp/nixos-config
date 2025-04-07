@@ -54,7 +54,7 @@
             ];
 
             exec = [
-                "swww img ./home/philipp/Images/Signalis-Wallpaper.jpg" 
+                "swww img ~/home/philipp/Images/Signalis-Wallpaper.jpg" 
             ];
 
             cursor = {
@@ -78,7 +78,7 @@
                     scroll_factor = 0.25;
                 };
 
-                sensitivity = 0; # -1.0 - 1.0, 0 means no modification.
+                sensitivity = -0.3; # -1.0 - 1.0, 0 means no modification.
             };
 
             dwindle = {
@@ -90,8 +90,6 @@
                 gaps_in = 5;
                 gaps_out = "60, 20, 20, 20";
                 border_size = 3;
-                # "col.active_border" = "rgba(33ccffee) rgba(00ff99ee) 45deg";
-                # "col.inactive_border" = "rgba(595959aa)";
                 "col.active_border" = "rgba(9ccfd8ee)";
                 "col.inactive_border" = "rgba(31748faa)";
 
@@ -108,7 +106,7 @@
 
                 blur = {
                     enabled = true;
-                    size = 16;
+                    size = 12;
                     passes = 2;
                     new_optimizations = true;
                 };
@@ -150,7 +148,7 @@
             bind = [
                 "$mainMod, Return, exec, ${pkgs.kitty}/bin/kitty"
                 "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
-                "$mainMod, B, exec, ${pkgs.brave}/bin/brave"
+                "$mainMod, B, exec, ${pkgs.firefox}/bin/firefox"
                 # Application Launcher
                 # "$mainMod, Space, exec, wofi --show drun -i --normal-window  --allow-images --width 500 --height 500" #App Launcher
                 "$mainMod, space, exec, rofi -show drun -show-icons"
@@ -159,8 +157,10 @@
                 "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy" # Clipboard
                 # Color Picker
                 "$mainMod, P, exec, hyprpicker -a -f hex"
-
-                "$mainMod, S, exec, ${pkgs.flameshot}/bin/flameshot gui"
+		
+		# Spotify
+		"$mainMod, S, exec, spotify_player"
+                "$mainMod SHIFT, S, exec, ${pkgs.flameshot}/bin/flameshot gui"
                 # ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" $XDG_SCREENSHOTS_DIR/$(date +'%s.png)''
 
                 "$mainMod, Q, killactive,"
