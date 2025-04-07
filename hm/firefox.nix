@@ -1,4 +1,4 @@
-{ pkgs, pkgs-firefox, username, ...}: {
+{ pkgs, username, ...}: {
     programs.firefox = {
         enable = true;
 
@@ -17,11 +17,11 @@
             };
             search.force = true;
 
-            extensions = with pkgs-firefox;[
-                bitwarden
-                ublock-origin
-                sponsorblock
-            ];
+#           extensions = with pkgs-firefox;[
+#               bitwarden
+#               ublock-origin
+#               sponsorblock
+#           ];
         };
     };
 }

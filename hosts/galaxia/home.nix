@@ -8,6 +8,7 @@
         neovim
         git
         hyprland
+        firefox
         themes
         hypridle
         kitty
