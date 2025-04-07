@@ -54,7 +54,7 @@
             ];
 
             exec = [
-                "swww img ${pkgs.nixos-artwork.wallpapers.catppuccin-macchiato.gnomeFilePath}"
+                "swww img ./home/philipp/Downloads/Signalis-Wallpaper.jpg" 
             ];
 
             cursor = {
