@@ -1,8 +1,8 @@
-{ pkgs, pkgs-firefox, config, ...}: {
+{ pkgs, pkgs-firefox, username, ...}: {
     programs.firefox = {
         enable = true;
 
-        profiles.${config.don.username} = {
+        profiles.${username} = {
             search.engines."Nix Packages" = {
                 urls = [{
                     template = "https://search.nixos.org/packages";

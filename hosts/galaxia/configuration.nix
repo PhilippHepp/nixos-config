@@ -16,6 +16,7 @@
         # Programs
         neovim
         zsh
+        firefox
 
         # Modules
         sound
