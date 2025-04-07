@@ -6,6 +6,7 @@
     
     environment.systemPackages = with pkgs; [
         # CLI Tools
+        btop
         vim
         gcc
         cargo
@@ -33,5 +34,6 @@
 
     fonts.packages = with pkgs; [
         nerd-fonts.fira-code
+        nerd-fonts.iosevka-term-slab
     ];
 }
