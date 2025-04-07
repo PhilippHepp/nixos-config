@@ -37,6 +37,8 @@
                 "size 678 384, title:^(Picture in picture)$"
                 "move 1214 671, title:^(Picture in picture)$"
                 "noinitialfocus, title:^(Picture in picture)$"
+		
+		
 
                 #"float, ^(org.pulseaudio.pavucontrol)$"
 
@@ -54,7 +56,7 @@
             ];
 
             exec = [
-                "swww img ~/home/philipp/Images/Signalis-Wallpaper.jpg" 
+                "swww img ~/home/philipp/Images/Signalis-RosePine-Wallpaper.png" 
             ];
 
             cursor = {
