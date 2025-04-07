@@ -55,7 +55,7 @@
 	    ];
         };
         "/home/philipp/HDD" = {
-            device "dev/sdb1";
+            device = "dev/sdb1";
             fsType = "ntfs-3g";
             options = [
                 "users"
@@ -65,7 +65,7 @@
         };
     };
     
-    boot.supportedFileSystems.ntfs = true;
+    boot.supportedFilesystems.ntfs = true;
     
     system.stateVersion = "24.11"; # Just don't
 }
