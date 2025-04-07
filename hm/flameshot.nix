@@ -1,11 +1,11 @@
-{pkgs, ...}:
+{pkgs, username, ...}:
 
 {
     services.flameshot.enable = true;
     services.flameshot.package = (pkgs.flameshot.override {enableWlrSupport = true;});
     services.flameshot.settings = {
       General = {
-        savePath = "/home/donielmaker/screenshots/";
+        savePath = "/home/${username}/Images/Screenshots/";
         # savePathFixed = false;
         saveAsFileExtension = ".png";
         # showSidePanelButton = false;
