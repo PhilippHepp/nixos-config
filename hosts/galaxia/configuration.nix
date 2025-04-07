@@ -16,6 +16,7 @@
         # Programs
         neovim
         zsh
+        steam
 
         # Modules
         sound
@@ -26,6 +27,9 @@
     environment.systemPackages = with pkgs; [
         # Programs
         brave
+        steam
+        lutris
+        protonup-qt
         nemo
         hyprpicker
 	vesktop

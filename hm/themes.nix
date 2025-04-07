@@ -26,9 +26,9 @@ in
       # iconTheme.name = "Rose-Pine";
       # iconTheme.package = pkgs.rose-pine-icon-theme;
 
-        theme.name = "catppuccin-macchiato-blue-standard";
-        theme.package = pkgs-stable.catppuccin-gtk.override {inherit variant;};
-      # theme.name = "rose-pine-moon";
-      # theme.package = pkgs.rose-pine-gtk-theme.override {inherit variant;};
+      # theme.name = "catppuccin-macchiato-blue-standard";
+      # theme.package = pkgs-stable.catppuccin-gtk.override {inherit variant;};
+        theme.name = "rose-pine-moon";
+        theme.package = pkgs.rose-pine-gtk-theme;
     };
 } 
