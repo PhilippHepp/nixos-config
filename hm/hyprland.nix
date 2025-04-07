@@ -44,7 +44,7 @@
             ];
 
             exec-once = [
-                "hyprctl setcursor Bibata-Modern-Ice 24"
+                "hyprctl setcursor BreezeX-RosePine-Linux 24"
                 "eww open -c ${dotfiles}/eww/bar bar"
                 "swww init"
                 "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
