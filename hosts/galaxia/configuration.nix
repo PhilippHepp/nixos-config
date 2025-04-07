@@ -44,15 +44,28 @@
         home-manager
     ];
 
-    file.Systems."/home/philipp/Arch" = {
-        device = "dev/sda2";
-	fsType = "ext4";
-        options = [
-	    "users"
-	    "nofail"
-	    "exec"
-	];
+    fileSystems = {
+        "/home/philipp/Arch" = {
+            device = "dev/sda2";
+	    fsType = "ext4";
+            options = [
+	        "users"
+	        "nofail"
+	        "exec"
+	    ];
+        };
+        "/home/philipp/HDD" = {
+            device "dev/sdb1";
+            fsType = "ntfs-3g";
+            options = [
+                "users"
+                "nofail"
+                "exec"
+            ];
+        };
     };
-
+    
+    boot.supportedFileSystems.ntfs = true;
+    
     system.stateVersion = "24.11"; # Just don't
 }
