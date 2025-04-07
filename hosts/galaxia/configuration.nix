@@ -31,13 +31,11 @@
         nemo
         hyprpicker
 	vesktop
-        spotify
 	spotify-player
         prismlauncher
         obsidian
-        google-chrome
-        # steam
         geeqie
+	# steam
 	steam
 	lutris
 	protonup-qt
