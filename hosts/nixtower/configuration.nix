@@ -36,6 +36,7 @@
         obsidian
         geeqie
 	networkmanagerapplet
+	brightnessctl
         # steam
 	steam
 	lutris

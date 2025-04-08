@@ -90,7 +90,7 @@
 
             general = {
                 gaps_in = 5;
-                gaps_out = "60, 20, 20, 20";
+                gaps_out = "10, 10, 10, 10";
                 border_size = 3;
                 "col.active_border" = "rgba(9ccfd8ee)";
                 "col.inactive_border" = "rgba(31748faa)";
