@@ -22,6 +22,7 @@
         sound
         graphics
         sddm
+	gc
     ];
 
     environment.systemPackages = with pkgs; [
