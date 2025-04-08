@@ -1,5 +1,9 @@
 { pkgs, monitor, dotfiles, kb_layout, ... }:
 
+let
+   rofi = "${pkgs.rofi}/bin/rofi";
+in
+
 {
    wayland.windowManager.hyprland.enable = true;
    wayland.windowManager.hyprland = {
@@ -153,10 +157,10 @@
                 "$mainMod, B, exec, ${pkgs.firefox}/bin/firefox"
                 # Application Launcher
                 # "$mainMod, Space, exec, wofi --show drun -i --normal-window  --allow-images --width 500 --height 500" #App Launcher
-                "$mainMod, space, exec, rofi -show drun -show-icons"
+                "$mainMod, space, exec, ${rofi} -show drun -show-icons"
                 # Clipboard History
                 # "$mainMod, V, exec, cliphist list | wofi --dmenu --allow-images -i --normal-window --width 500 --height 500 | cliphist decode | wl-copy" # Clipboard
-                "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy" # Clipboard
+                "$mainMod, V, exec, cliphist list | ${rofi} -dmenu | cliphist decode | wl-copy" # Clipboard
                 # Color Picker
                 "$mainMod, P, exec, hyprpicker -a -f hex"
 		
