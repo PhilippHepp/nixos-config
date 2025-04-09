@@ -8,10 +8,10 @@
         home-manager.url = "github:nix-community/home-manager";
         home-manager.inputs.nixpkgs.follows = "nixpkgs";
 
-        disko.url = "github:nix-community/disko/latest";
-        disko.inputs.nixpkgs.follows = "nixpkgs";
+	disko.url = "github:nix-community/disko/latest";
+	disko.inputs.nixpkgs.follows = "nixpkgs";
 
-	    wsl.url = "github:nix-community/NixOS-WSL/main";
+	wsl.url = "github:nix-community/NixOS-WSL/main";
     };
 
     outputs = {self, ...}@inputs :

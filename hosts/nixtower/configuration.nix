@@ -14,9 +14,9 @@
         nvidia
         
         # Programs
-        neovim
         zsh
         steam
+	neovim
 
         # Modules
         sound
@@ -41,6 +41,7 @@
         inputplumber
         haruna
         libsForQt5.qt5ct
+	qt6ct
         # steam
 	steam
 	lutris

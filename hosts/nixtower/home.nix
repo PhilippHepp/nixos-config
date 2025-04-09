@@ -5,7 +5,6 @@
         rofi
         oh-my-posh
         zsh
-        neovim
         git
         hyprland
         firefox
@@ -13,7 +12,7 @@
         hypridle
         kitty
         flameshot
-        hyprland-controller
+	neovim
     ];
 
     home = {
@@ -21,4 +20,5 @@
         homeDirectory = lib.mkForce "/home/${username}";
         stateVersion = "24.11";
     };
+    
 }
