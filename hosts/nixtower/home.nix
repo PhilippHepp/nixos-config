@@ -13,6 +13,7 @@
         hypridle
         kitty
         flameshot
+        hyprland-controller
     ];
 
     home = {

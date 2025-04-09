@@ -38,6 +38,9 @@
         geeqie
 	networkmanagerapplet
 	brightnessctl
+        inputplumber
+        haruna
+        libsForQt5.qt5ct
         # steam
 	steam
 	lutris
@@ -46,7 +49,10 @@
         # Other
         home-manager
     ];
-
+    environment.variables = { 
+        "QT_STYLE_OVERRIDE" = "qt5ct";
+        "QT_QPA_PLATFORMTHEME" = "qt5ct";
+     };
     fileSystems = {
         "/home/philipp/Arch" = {
             device = "dev/sda2";
