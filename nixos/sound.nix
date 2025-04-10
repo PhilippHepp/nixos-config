@@ -1,4 +1,4 @@
-{pkgs, ...}:
+{pkgs, lib, ...}:
 
 {
     security.rtkit.enable = true;
@@ -9,14 +9,13 @@
       alsa.support32Bit = true;
       pulse.enable = true;
       # If you want to use JACK applications, uncomment this
-      jack.enable = true;
+      # jack.enable = true;
+      wireplumber.enable = true;
     };
-
     environment.systemPackages = with pkgs; [
-
-        wireplumber
         pavucontrol
         pamixer
 	alsa-utils
+	pulsemixer
     ];
 }
