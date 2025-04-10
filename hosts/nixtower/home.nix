@@ -2,7 +2,8 @@
 
 {
     imports = with inputs.self.homeManagerModules; [
-        rofi
+        launcher
+	rofi
         oh-my-posh
         zsh
         git
