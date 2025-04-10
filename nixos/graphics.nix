@@ -7,7 +7,7 @@
 
     environment.sessionVariables = {
         # Activate if Cursor keeps dissappearing
-        # WLR_NO_HARDWARE_CURSORS = "1";
+        WLR_NO_HARDWARE_CURSORS = "1";
 
         # Required for Wayland
         NIXOS_OZONE_WL = "1";
