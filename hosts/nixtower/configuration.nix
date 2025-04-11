@@ -31,6 +31,8 @@
         xorg.xrandr
 	brave
         nemo
+	xfce.thunar
+	kdePackages.dolphin
         hyprpicker
 	vesktop
 	spotify-player
