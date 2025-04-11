@@ -28,7 +28,7 @@
     environment.systemPackages = with pkgs; [
         # Programs
         (blender.override { cudaSupport = true; })
-        xrandr
+        xorg.xrandr
 	brave
         nemo
         hyprpicker
