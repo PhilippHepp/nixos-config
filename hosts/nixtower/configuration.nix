@@ -42,7 +42,8 @@
         haruna
         libsForQt5.qt5ct
 	qt6ct
-        # steam
+        bemenu
+	# steam
 	steam
 	lutris
 	protonup-qt
