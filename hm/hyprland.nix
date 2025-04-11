@@ -50,7 +50,7 @@ in
             ];
 
             exec-once = [
-                "hyprctl setcursor BreezeX-RosePine-Linux 24"
+		"hyprctl setcursor BreezeX-RosePine-Linux 24"
                 "eww open -c ${dotfiles}/eww/bar bar"
                 "swww init"
                 "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
@@ -154,7 +154,7 @@ in
 
             bind = [
                 "$mainMod, Return, exec, ${pkgs.kitty}/bin/kitty"
-                "$mainMod, E, exec, ${pkgs.nemo}/bin/nemo"
+                "$mainMod, E, exec, ${pkgs.kitty}/bin/kitty -e yazi"
                 "$mainMod, B, exec, ${pkgs.firefox}/bin/firefox"
                 # Application Launcher
                 # "$mainMod, Space, exec, wofi --show drun -i --normal-window  --allow-images --width 500 --height 500" #App Launcher
@@ -166,7 +166,7 @@ in
                 "$mainMod, P, exec, hyprpicker -a -f hex"
 		
 		# Spotify
-		"$mainMod, S, exec, spotify_player"
+		"$mainMod, S, exec, kitty -e spotify_player"
                 "$mainMod SHIFT, S, exec, ${pkgs.flameshot}/bin/flameshot gui"
                 # ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" $XDG_SCREENSHOTS_DIR/$(date +'%s.png)''
 
