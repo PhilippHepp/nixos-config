@@ -27,8 +27,9 @@
 
     environment.systemPackages = with pkgs; [
         # Programs
-        blender
-        brave
+        (blender.override { cudaSupport = true; })
+        xrandr
+	brave
         nemo
         hyprpicker
 	vesktop
@@ -36,6 +37,7 @@
         prismlauncher
         obsidian
         geeqie
+	yazi
 	networkmanagerapplet
 	brightnessctl
         inputplumber
@@ -43,6 +45,11 @@
         libsForQt5.qt5ct
 	qt6ct
         bemenu
+	toipe
+	bat
+	ascii-image-converter
+	wordgrinder
+	asciiquarium
 	# steam
 	steam
 	lutris
