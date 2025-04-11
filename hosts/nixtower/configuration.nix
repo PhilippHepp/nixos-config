@@ -81,6 +81,7 @@
     };
     
     boot.supportedFilesystems.ntfs = true;
+    services.gvfs.enable = true;
     
     system.stateVersion = "24.11"; # Just don't
 }
