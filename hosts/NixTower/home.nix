@@ -10,14 +10,20 @@
     files
     gaming
     oh-my-posh
-    zsh
     git
     hyprland
-    themes
+    theming
     hypridle
-    kitty
+    terminal
     neovim
-    rofi
+    music
+    latex
+    kde
+    media
+    messaging
+    tuis
+    zsh
+    launcher
   ];
 
   home = {
