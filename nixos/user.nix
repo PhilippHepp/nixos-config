@@ -7,9 +7,15 @@
   users.users.${username} = {
     isNormalUser = true;
     description = username;
-    extraGroups = ["networkmanager" "wheel" "input" "audio" "video"];
+    extraGroups = [
+      "networkmanager"
+      "wheel"
+      "audio"
+      "input"
+      "video"
+    ];
     shell = pkgs.${shell};
-    initialPassword = "Changeme";
+    initialPassword = "qwertz";
     openssh.authorizedKeys.keys = [];
   };
 }

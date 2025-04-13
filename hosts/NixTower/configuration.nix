@@ -8,7 +8,6 @@
     inputs.disko.nixosModules.disko
 
     # System
-    settings
     networking
     bootloader
     disko
@@ -17,7 +16,7 @@
     locales
 
     # Programs
-    zsh
+    terminalbase
     steam
     neovim
 
@@ -25,6 +24,7 @@
     sound
     graphics
     displaymanager
+    windowmanager
     gc
   ];
 

@@ -27,12 +27,8 @@ rec {
     "HDMI-A-1, 1920x1080@60, 320x1080, 1"
   ];
 
-  # Nvidia Specifics (example)
-  nvidia = {
-    package = "latest";
-    open = false;
-    finegrained = false;
-  };
+  # Nvidia Specifics
+  nvidiaPackage = "latest";
   # Theming & Appearance
   theme = {
     cursor = "BreezeX-RosePine-Linux";

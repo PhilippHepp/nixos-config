@@ -7,7 +7,7 @@
   networking.hostName = hostname;
 
   environment.systemPackages = with pkgs; [
-    network-manager-applet
+    networkmanagerapplet
     speedtest-cli
     curl
     wget
