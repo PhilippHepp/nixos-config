@@ -51,5 +51,5 @@
     commandLineArgs = [
       "--disable-features=WebRtcAllowInputVolumeAdjustment"
     ];
-  }; #  TODO add bombadillo
+  }; # TODO: add bombadillo
 }

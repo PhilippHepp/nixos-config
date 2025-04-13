@@ -4,5 +4,5 @@
     krita
   ];
 
-  # look into termgl for light in-terminal-rendering
+  # TODO: look into termgl for light in-terminal-rendering
 }
