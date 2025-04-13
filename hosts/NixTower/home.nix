@@ -13,7 +13,7 @@
     git
     hyprland
     theming
-    hypridle
+    hypraddons
     terminal
     neovim
     music
