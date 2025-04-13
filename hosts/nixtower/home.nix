@@ -5,6 +5,8 @@
   ...
 }: {
   imports = with inputs.self.homeManagerModules; [
+    3
+    d
     rofi
     browser
     oh-my-posh
