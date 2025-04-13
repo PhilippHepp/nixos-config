@@ -1,11 +1,16 @@
-{hostname, ...}:
-
 {
-    networking.networkmanager.enable = true;
-    networking.hostName = hostname;
-    services.samba = {
-      enable = true;
-      settings.global.security = "user";
-      openFirewall = true;
-    };
+  hostname,
+  pkgs,
+  ...
+}: {
+  networking.networkmanager.enable = true;
+  networking.hostName = hostname;
+
+  environment.systemPackages = with pkgs; [
+    network-manager-applet
+    speedtest-cli
+    curl
+    wget
+    qbittorrent-enhanced-nox
+  ];
 }

@@ -1,14 +1,64 @@
 rec {
-  hostname = "nixos";
-  system = "x86_64-linux";
+  # System Identification
+  hostname = "nixtower"; # Host-specific
+  system = "x86_64-linux"; # Usually fixed per host
+  timezone = "Europe/Berlin"; # Host-specific location
+
+  # User Configuration
   username = "philipp";
   mail = "philipp.hepp7@gmail.com";
-  dotfiles = "/home/${username}/.config";
-  kb_layout = "de";
-  monitor = ["DP-1, 2560x1080@144, 0x0, 1" "HDMI-A-1, 1920x1080@60, 0x1080, 1"];
-  timezone = "Europe/Berlin";
-  drive = "/dev/nvme0n1";
-  theme = {
-    colorscheme = "rose-pine-moon";
+  shell = "zsh"; # Or use string "zsh" and look up pkgs.${shell} in user.nix
+  dotfiles = "/home/${username}/.config"; # Derived
+  userGroups = ["networkmanager" "wheel" "audio" "input" "video"]; # Base groups
+  userSshKeys = [
+    # "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIH..." # Add actual keys
+  ];
+  locales = {
+    main = "en_US.UTF-8";
+    extra = "de_DE.UTF-8";
   };
+  # Hardware & Installation
+  mydrive = "/dev/nvme0n1"; # Primary disk for installation
+  swapSize = "16G"; # Match RAM
+  kb_layout = "de";
+  monitor = [
+    # Hyprland monitor config
+    "DP-1, 2560x1080@144, 0x0, 1"
+    "HDMI-A-1, 1920x1080@60, 320x1080, 1"
+  ];
+
+  # Nvidia Specifics (example)
+  nvidia = {
+    package = "latest";
+    open = false;
+    finegrained = false;
+  };
+  # Theming & Appearance
+  theme = {
+    cursor = "BreezeX-RosePine-Linux";
+    colorscheme = "rose-pine-moon"; # For Stylix base16Scheme
+  };
+  wallpaperPath = "/home/${username}/Pictures/Wallpapers/current.png";
+  stylixTargets = {
+    # Which apps Stylix should theme
+    bat = true;
+    neovim = true;
+    yazi = true;
+    hyprland = true;
+    kitty = true;
+  };
+
+  # Application Settings
+  font.name = "IosevkaTermSlab";
+  font.size = 11;
+  shellPrompt = "fastfetch"; # Command for Zsh prompt
+  sensitivity = -0.6;
+
+  firefoxExtensionNames = [
+    "clearurls"
+    "ublock-origin"
+    "buster-captcha-solver"
+    "bitwarden"
+    "sponsorblock"
+  ];
 }

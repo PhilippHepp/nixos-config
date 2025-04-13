@@ -14,6 +14,7 @@
     disko
     user
     nvidia
+    locales
 
     # Programs
     zsh
@@ -23,7 +24,7 @@
     # Modules
     sound
     graphics
-    sddm
+    displaymanager
     gc
   ];
 
