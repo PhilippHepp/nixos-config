@@ -33,6 +33,7 @@
         definedAliases = ["@nix"];
       };
       search.force = true;
+      extensions.force = true;
       extensions.packages = with inputs.firefox-addons.packages.${system}; [
         clearurls
         ublock-origin

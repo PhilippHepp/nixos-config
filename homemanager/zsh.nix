@@ -7,7 +7,6 @@
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
-    promptInit = "${shellPrompt}";
     dotDir = ".config/zsh";
     shellAliases = {
       update-flake = "nix flake update ${dotfiles}/nix";

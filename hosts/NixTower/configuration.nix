@@ -18,7 +18,6 @@
     # Programs
     terminalbase
     steam
-    neovim
 
     # Modules
     sound

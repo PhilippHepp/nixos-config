@@ -17,10 +17,10 @@ in {
 
   i18n.defaultLocale = "${locales.main}";
   i18n.extraLocaleSettings = {
-    LC_MESSAGES = secondary;
     LC_ADDRESS = secondary;
     LC_IDENTIFICATION = secondary;
     LC_MEASUREMENT = secondary;
+    LC_MESSAGES = secondary;
     LC_MONETARY = secondary;
     LC_NAME = secondary;
     LC_NUMERIC = secondary;

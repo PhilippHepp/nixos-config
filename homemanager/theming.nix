@@ -8,24 +8,28 @@
 
   stylix = {
     enable = true;
-    autoEnable = false;
+    autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme.colorscheme}.yaml";
     targets = {
-      nvf.enable = true;
-      bat.enable = true;
-      neovim.enable = true;
-      yazi.enable = true;
-      hyprland.enable = true;
-      kitty = {
-        enable = true;
-        variant256Colors = true;
+      firefox = {
+        profileNames = ["philipp"];
+        colorTheme.enable = true;
       };
+      hyprland.hyprpaper.enable = true;
+      kitty.variant256Colors = true;
+      lazygit.enable = false;
+      rofi.enable = false;
+      qt.enable = false;
+      gtk.enable = false;
     };
   };
-
+  home.packages = with pkgs; [
+    libsForQt5.qt5ct
+    qt6ct
+  ];
   qt = {
     enable = true;
-    platformTheme.name = "qt5ct";
+    platformTheme.name = "qt6ct";
     style.name = "Fusion";
   };
   gtk = {
