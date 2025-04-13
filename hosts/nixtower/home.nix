@@ -5,10 +5,9 @@
   ...
 }: {
   imports = with inputs.self.homeManagerModules; [
-    3
-    d
-    rofi
+    cad
     browser
+    files
     oh-my-posh
     zsh
     git
@@ -18,6 +17,7 @@
     kitty
     flameshot
     neovim
+    rofi
   ];
 
   home = {
