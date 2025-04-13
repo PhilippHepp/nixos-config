@@ -22,7 +22,6 @@
 
     # Modules
     sound
-    graphics
     displaymanager
     windowmanager
     gc

@@ -1,6 +1,6 @@
 {pkgs, ...}: {
   programs.hyprland.enable = true;
-  programs.hypridle.enable = true;
+  services.hypridle.enable = true;
 
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";

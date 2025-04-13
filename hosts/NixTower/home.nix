@@ -16,7 +16,6 @@
     themes
     hypridle
     kitty
-    flameshot
     neovim
     rofi
   ];
