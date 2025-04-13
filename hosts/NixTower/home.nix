@@ -8,6 +8,7 @@
     cad
     browser
     files
+    gaming
     oh-my-posh
     zsh
     git

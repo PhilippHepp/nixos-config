@@ -21,6 +21,7 @@
 	# LSP
 	marksman
 	lua-language-server
+	nixd
 	# rust-analyzer
 	tinymist
 	yaml-language-server
