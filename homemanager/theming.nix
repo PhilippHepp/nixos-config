@@ -2,6 +2,7 @@
   inputs,
   pkgs,
   theme,
+  dotfiles,
   ...
 }:
 {
@@ -18,14 +19,33 @@
       package = pkgs.rose-pine-cursor;
     };
     fonts = {
+      sizes = {
+        applications = 13;
+        desktop = 12;
+        popups = 12;
+        terminal = 13;
+      };
       # nerd-fonts.iosevka-term-slab
       # nerd-fonts.bigblue-terminal
       # nerd-fonts.fira-code
       # nerd-fonts.zed-mono
+      sansSerif = {
+        name = "Iosevka Nerd Font Propo";
+        package = pkgs.nerd-fonts.iosevka;
+      };
+      serif = {
+        name = "TeX Gyre Schola";
+        package = pkgs.gyre-fonts;
+      };
       monospace = {
         name = "IosevkaTermSlab Nerd Font";
         package = pkgs.nerd-fonts.iosevka-term-slab;
       };
+    };
+    iconTheme = {
+      enable = true;
+      dark = "Papirus-Dark";
+      package = pkgs.catppuccin-papirus-folders.override { flavor = "macchiato"; };
     };
     targets = {
       firefox = {
@@ -39,6 +59,7 @@
       qt.enable = false;
     };
   };
+  stylix.image = "${dotfiles}/nix/hosts/NixTower/Eldritch-Island-Vista.webp";
   home.packages = with pkgs; [
     libsForQt5.qt5ct
     qt6ct
@@ -50,9 +71,6 @@
   };
   gtk = {
     enable = true;
-
-    iconTheme.name = "Papirus-Dark";
-    iconTheme.package = pkgs.catppuccin-papirus-folders.override { flavor = "macchiato"; };
     # iconTheme.name = "Rose-Pine";
     # iconTheme.package = pkgs.rose-pine-icon-theme;
 
