@@ -2,7 +2,6 @@
   inputs,
   pkgs,
   theme,
-  dotfiles,
   ...
 }:
 {
@@ -30,7 +29,7 @@
       # nerd-fonts.fira-code
       # nerd-fonts.zed-mono
       sansSerif = {
-        name = "Iosevka Nerd Font Propo";
+        name = "Iosevka Nerd Font";
         package = pkgs.nerd-fonts.iosevka;
       };
       serif = {
@@ -47,19 +46,28 @@
       dark = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders.override { flavor = "macchiato"; };
     };
+    image = "/home/philipp/Images/Eldritch-Island-Vista.webp";
+    imageScalingMode = "fit";
+    opacity = {
+      applications = 0.7;
+      desktop = 0.7;
+      popups = 0.7;
+      terminal = 0.7;
+    };
     targets = {
       firefox = {
         profileNames = [ "philipp" ];
         colorTheme.enable = true;
       };
-      # hyprland.hyprpaper.enable = true;
+      hyprland.hyprpaper.enable = true;
       kitty.variant256Colors = true;
       lazygit.enable = false;
       rofi.enable = false;
       qt.enable = false;
+      gnome.enable = false;
+      kde.enable = false;
     };
   };
-  stylix.image = "${dotfiles}/nix/Eldritch-Island-Vista.webp";
   home.packages = with pkgs; [
     libsForQt5.qt5ct
     qt6ct
