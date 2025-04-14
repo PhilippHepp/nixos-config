@@ -34,6 +34,7 @@ rec {
     cursor = "BreezeX-RosePine-Linux";
     colorscheme = "vesper"; # For Stylix base16Scheme
     font = "IosevkaTermSlab";
+    wallpaper = "Eldritch-Island-Vista.webp";
   };
   wallpaperPath = "/home/${username}/Pictures/Wallpapers/current.png";
 

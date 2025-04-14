@@ -1,9 +1,14 @@
 {
+  config,
   inputs,
   pkgs,
   theme,
   ...
 }:
+
+let
+  scheme = "${pkgs.base16-schemes}/share/themes/${theme.colorscheme}.yaml";
+in
 {
   imports = [ inputs.stylix.homeManagerModules.stylix ];
 
@@ -11,7 +16,7 @@
     enable = true;
     autoEnable = true;
 
-    base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme.colorscheme}.yaml";
+    base16Scheme = scheme;
     cursor = {
       name = "${theme.cursor}";
       size = 24;
@@ -46,8 +51,6 @@
       dark = "Papirus-Dark";
       package = pkgs.catppuccin-papirus-folders.override { flavor = "macchiato"; };
     };
-    image = "/home/philipp/Images/Eldritch-Island-Vista.webp";
-    imageScalingMode = "fit";
     opacity = {
       applications = 0.7;
       desktop = 0.7;
@@ -59,7 +62,7 @@
         profileNames = [ "philipp" ];
         colorTheme.enable = true;
       };
-      hyprland.hyprpaper.enable = true;
+      hyprpaper.enable = false;
       kitty.variant256Colors = true;
       lazygit.enable = false;
       rofi.enable = false;

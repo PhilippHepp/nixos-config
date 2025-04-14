@@ -20,7 +20,7 @@
     messaging
     music
     neovim
-    oh-my-posh
+    oh-my-zsh
     productivity
     terminal
     theming

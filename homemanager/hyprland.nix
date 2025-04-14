@@ -2,6 +2,7 @@
   pkgs,
   monitor,
   dotfiles,
+  theme,
   kb_layout,
   ...
 }:
@@ -46,6 +47,7 @@
       ];
 
       exec-once = [
+        "hyperctl hyprpaper reload ,'${dotfiles}/nix/assets/wallpapers/${theme.wallpaper}'"
         "xrandr --output DP-1 --primary"
         # "hyprctl setcursor BreezeX-RosePine-Linux 24"
         "openrgb -p ${dotfiles}/OpenRGB/Main.orp"

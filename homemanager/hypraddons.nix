@@ -1,4 +1,4 @@
-{ username, ... }:
+{ dotfiles, theme, ... }:
 {
   services = {
     hypridle = {
@@ -20,6 +20,9 @@
     hyprpaper = {
       enable = true;
       settings = {
+        preload = "${dotfiles}/nix/assets/wallpapers/${theme.wallpaper}";
+        wallpaper = "${dotfiles}/nix/assets/wallpapers/${theme.wallpaper}";
+
         # wallpaper = "/home/${username}/Images/Eldritch-Island-Vista.webp";
       };
     };
