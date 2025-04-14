@@ -27,7 +27,11 @@
       lg = "lazygit";
       v = "nvim";
       ls = "eza -a --icons=auto";
-      # zz = "eza -aTL 3 --icons";
+      lS = "eza -l -ssize";
+      ll = "eza -l";
+      lD = "eza -lD";
+      lDD = "eza -laD";
+
       ff = "fastfetch";
       #rust = "nix develop ${dotfiles}/nix#rust -c zsh";
       sp = "spotify_player";

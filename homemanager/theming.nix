@@ -27,7 +27,7 @@ in
         applications = 13;
         desktop = 12;
         popups = 12;
-        terminal = 13;
+        terminal = 16;
       };
       # nerd-fonts.iosevka-term-slab
       # nerd-fonts.bigblue-terminal

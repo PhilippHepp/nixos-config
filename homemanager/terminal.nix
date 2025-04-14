@@ -53,4 +53,9 @@
     enable = true;
     defaultEditor = true;
   };
+
+  programs.thefuck = {
+    enable = true;
+    enableZshIntegration = true;
+  };
 }
