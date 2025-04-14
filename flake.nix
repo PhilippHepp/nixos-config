@@ -13,9 +13,6 @@
 
     # obsidian-nvim.url = "github:epwalsh/obsidian.nvim";
 
-    ironbar.url = "github:JakeStanger/ironbar";
-    ironbar.inputs.nixpkgs.follows = "nixpkgs";
-
     nvf.url = "github:notashelf/nvf";
     nvf.inputs.nixpkgs.follows = "nixpkgs";
     # nvf.inputs.obsidian-nvim.follows = "obsidian-nvim";

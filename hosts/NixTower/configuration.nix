@@ -7,63 +7,33 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     inputs.disko.nixosModules.disko
-
-    # System
-    networking
     bootloader
     disko
-    user
-    nvidia
-    locales
-    hardwarecontrol
-
-    # Programs
-    terminalbase
-    steam
-
-    # Modules
-    sound
     displaymanager
-    windowmanager
     gc
+    hardwarecontrol
+    locales
+    networking
+    nvidia
+    sound
+    steam
+    terminalbase
+    user
+    windowmanager
   ];
 
   environment.systemPackages = with pkgs; [
     # Programs
-    (blender.override { cudaSupport = true; })
-    nixpkgs-fmt
-    nixfmt-rfc-style
-    alejandra
     xorg.xrandr
-    brave
     nemo
-    xfce.thunar
-    kdePackages.dolphin
     hyprpicker
-    vesktop
-    spotify-player
-    prismlauncher
-    obsidian
     geeqie
-    yazi
-    networkmanagerapplet
-    brightnessctl
-    inputplumber
     haruna
-    libsForQt5.qt5ct
-    qt6ct
-    bemenu
     toipe
-    bat
     ascii-image-converter
     wordgrinder
     asciiquarium
-    # steam
-    steam
-    lutris
-    protonup-qt
-    (flameshot.override { enableWlrSupport = true; })
-    # Other
+    # WARN: Do not remove:
     home-manager
   ];
 

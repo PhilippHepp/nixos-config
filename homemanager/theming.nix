@@ -10,6 +10,7 @@
   stylix = {
     enable = true;
     autoEnable = true;
+
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme.colorscheme}.yaml";
     cursor = {
       name = "${theme.cursor}";
@@ -36,7 +37,6 @@
       lazygit.enable = false;
       rofi.enable = false;
       qt.enable = false;
-      gtk.enable = true;
     };
   };
   home.packages = with pkgs; [
@@ -51,13 +51,8 @@
   gtk = {
     enable = true;
 
-    # cursorTheme.name = "Bibata-Modern-Ice";
-    # cursorTheme.package = pkgs-stable.bibata-cursors;
-    # cursorTheme.name = "BreezeX-RosePine-Linux";
-    # cursorTheme.package = pkgs.rose-pine-cursor;
-
-    # iconTheme.name = "Papirus-Dark";
-    # iconTheme.package = pkgs.catppuccin-papirus-folders.override { flavor = "macchiato"; };
+    iconTheme.name = "Papirus-Dark";
+    iconTheme.package = pkgs.catppuccin-papirus-folders.override { flavor = "macchiato"; };
     # iconTheme.name = "Rose-Pine";
     # iconTheme.package = pkgs.rose-pine-icon-theme;
 

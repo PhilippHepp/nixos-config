@@ -32,7 +32,7 @@ rec {
   # Theming & Appearance
   theme = {
     cursor = "BreezeX-RosePine-Linux";
-    colorscheme = "rose-pine-moon"; # For Stylix base16Scheme
+    colorscheme = "vesper"; # For Stylix base16Scheme
     font = "IosevkaTermSlab";
   };
   wallpaperPath = "/home/${username}/Pictures/Wallpapers/current.png";

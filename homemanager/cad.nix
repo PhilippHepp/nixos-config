@@ -1,7 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
-    # (blender.override {cudaSupport = true;})
+    (blender.override { cudaSupport = true; })
     krita
   ];
 

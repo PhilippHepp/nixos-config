@@ -17,14 +17,10 @@
       search.engines."Nix Packages" = {
         urls = [
           {
-            template = "https://mynixos.com/search?q=";
+            template = "https://mynixos.com/search?";
             params = [
               {
-                name = "type";
-                value = "packages";
-              }
-              {
-                name = "query";
+                name = "q";
                 value = "{searchTerms}";
               }
             ];

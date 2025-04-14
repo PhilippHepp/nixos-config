@@ -1,7 +1,5 @@
-{ pkgs, inputs, ... }:
+{ pkgs, ... }:
 {
-  imports = [ inputs.ironbar.homeManagerModules.ironbar ];
-
   programs.rofi = {
     enable = true;
     terminal = "${pkgs.kitty}/bin/kitty";
@@ -12,11 +10,9 @@
     location = "center";
     theme = "arthur";
   };
-  programs.ironbar = {
+  programs.eww = {
     enable = true;
-    systemd.enable = true;
-    settings = {
-    };
+    enableZshIntegration = true;
   };
   home.packages = [ pkgs.libqalculate ];
 }

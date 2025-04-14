@@ -38,5 +38,6 @@
     protonup-qt
     wine
     winetricks
+    prismlauncher
   ];
 }

@@ -6,25 +6,26 @@
 }:
 {
   imports = with inputs.self.homeManagerModules; [
-    cad
     browser
+    cad
     files
     gaming
-    oh-my-posh
     git
-    hyprland
-    theming
     hypraddons
-    terminal
-    neovim
-    music
-    latex
+    hyprland
     kde
+    latex
+    launcher
     media
     messaging
+    music
+    neovim
+    oh-my-posh
+    productivity
+    terminal
+    theming
     tuis
     zsh
-    launcher
   ];
 
   home = {
