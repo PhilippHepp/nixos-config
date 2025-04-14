@@ -2,10 +2,11 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = [
     inputs.nvf.homeManagerModules.nvf
-    # TODO home/philipp/.config/nix/hm/vimbinds.nix
+    ./vimbinds.nix
   ];
 
   programs.nvf = {
@@ -44,7 +45,13 @@
           enableFormat = true;
           enableTreesitter = true;
 
-          nix.enable = true;
+          nix = {
+            enable = true;
+            format.package = pkgs.nixfmt-rfc-style;
+            format.type = "nixfmt";
+            lsp.server = "nixd";
+            treesitter.enable = true;
+          };
           markdown.enable = true;
           bash.enable = true;
           lua.enable = true;
@@ -100,7 +107,11 @@
         telescope = {
           enable = true;
           setupOpts.defaults = {
-            file_ignore_patterns = ["out/" "build/" ".git/"];
+            file_ignore_patterns = [
+              "out/"
+              "build/"
+              ".git/"
+            ];
           };
         };
         git = {
@@ -175,7 +186,10 @@
               nix = "110";
               ruby = "120";
               java = "130";
-              go = ["90" "130"];
+              go = [
+                "90"
+                "130"
+              ];
             };
           };
           fastaction.enable = true;
@@ -190,7 +204,9 @@
             package = vimtex;
             setup = ''vim.g.vimtex_view_method = "zathura"'';
           };
-          img-clip = {package = img-clip-nvim;};
+          img-clip = {
+            package = img-clip-nvim;
+          };
         };
       };
     };

@@ -15,4 +15,7 @@
       ];
     };
   };
+  services.hyprpaper = {
+    enable = true;
+  };
 }

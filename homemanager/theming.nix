@@ -3,24 +3,40 @@
   pkgs,
   theme,
   ...
-}: {
-  imports = [inputs.stylix.homeManagerModules.stylix];
+}:
+{
+  imports = [ inputs.stylix.homeManagerModules.stylix ];
 
   stylix = {
     enable = true;
     autoEnable = true;
     base16Scheme = "${pkgs.base16-schemes}/share/themes/${theme.colorscheme}.yaml";
+    cursor = {
+      name = "${theme.cursor}";
+      size = 24;
+      package = pkgs.rose-pine-cursor;
+    };
+    fonts = {
+      # nerd-fonts.iosevka-term-slab
+      # nerd-fonts.bigblue-terminal
+      # nerd-fonts.fira-code
+      # nerd-fonts.zed-mono
+      monospace = {
+        name = "IosevkaTermSlab Nerd Font";
+        package = pkgs.nerd-fonts.iosevka-term-slab;
+      };
+    };
     targets = {
       firefox = {
-        profileNames = ["philipp"];
+        profileNames = [ "philipp" ];
         colorTheme.enable = true;
       };
-      hyprland.hyprpaper.enable = true;
+      # hyprland.hyprpaper.enable = true;
       kitty.variant256Colors = true;
       lazygit.enable = false;
       rofi.enable = false;
       qt.enable = false;
-      gtk.enable = false;
+      gtk.enable = true;
     };
   };
   home.packages = with pkgs; [
@@ -37,17 +53,17 @@
 
     # cursorTheme.name = "Bibata-Modern-Ice";
     # cursorTheme.package = pkgs-stable.bibata-cursors;
-    cursorTheme.name = "BreezeX-RosePine-Linux";
-    cursorTheme.package = pkgs.rose-pine-cursor;
+    # cursorTheme.name = "BreezeX-RosePine-Linux";
+    # cursorTheme.package = pkgs.rose-pine-cursor;
 
-    iconTheme.name = "Papirus-Dark";
-    iconTheme.package = pkgs.catppuccin-papirus-folders.override {flavor = "macchiato";};
+    # iconTheme.name = "Papirus-Dark";
+    # iconTheme.package = pkgs.catppuccin-papirus-folders.override { flavor = "macchiato"; };
     # iconTheme.name = "Rose-Pine";
     # iconTheme.package = pkgs.rose-pine-icon-theme;
 
     # theme.name = "catppuccin-macchiato-blue-standard";
     # theme.package = pkgs-stable.catppuccin-gtk.override {inherit variant;};
-    theme.name = "rose-pine-moon";
-    theme.package = pkgs.rose-pine-gtk-theme;
+    # theme.name = "rose-pine-moon";
+    # theme.package = pkgs.rose-pine-gtk-theme;
   };
 }

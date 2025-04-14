@@ -3,7 +3,8 @@
   username,
   shell,
   ...
-}: {
+}:
+{
   users.users.${username} = {
     isNormalUser = true;
     description = username;
@@ -16,6 +17,6 @@
     ];
     shell = pkgs.${shell};
     initialPassword = "qwertz";
-    openssh.authorizedKeys.keys = [];
+    openssh.authorizedKeys.keys = [ ];
   };
 }

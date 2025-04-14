@@ -2,7 +2,8 @@
   pkgs,
   dotfiles,
   ...
-}: {
+}:
+{
   programs.lf = {
     enable = true;
     keybindings = {
@@ -30,8 +31,7 @@
     # full-border = "${yazi-plugins}/full-border.yazi";
     # toggle-pane = "${yazi-plugins}/toggle-pane.yazi";
     # };
-    initLua = ''
-    '';
+    initLua = '''';
     keymap = {
       manager.prepend_keymap = [
       ];

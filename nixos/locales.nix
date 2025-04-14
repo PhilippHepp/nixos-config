@@ -3,9 +3,11 @@
   timezone,
   locales,
   ...
-}: let
+}:
+let
   secondary = "${locales.main}";
-in {
+in
+{
   services.xserver.xkb.layout = kb_layout;
 
   time.timeZone = timezone;

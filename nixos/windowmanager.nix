@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.hyprland.enable = true;
   services.hypridle.enable = true;
 
@@ -8,7 +9,7 @@
   };
 
   xdg.portal.enable = true;
-  xdg.portal.extraPortals = [pkgs.xdg-desktop-portal-hyprland];
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-hyprland ];
 
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true;

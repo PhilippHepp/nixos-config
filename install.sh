@@ -1,4 +1,4 @@
-set -e
+set -e -x
 
 printf "Make sure you have the right disk selected!\nFlake:\t%s\nDisk:\t%s\n\n" "$1" "$2"
 

@@ -3,8 +3,9 @@
   pkgs,
   nvidiaPackage,
   ...
-}: {
-  services.xserver.videoDrivers = ["nvidia"];
+}:
+{
+  services.xserver.videoDrivers = [ "nvidia" ];
 
   hardware = {
     nvidia = {
@@ -26,7 +27,7 @@
   };
   environment.systemPackages = with pkgs; [
     libva-utils
-    nvtop-nvidia
+    nvtopPackages.nvidia
     egl-wayland
     vdpauinfo
     vulkan-loader
@@ -36,7 +37,10 @@
     # libGL
   ];
 
-  boot.kernelParams = ["nvidia_drm.modeset=1" "nvidia.NVreg_PreserveVideoMemoryAllocations=1"];
+  boot.kernelParams = [
+    "nvidia_drm.modeset=1"
+    "nvidia.NVreg_PreserveVideoMemoryAllocations=1"
+  ];
 
   environment.variables = {
     GBM_BACKEND = "nvidia-drm";

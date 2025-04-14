@@ -2,7 +2,8 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     inputs.disko.nixosModules.disko
@@ -14,6 +15,7 @@
     user
     nvidia
     locales
+    hardwarecontrol
 
     # Programs
     terminalbase
@@ -28,7 +30,7 @@
 
   environment.systemPackages = with pkgs; [
     # Programs
-    (blender.override {cudaSupport = true;})
+    (blender.override { cudaSupport = true; })
     nixpkgs-fmt
     nixfmt-rfc-style
     alejandra
@@ -60,7 +62,7 @@
     steam
     lutris
     protonup-qt
-    (flameshot.override {enableWlrSupport = true;})
+    (flameshot.override { enableWlrSupport = true; })
     # Other
     home-manager
   ];

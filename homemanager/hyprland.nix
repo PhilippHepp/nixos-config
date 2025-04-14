@@ -4,7 +4,8 @@
   dotfiles,
   kb_layout,
   ...
-}: {
+}:
+{
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland = {
     xwayland.enable = true;
@@ -18,10 +19,6 @@
         "XDG_CURRENT_DESKTOP,Hyprland"
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
-        # "XCURSOR_THEME,Bibata-Modern-Ice"
-        # "XCURSOR_SIZE, 24"
-        # "HYPRCURSOR_THEME,Bibata-Modern-Ice"
-        # "HYPRCURSOR_SIZE,24"
         "QT_QPA_PLATFORM,wayland"
         "XDG_SCREENSHOTS_DIR,~/screenshots"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
@@ -49,17 +46,16 @@
       ];
 
       exec-once = [
-        "hyprctl setcursor BreezeX-RosePine-Linux 24"
-        "eww open -c ${dotfiles}/eww/bar bar"
-        "swww init"
+        "xrandr --output DP-1 --primary"
+        # "hyprctl setcursor BreezeX-RosePine-Linux 24"
         "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
-        "mangohud steam"
+        # "mangohud steam"
       ];
 
       exec = [
-        "swww img ~/home/philipp/Images/Signalis-RosePine-Wallpaper.png"
+        # "swww img ~/home/philipp/Images/Signalis-RosePine-Wallpaper.png"
       ];
 
       cursor = {

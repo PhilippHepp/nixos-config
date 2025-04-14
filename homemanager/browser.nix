@@ -4,7 +4,8 @@
   inputs,
   system,
   ...
-}: {
+}:
+{
   programs.firefox = {
     enable = true;
     languagePacks = [
@@ -30,7 +31,7 @@
           }
         ];
         icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-        definedAliases = ["@nix"];
+        definedAliases = [ "@nix" ];
       };
       search.force = true;
       extensions.force = true;
@@ -47,7 +48,7 @@
     enable = true;
     package = pkgs.brave;
     extensions = [
-      {id = "cjpalhdlnbpafiamejdnhcphjbkeiagm";} # ublock origin
+      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
     ];
     commandLineArgs = [
       "--disable-features=WebRtcAllowInputVolumeAdjustment"

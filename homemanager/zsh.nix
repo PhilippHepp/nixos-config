@@ -1,28 +1,25 @@
+{ dotfiles, ... }:
 {
-  dotfiles,
-  shellPrompt,
-  ...
-}: {
   programs.zsh = {
     enable = true;
     enableCompletion = true;
     autosuggestion.enable = true;
     dotDir = ".config/zsh";
     shellAliases = {
-      update-flake = "nix flake update ${dotfiles}/nix";
+      update-flake = "nix flake update --flake ${dotfiles}/nix";
       rb = "sudo nixos-rebuild switch --flake ${dotfiles}/nix";
       rbt = "sudo nixos-rebuild test --flake ${dotfiles}/nix";
       rbb = "sudo nixos-rebuild boot --flake ${dotfiles}/nix";
       update = ''
         echo "Updating flake inputs..."
-        nix flake update ${dotfiles}/nix && \
+        nix flake update --flake ${dotfiles}/nix && \
         echo "Rebuilding system (switch)..." && \
         sudo nixos-rebuild switch --flake ${dotfiles}/nix
         echo "Update and rebuild complete."
       '';
       updatet = ''
         echo "Updating flake inputs..."
-        nix flake update ${dotfiles}/nix && \
+        nix flake update --flake ${dotfiles}/nix && \
         echo "Testing system build..." && \
         sudo nixos-rebuild test --flake ${dotfiles}/nix
         echo "Update and test complete."

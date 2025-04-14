@@ -1,4 +1,8 @@
-{drive ? "/dev/nvme0n1", ...}: {
+{
+  drive ? "/dev/nvme0n1",
+  ...
+}:
+{
   disko.devices.disk.main = {
     device = drive;
     type = "disk";
@@ -12,7 +16,7 @@
             type = "filesystem";
             format = "vfat";
             mountpoint = "/boot";
-            mountOptions = ["umask=0077"];
+            mountOptions = [ "umask=0077" ];
           };
         };
         root = {

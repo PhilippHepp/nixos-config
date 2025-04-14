@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services.hardware.openrgb = {
     enable = true;
   };
@@ -9,7 +10,7 @@
   environment.systemPackages = with pkgs; [
     inputplumber
     brightnessctl
-    lsusb
+    usbutils
     pciutils
     lm_sensors
   ];

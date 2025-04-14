@@ -3,7 +3,8 @@
   username,
   lib,
   ...
-}: {
+}:
+{
   imports = with inputs.self.homeManagerModules; [
     cad
     browser

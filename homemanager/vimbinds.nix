@@ -1,12 +1,12 @@
 {
-  config.vim = {
+  programs.nvf.settings.vim = {
     comments.comment-nvim.mappings = {
       toggleCurrentBlock = "gbc";
       toggleCurrentLine = "gcc";
     };
 
     lsp.mappings = {
-      hover = "<S-k>";
+      hover = "<S-f>";
     };
 
     autocomplete.nvim-cmp.mappings = {

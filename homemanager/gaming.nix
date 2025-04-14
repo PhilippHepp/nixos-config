@@ -1,10 +1,11 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.mangohud = {
     enable = true;
     # enableSessionWide = true;
     settings = {
       gpu_text = "GPU";
-      gpu_list = [0];
+      gpu_list = [ 0 ];
       gpu_stats = true;
       gpu_temp = true;
       gpu_power = true;
