@@ -59,7 +59,7 @@
       qt.enable = false;
     };
   };
-  stylix.image = "${dotfiles}/nix/hosts/NixTower/Eldritch-Island-Vista.webp";
+  stylix.image = "${dotfiles}/nix/Eldritch-Island-Vista.webp";
   home.packages = with pkgs; [
     libsForQt5.qt5ct
     qt6ct
