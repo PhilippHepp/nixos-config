@@ -19,7 +19,7 @@ in
     base16Scheme = scheme;
     cursor = {
       name = "${theme.cursor}";
-      size = 24;
+      size = 32;
       package = pkgs.rose-pine-cursor;
     };
     fonts = {
@@ -54,8 +54,8 @@ in
     opacity = {
       applications = 0.7;
       desktop = 0.7;
-      popups = 0.7;
-      terminal = 0.7;
+      popups = 0.5;
+      terminal = 0.5;
     };
     targets = {
       firefox = {
@@ -68,7 +68,6 @@ in
       rofi.enable = false;
       qt.enable = false;
       gnome.enable = false;
-      kde.enable = false;
     };
   };
   home.packages = with pkgs; [

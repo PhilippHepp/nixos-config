@@ -21,7 +21,6 @@
         "XDG_SESSION_TYPE,wayland"
         "XDG_SESSION_DESKTOP,Hyprland"
         "QT_QPA_PLATFORM,wayland"
-        "XDG_SCREENSHOTS_DIR,~/screenshots"
         "ELECTRON_OZONE_PLATFORM_HINT,auto"
       ];
 
@@ -41,13 +40,18 @@
         "move 1214 671, title:^(Picture in picture)$"
         "noinitialfocus, title:^(Picture in picture)$"
 
+        "float, class:^(Rofi)$"
+        "stayfocused, class:^(Rofi)$"
+        "noborder, class:^(Rofi)$"
+
         #"float, ^(org.pulseaudio.pavucontrol)$"
 
         #"float, ^(.blueman-manager-wrapped)"
       ];
 
       exec-once = [
-        "hyperctl hyprpaper reload ,'${dotfiles}/nix/assets/wallpapers/${theme.wallpaper}'"
+        "hyprpaper"
+        "hyprlock || hyprctl dispatch exit"
         "xrandr --output DP-1 --primary"
         # "hyprctl setcursor BreezeX-RosePine-Linux 24"
         "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
@@ -58,6 +62,7 @@
 
       exec = [
         # "swww img ~/home/philipp/Images/Signalis-RosePine-Wallpaper.png"
+        ''hyperctl hyprpaper reload ,"${dotfiles}/nix/assets/wallpapers/${theme.wallpaper}"''
       ];
 
       cursor = {
@@ -157,11 +162,11 @@
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy" # Clipboard
         "$mainMod, C, exec, rofi -show calc -no-history"
         # Color Picker
-        "$mainMod, P, exec, hyprpicker -a -f hex"
+        "$mainMod, I, exec, hyprpicker -a -f hex"
 
         # Spotify
         "$mainMod, S, exec, kitty -e spotify_player"
-        "$mainMod SHIFT, S, exec, ${pkgs.flameshot}/bin/flameshot gui"
+        "$mainMod SHIFT, S, exec, hyprshot -m region -z "
         # ''$mainMod SHIFT, S, exec, grim -g "$(slurp -w 0)" $XDG_SCREENSHOTS_DIR/$(date +'%s.png)''
 
         "$mainMod, Q, killactive,"
@@ -169,6 +174,8 @@
         "$mainMod, F, togglefloating,"
         "$mainMod, J, togglesplit, # dwindle"
         "$mainMod, G, fullscreen"
+        "$mainMod, L, exec, hyprlock"
+        "$mainMod, P, exec, systemctl suspend"
 
         # Move focus with mainMod + arrow keys
         "$mainMod, left,  movefocus, l"
@@ -187,6 +194,10 @@
         "$mainMod CTRL, right, resizeactive,  60 0"
         "$mainMod CTRL, up,    resizeactive,  0 -60"
         "$mainMod CTRL, down,  resizeactive,  0  60"
+
+        #Switch workspaces with mainMod + scrollwheel
+        "$mainMod, mouse_down, exec, hyprnome"
+        "$mainMod, mouse_up, exec, hyprnome --previous"
 
         # Switch workspaces with mainMod + [0-9]
         "$mainMod, 1, workspace, 1"

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, username, ... }:
 {
   programs.hyprland.enable = true;
   services.hypridle.enable = true;
@@ -6,6 +6,7 @@
   environment.sessionVariables = {
     WLR_NO_HARDWARE_CURSORS = "1";
     NIXOS_OZONE_WL = "1";
+    HYPRSHOT_DIR = "/home/${username}/Images/Screenshots";
   };
 
   xdg.portal.enable = true;

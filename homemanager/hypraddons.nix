@@ -1,4 +1,10 @@
-{ dotfiles, theme, ... }:
+{
+  dotfiles,
+  theme,
+  config,
+  pkgs,
+  ...
+}:
 {
   services = {
     hypridle = {
@@ -27,4 +33,40 @@
       };
     };
   };
+  programs.hyprlock = {
+    enable = true;
+    settings = {
+      general = {
+        grace = 0;
+        hide_cursor = true;
+      };
+      input-field = {
+        size = "400, 100";
+        position = "0, 0";
+        monitor = "DP-1";
+        dots_center = true;
+        fade_on_empty = false;
+        placeholder_text = "#ACHTUNG ACHTUNG";
+        fail_text = "<i>$FAIL <b>($ATTEMPTS)</b></i>";
+        numlock_color = "rgb(${config.lib.stylix.colors.base0C})";
+        font_family = "IosevkaTermSlab Nerd Font";
+        outline_thickness = 5;
+        shadow_passes = 2;
+      };
+
+    };
+  };
+  services.wlsunset = {
+    enable = true;
+    temperature = {
+      day = 6400;
+      night = 3200;
+    };
+    latitude = 53;
+    longitude = 9;
+  };
+  home.packages = with pkgs; [
+    hyprshot
+    hyprnome
+  ];
 }

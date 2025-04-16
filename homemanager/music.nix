@@ -7,5 +7,10 @@
   };
   home.packages = with pkgs; [
     spotify-player
+    cmus
+    cava
+    cli-visualizer
+    musescore
+    dl-librescore
   ];
 }

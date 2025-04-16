@@ -1,6 +1,7 @@
 {
   inputs,
   pkgs,
+  username,
   ...
 }:
 {
@@ -47,7 +48,6 @@
 
           nix = {
             enable = true;
-            format.package = pkgs.nixfmt-rfc-style;
             format.type = "nixfmt";
             lsp.server = "nixd";
             treesitter.enable = true;
@@ -66,8 +66,7 @@
           nvim-cursorline.enable = true;
           cinnamon-nvim.enable = true;
           fidget-nvim.enable = true;
-
-          highlight-undo.enable = true;
+          # highlight-undo.enable = true;
           indent-blankline.enable = true;
 
           # Fun
@@ -156,7 +155,16 @@
           };
         };
         notes = {
-          obsidian.enable = false; # FIXME: neovim fails to build if obsidian is enabled
+          obsidian = {
+            enable = true;
+            setupOpts = {
+              dir = "/home/philipp/Documents/vaults/nixos";
+            };
+            completion = {
+              nvim_cmp = true;
+            };
+          };
+
           neorg.enable = false;
           orgmode.enable = false;
           mind-nvim.enable = true;
