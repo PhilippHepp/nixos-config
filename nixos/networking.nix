@@ -7,6 +7,10 @@
   networking.networkmanager.enable = true;
   networking.hostName = hostname;
 
+  services.cloudflare-warp = {
+    enable = true;
+  };
+
   environment.systemPackages = with pkgs; [
     networkmanagerapplet
     speedtest-cli

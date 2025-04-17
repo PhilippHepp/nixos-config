@@ -52,7 +52,15 @@
             lsp.server = "nixd";
             treesitter.enable = true;
           };
-          markdown.enable = true;
+          markdown = {
+            enable = true;
+            extensions = {
+              render-markdown-nvim.enable = true;
+            };
+            format.enable = true;
+            lsp.enable = true;
+            treesitter.enable = true;
+          };
           bash.enable = true;
           lua.enable = true;
           python = {
@@ -143,7 +151,11 @@
           surround.enable = true;
           leetcode-nvim.enable = true;
           multicursors.enable = true;
-          preview.markdownPreview.enable = true;
+          preview.markdownPreview = {
+            enable = true;
+            autoStart = true;
+            lazyRefresh = true;
+          };
 
           motion = {
             hop.enable = true;
@@ -159,9 +171,7 @@
             enable = true;
             setupOpts = {
               dir = "/home/philipp/Documents/vaults/nixos";
-            };
-            completion = {
-              nvim_cmp = true;
+              completion.nvim_cmp = true;
             };
           };
 
