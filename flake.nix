@@ -53,6 +53,6 @@
 
       nixosConfigurations.nixtower = mkNixos ./hosts/NixTower;
       nixosConfigurations.nixserver = mkNixos ./hosts/NixServer;
-      nixosConfigurations.nixvm = mkNixos ./hosts/NixVM;
+      nixosConfigurations.nixwsl = mkNixos ./hosts/NixWSL;
     };
 }
