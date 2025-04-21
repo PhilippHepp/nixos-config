@@ -51,8 +51,10 @@
       nixosModules = buildModules ./nixos;
       homeManagerModules = buildModules ./homemanager;
 
-      nixosConfigurations.nixtower = mkNixos ./hosts/NixTower;
-      nixosConfigurations.nixserver = mkNixos ./hosts/NixServer;
-      nixosConfigurations.nixwsl = mkNixos ./hosts/NixWSL;
+      nixosConfigurations = {
+        nixtower = mkNixos ./hosts/NixTower;
+        nixserver = mkNixos ./hosts/NixServer;
+        nixwsl = mkNixos ./hosts/NixWSL;
+      };
     };
 }

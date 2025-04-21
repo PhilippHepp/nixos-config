@@ -33,14 +33,14 @@
     ascii-image-converter
     wordgrinder
     asciiquarium
-    # WARN: Do not remove:
+    #  WARN: Do not remove:
     home-manager
   ];
 
   fileSystems = {
     "/home/philipp/Arch" = {
-      device = "dev/disk/by-uuid/e94e7cb8-e2db-43cc-bb8e-2b607905ab76";
-      fsType = "ext4";
+      device = "dev/disk/by-uuid/3E40DDEE40DDAD41";
+      fsType = "ntfs-3g";
       options = [
         "users"
         "nofail"

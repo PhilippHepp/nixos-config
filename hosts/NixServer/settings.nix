@@ -1,11 +1,30 @@
 rec {
-    hostname = "zenith";
-    system = "x86_64-linux";
-    username = "donielmaker";
-    mail = "daniel.schmidt0204@gmail.com";
-    dotfiles = "/home/${username}/.config";
-    kb_layout = "us";
-    monitor = ", 2560x1440@144hz, auto, 1";
-    timezone = "Europe/Berlin";
-    drive = "/dev/nvme0n1";
+  hostname = "nixserver";
+  system = "x86_64-linux";
+  timezone = "Europe/Berlin";
+
+  username = "admin";
+  mail = "philipp.hepp7@gmail.com";
+  shell = "zsh";
+
+  dotfiles = "/home/${username}/.config";
+
+  userSSHKeys = [
+
+  ];
+
+  locales = {
+    main = "en_US.UTF-8";
+    extra = "de_DE.UTF-8";
+  };
+
+  mydrive = "/dev/nvme0n1";
+  swapSize = "16G";
+  kb_layout = "de";
+  monitor = [
+  ];
+
+  nvidiaPackage = "latest";
+
+  shellPrompt = "";
 }

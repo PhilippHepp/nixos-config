@@ -1,17 +1,17 @@
 {
-  drive ? "/dev/nvme0n1",
+  mydrive,
   ...
 }:
 {
   disko.devices.disk.main = {
-    device = drive;
+    device = mydrive;
     type = "disk";
     content = {
       type = "gpt";
       partitions = {
         ESP = {
           type = "EF00";
-          size = "500M";
+          size = "1000M";
           content = {
             type = "filesystem";
             format = "vfat";

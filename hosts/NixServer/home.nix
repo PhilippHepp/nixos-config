@@ -1,24 +1,23 @@
-{ inputs, username, lib, ... }:
+{
+  inputs,
+  username,
+  lib,
+  ...
+}:
 
 {
-    imports = with inputs.self.homeManagerModules; [
-        rofi
-        oh-my-posh
-        zsh
-        neovim
-        git
-        hyprland
-        themes
-        zsh
-        git
-        hypridle
-        kitty
-        flameshot
-    ];
+  imports = with inputs.self.homeManagerModules; [
+    git
+    neovim
+    oh-my-zsh
+    terminal
+    vimbinds
+    zsh
+  ];
 
-    home = {
-        inherit username;
-        homeDirectory = lib.mkForce "/home/${username}";
-        stateVersion = "24.11";
-    };
+  home = {
+    inherit username;
+    homeDirectory = lib.mkForce "/home/${username}";
+    stateVersion = "24.11";
+  };
 }
