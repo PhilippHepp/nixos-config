@@ -1,5 +1,5 @@
 {
-  mydrive,
+  mydrive ? "/dev/nvme0n1",
   ...
 }:
 {
