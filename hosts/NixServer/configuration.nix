@@ -11,6 +11,7 @@
     inputs.disko.nixosModules.disko
     bootloader
     disko
+    docker
     gc
     hardwarecontrol
     locales
