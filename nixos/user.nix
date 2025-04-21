@@ -16,7 +16,7 @@
       "audio"
       "input"
       "video"
-    ] ++ lib.mkIf config.virtualisation.docker.enable [ "docker" ];
+    ] ++ [ "docker" ];
     shell = pkgs.${shell};
     initialPassword = "qwertz";
     openssh.authorizedKeys.keys = [ ];
