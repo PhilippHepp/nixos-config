@@ -18,6 +18,7 @@
     vim
     kitty
     neovim
+    geeqie
     git
     fd
     fzf

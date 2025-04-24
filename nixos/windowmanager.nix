@@ -21,5 +21,7 @@
     xwayland
     wl-clipboard
     cliphist
+    xorg.xrandr
+
   ];
 }

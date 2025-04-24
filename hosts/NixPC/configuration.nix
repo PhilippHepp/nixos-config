@@ -14,9 +14,9 @@
     hardwarecontrol
     locales
     networking
-    nvidia
+    # nvidia
     sound
-    steam
+    # steam
     terminalbase
     user
     windowmanager
@@ -24,39 +24,18 @@
 
   environment.systemPackages = with pkgs; [
     # Programs
-    toipe
-    ascii-image-converter
+    # toipe
+    # ascii-image-converter
     #  WARN: Do not remove:
     home-manager
   ];
-
-  fileSystems = {
-    "/home/philipp/Arch" = {
-      device = "dev/disk/by-uuid/3E40DDEE40DDAD41";
-      fsType = "ntfs-3g";
-      options = [
-        "users"
-        "nofail"
-        "exec"
-      ];
-    };
-    "/home/philipp/HDD" = {
-      device = "dev/disk/by-uuid/24AC6C57AC6C2610";
-      fsType = "ntfs-3g";
-      options = [
-        "users"
-        "nofail"
-        "exec"
-      ];
-    };
-  };
 
   boot.supportedFilesystems.ntfs = true;
 
   swapDevices = [
     {
       device = "/swapfile";
-      size = 17 * 1024; # 16GB
+      size = 16 * 1024; # 16GB
     }
   ];
 

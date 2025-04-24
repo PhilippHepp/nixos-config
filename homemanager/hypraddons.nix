@@ -83,5 +83,6 @@
   home.packages = with pkgs; [
     hyprshot
     hyprnome
+    hyprpicker
   ];
 }

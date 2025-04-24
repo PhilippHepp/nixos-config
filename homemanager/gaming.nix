@@ -39,5 +39,6 @@
     wine
     winetricks
     prismlauncher
+    xorg.xrandr
   ];
 }

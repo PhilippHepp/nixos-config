@@ -1,6 +1,7 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    asciiquarium-transparent
     astroterm
     cbonsai
     chess-tui
