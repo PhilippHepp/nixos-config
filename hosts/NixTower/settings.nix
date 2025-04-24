@@ -24,7 +24,7 @@ rec {
   monitor = [
     # Hyprland monitor config
     "DP-1, 2560x1080@144, 0x0, 1"
-    "HDMI-A-1, 1920x1080@60, 320x1080, 1"
+    "HDMI-A-1, 1920x1080@60, 320x1080, 1.25"
   ];
 
   # Nvidia Specifics

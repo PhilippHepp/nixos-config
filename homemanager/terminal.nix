@@ -4,7 +4,7 @@
     # CLI Tools
     bat
     btop
-    cargo
+    devenv
     eza
     fastfetch
     fd
@@ -14,30 +14,18 @@
     git
     htop
     imagemagick
-    jq
     lazygit
     lf
     nmap
-    nodejs
     openssl
     pkg-config
     ripgrep
-    rustc
     sysz
     tmux
     tree-sitter
     unzip
     vim
     zig
-
-    # LSP
-    bash-language-server
-    lua-language-server
-    marksman
-    nil
-    slint-lsp
-    tinymist
-    vscode-langservers-extracted
   ];
 
   programs.zoxide = {
