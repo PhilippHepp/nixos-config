@@ -73,11 +73,12 @@ in
   home.packages = with pkgs; [
     libsForQt5.qt5ct
     qt6ct
+    rose-pine-kvantum
   ];
   qt = {
     enable = true;
     platformTheme.name = "qt6ct";
-    style.name = "Fusion";
+    style.name = "rose-pine-kvantum";
   };
   gtk = {
     enable = true;

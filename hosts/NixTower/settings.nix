@@ -7,7 +7,7 @@ rec {
   # User Configuration
   username = "philipp";
   mail = "philipp.hepp7@gmail.com";
-  shell = "zsh"; # Or use string "zsh" and look up pkgs.${shell} in user.nix
+  shell = "fish"; # Or use string "zsh" and look up pkgs.${shell} in user.nix
   dotfiles = "/home/${username}/.config"; # Derived
 
   userSshKeys = [

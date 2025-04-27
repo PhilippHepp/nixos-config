@@ -30,11 +30,11 @@
 
   programs.zoxide = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
   };
   programs.kitty = {
     enable = true;
-    shellIntegration.enableZshIntegration = true;
+    shellIntegration.enableFishIntegration = true;
   };
 
   programs.neovim = {
@@ -44,6 +44,6 @@
 
   programs.thefuck = {
     enable = true;
-    enableZshIntegration = true;
+    enableFishIntegration = true;
   };
 }

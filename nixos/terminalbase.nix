@@ -1,6 +1,7 @@
 {
   pkgs,
   shellPrompt,
+  shell,
   ...
 }:
 {
@@ -9,9 +10,9 @@
     nerd-fonts.iosevka-term-slab
   ];
 
-  programs.zsh.enable = true;
-  programs.zsh.promptInit = "${shellPrompt}";
-  environment.pathsToLink = [ "/share/zsh" ];
+  programs.${shell}.enable = true;
+  programs.${shell}.promptInit = "${shellPrompt}";
+  environment.pathsToLink = [ "/share/${shell}" ];
 
   environment.systemPackages = with pkgs; [
     # CLI Tools
