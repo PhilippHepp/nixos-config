@@ -10,8 +10,8 @@
     nerd-fonts.iosevka-term-slab
   ];
 
-  programs.${shell}.enable = true;
-  programs.${shell}.promptInit = "${shellPrompt}";
+  programs.fish.enable = true;
+  programs.fish.promptInit = "${shellPrompt}";
   environment.pathsToLink = [ "/share/${shell}" ];
 
   environment.systemPackages = with pkgs; [

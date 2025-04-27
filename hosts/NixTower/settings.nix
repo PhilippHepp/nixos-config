@@ -36,8 +36,9 @@ rec {
     font = "IosevkaTermSlab";
     wallpaper = "Eldritch-Island-Vista.webp";
   };
-  # Application Settings
-  shellLogo = "yellow-sign.txt";
-  shellPrompt = "fastfetch -s OS:Font:Disk:Packages:Monitor:Memory -l /home/philipp/.config/nix/assets/logos/${shellLogo} --logo-color-1 yellow"; # Command for Zsh prompt
+
+  shellPrompt = "";
+  # shellLogo = "yellow-sign.txt";
+  # shellPrompt = "fastfetch -s OS:Font:Disk:Packages:Monitor:Memory -l /home/philipp/.config/nix/assets/logos/${shellLogo} --logo-color-1 yellow"; # Command for Zsh prompt
   sensitivity = -0.6;
 }
