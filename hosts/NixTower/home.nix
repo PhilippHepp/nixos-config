@@ -23,6 +23,7 @@
     neovim
     # oh-my-zsh
     productivity
+    starship
     terminal
     theming
     tuis

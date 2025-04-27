@@ -42,9 +42,13 @@
   home.packages = with pkgs.fishPlugins; [
     z
     fzf
-    bobthefisher
     plugin-git
     autopair
-
+    spark
   ];
+
+  programs.starship = {
+    enable = true;
+    enableFishIntegration = true;
+  };
 }
