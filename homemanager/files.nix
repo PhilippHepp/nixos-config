@@ -53,15 +53,6 @@ in
     };
   };
 
-  users.${username} = {
-    xdg.mimeApps = {
-      enable = true;
-      defaultApplications = {
-        "text/pdf" = "zathura";
-      };
-    };
-  };
-
   home.packages = with pkgs; [
     superfile
     nemo

@@ -7,9 +7,9 @@
     dotDir = ".config/zsh";
     shellAliases = {
       update-flake = "nix flake update --flake ${dotfiles}/nix";
-      rb = "sudo nixos-rebuild switch --flake ${dotfiles}/nix";
-      rbt = "sudo nixos-rebuild test --flake ${dotfiles}/nix";
-      rbb = "sudo nixos-rebuild boot --flake ${dotfiles}/nix";
+      rb = "sudo nh os switch ${dotfiles}/nix";
+      rbt = "sudo nh os test ${dotfiles}/nix";
+      rbb = "sudo nh os boot ${dotfiles}/nix";
       update = ''
         echo "Updating flake inputs..."
         nix flake update --flake ${dotfiles}/nix && \
