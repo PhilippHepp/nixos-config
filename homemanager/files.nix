@@ -1,50 +1,73 @@
 {
   pkgs,
-  dotfiles,
-  shell,
-  lib,
+  username,
   ...
 }:
+let
+  yazi-plugins = pkgs.fetchFromGitHub {
+    owner = "yazi-rs";
+    repo = "plugins";
+    rev = "864a0210d9ba1e8eb925160c2e2a25342031d8d3";
+    hash = "sha256-m3709h7/AHJAtoJ3ebDA40c77D+5dCycpecprjVqj/k=";
+  };
+in
 {
-  programs.lf = {
+  programs.yazi = {
     enable = true;
-    keybindings = {
-      # D = "trash";
-      gh = "cd ~";
-      df = "cd ${dotfiles}/nix";
+    shellWrapperName = "y";
+    enableZshIntegration = true;
+    settings = {
+      manager = {
+        show_hidden = true;
+      };
+      preview = {
+        max_width = 1000;
+        max_height = 1000;
+      };
+      opener = {
+
+      };
+    };
+    plugins = {
+      chmod = "${yazi-plugins}/chmod.yazi";
+      full-border = "${yazi-plugins}/full-border.yazi";
+      toggle-pane = "${yazi-plugins}/toggle-pane.yazi";
+    };
+    initLua = ''require("full-border"):setup()'';
+    keymap = {
+      manager.prepend_keymap = [
+        {
+          on = "T";
+          run = "plugin toggle-pane max-preview";
+          desc = "Maximize or restore the preview pane";
+        }
+        {
+          on = [
+            "c"
+            "m"
+          ];
+          run = "plugin chmod";
+          desc = "Chmod on selected files";
+        }
+      ];
     };
   };
-  programs.yazi =
-    {
+
+  users.${username} = {
+    xdg.mimeApps = {
       enable = true;
-      shellWrapperName = "y";
-      settings = {
-        manager = {
-          show_hidden = true;
-        };
-        preview = {
-          max_width = 1000;
-          max_height = 1000;
-        };
+      defaultApplications = {
+        "text/pdf" = "zathura";
       };
-      # FIX: find hash and rev values
-      # plugins = {
-      # chmod = "${yazi-plugins}/chmod.yazi";
-      # full-border = "${yazi-plugins}/full-border.yazi";
-      # toggle-pane = "${yazi-plugins}/toggle-pane.yazi";
-      # };
-      initLua = '''';
-      keymap = {
-        manager.prepend_keymap = [
-        ];
-      };
-    }
-    // lib.optionalAttrs (shell == "bash") { enableBashIntegration = true; }
-    // lib.optionalAttrs (shell == "zsh") { enableZshIntegration = true; }
-    // lib.optionalAttrs (shell == "fish") { enableFishIntegration = true; };
+    };
+  };
 
   home.packages = with pkgs; [
     superfile
     nemo
+    # Utils
+    zathura
+    imagemagick
+    resvg
   ];
 }

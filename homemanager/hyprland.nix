@@ -3,6 +3,7 @@
   monitor,
   dotfiles,
   theme,
+  username,
   kb_layout,
   ...
 }:
@@ -54,15 +55,17 @@
         "hyprlock || hyprctl dispatch exit"
         "xrandr --output DP-1 --primary"
         # "hyprctl setcursor BreezeX-RosePine-Linux 24"
-        "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
+        # "openrgb -p ${dotfiles}/OpenRGB/Main.orp"
+        "albert"
         "wl-paste --type text --watch cliphist store"
         "wl-paste --type image --watch cliphist store"
+        "eww -c ${dotfiles}/eww open bar"
         # "mangohud steam"
       ];
 
       exec = [
         # "swww img ~/home/philipp/Images/Signalis-RosePine-Wallpaper.png"
-        ''hyperctl hyprpaper reload ,"${dotfiles}/nix/assets/wallpapers/${theme.wallpaper}"''
+        ''hyperctl hyprpaper reload ,"/home/${username}/.config/nix/assets/wallpapers/${theme.wallpaper}"''
       ];
 
       cursor = {
@@ -157,7 +160,8 @@
         "$mainMod, E, exec, kitty -e yazi"
         "$mainMod, B, exec, ${pkgs.firefox}/bin/firefox"
         # Application Launcher
-        "$mainMod, space, exec, rofi -show drun -show-icons"
+        # "$mainMod, space, exec, rofi -show drun -show-icons"
+        "$mainMod, space, exec, albert toggle"
         # Clipboard History
         "$mainMod, V, exec, cliphist list | rofi -dmenu | cliphist decode | wl-copy" # Clipboard
         "$mainMod, C, exec, rofi -show calc -no-history"

@@ -15,6 +15,7 @@
 
     profiles.${username} = {
       search.engines."Nix Packages" = {
+        # TODO: Remove search engine, Albert's is sufficient
         urls = [
           {
             template = "https://mynixos.com/search?";
@@ -40,14 +41,7 @@
       ];
     };
   };
-  programs.chromium = {
-    enable = true;
-    package = pkgs.brave;
-    extensions = [
-      { id = "cjpalhdlnbpafiamejdnhcphjbkeiagm"; } # ublock origin
-    ];
-    commandLineArgs = [
-      "--disable-features=WebRtcAllowInputVolumeAdjustment"
-    ];
-  }; # TODO: add bombadillo
+  home.packages = with pkgs; [
+    bombadillo
+  ];
 }

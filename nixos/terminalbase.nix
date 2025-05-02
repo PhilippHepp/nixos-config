@@ -10,8 +10,8 @@
     nerd-fonts.iosevka-term-slab
   ];
 
-  programs.fish.enable = true;
-  programs.fish.promptInit = "${shellPrompt}";
+  programs.zsh.enable = true;
+  programs.zsh.promptInit = "${shellPrompt}";
   environment.pathsToLink = [ "/share/${shell}" ];
 
   environment.systemPackages = with pkgs; [
@@ -28,6 +28,7 @@
     ffmpeg
     pkg-config
     openssl
+    nodejs
     lf
   ];
 }

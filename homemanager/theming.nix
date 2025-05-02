@@ -3,6 +3,7 @@
   inputs,
   pkgs,
   theme,
+  lib,
   ...
 }:
 
@@ -62,23 +63,25 @@ in
         profileNames = [ "philipp" ];
         colorTheme.enable = true;
       };
-      hyprpaper.enable = false;
+      nvf = {
+        transparentBackground.enable = true;
+      };
       kitty.variant256Colors = true;
+      hyprpaper.enable = false;
       lazygit.enable = false;
       rofi.enable = false;
-      qt.enable = false;
       gnome.enable = false;
+      qt.enable = false;
     };
   };
   home.packages = with pkgs; [
     libsForQt5.qt5ct
     qt6ct
-    rose-pine-kvantum
   ];
   qt = {
     enable = true;
-    platformTheme.name = "qt6ct";
-    style.name = "rose-pine-kvantum";
+    platformTheme.name = "adwaita";
+    style.name = "adwaita-dark";
   };
   gtk = {
     enable = true;

@@ -4,7 +4,7 @@ rec {
   timezone = "Europe/Berlin";
 
   username = "admin";
-  mail = "philipp.hepp7@gmail.com";
+  email = "philipp.hepp7@gmail.com";
   shell = "zsh";
 
   dotfiles = "/home/${username}/.config";

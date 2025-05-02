@@ -7,8 +7,8 @@
 {
   imports = with inputs.self.homeManagerModules; [
     browser
-    cad
-    fish
+    design
+    eww
     files
     gaming
     git
@@ -21,13 +21,12 @@
     messaging
     music
     neovim
-    # oh-my-zsh
+    oh-my-zsh
     productivity
-    starship
     terminal
     theming
     tuis
-    # zsh
+    zsh
   ];
 
   home = {

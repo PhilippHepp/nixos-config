@@ -38,9 +38,7 @@
       at = "astroterm -c -r -0.5 -l 2 -t 5.5 -u -i Bremen -s 3";
       #rust = "nix develop ${dotfiles}/nix#rust -c zsh";
       sp = "spotify_player";
-      gc = "sudo nix-collect-garbage -d";
-      gco = "sudo nix optimise-store";
-      gcd = ''
+      gc = ''
         echo "Running nix-collect-garbage -d..."
         sudo nix-collect-garbage -d
         echo "Running nix store optimise..."

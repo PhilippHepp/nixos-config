@@ -102,6 +102,8 @@
           enable = true;
         };
         treesitter = {
+          enable = true;
+          addDefaultGrammars = true;
           context.enable = true;
           fold = true;
           indent.enable = true;

@@ -6,7 +6,7 @@ rec {
 
   # User Configuration
   username = "eugen";
-  mail = "eugen.hepp@gmx.de";
+  email = "eugen.hepp@gmx.de";
   shell = "zsh"; # Or use string "zsh" and look up pkgs.${shell} in user.nix
   dotfiles = "/home/${username}/.config"; # Derived
 

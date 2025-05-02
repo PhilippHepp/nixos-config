@@ -14,6 +14,7 @@
     git
     htop
     imagemagick
+    jq
     lazygit
     lf
     nmap
@@ -30,11 +31,11 @@
 
   programs.zoxide = {
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
   };
   programs.kitty = {
     enable = true;
-    shellIntegration.enableFishIntegration = true;
+    shellIntegration.enableZshIntegration = true;
   };
 
   programs.neovim = {
@@ -44,6 +45,6 @@
 
   programs.thefuck = {
     enable = true;
-    enableFishIntegration = true;
+    enableZshIntegration = true;
   };
 }

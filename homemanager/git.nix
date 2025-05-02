@@ -1,13 +1,13 @@
 {
   username,
-  mail,
+  email,
   ...
 }:
 {
   programs.git = {
     enable = true;
     userName = username;
-    userEmail = mail;
+    userEmail = email;
   };
   programs.lazygit = {
     enable = true;

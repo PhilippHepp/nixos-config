@@ -15,5 +15,6 @@
     gurk-rs
     nchat
     tuisky
+    wasistlos
   ];
 }

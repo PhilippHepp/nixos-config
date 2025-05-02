@@ -6,8 +6,8 @@ rec {
 
   # User Configuration
   username = "philipp";
-  mail = "philipp.hepp7@gmail.com";
-  shell = "fish"; # Or use string "zsh" and look up pkgs.${shell} in user.nix
+  email = "philipp.hepp7@gmail.com";
+  shell = "zsh"; # Or use string "zsh" and look up pkgs.${shell} in user.nix
   dotfiles = "/home/${username}/.config"; # Derived
 
   userSshKeys = [
@@ -32,7 +32,7 @@ rec {
   # Theming & Appearance
   theme = {
     cursor = "BreezeX-RosePine-Linux";
-    colorscheme = "vesper"; # For Stylix base16Scheme
+    colorscheme = "rose-pine-moon"; # For Stylix base16Scheme
     font = "IosevkaTermSlab";
     wallpaper = "Eldritch-Island-Vista.webp";
   };
