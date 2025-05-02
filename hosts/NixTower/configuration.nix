@@ -10,10 +10,10 @@
     bootloader
     disko
     displaymanager
-    gc
     hardwarecontrol
     locales
     networking
+    nh
     nvidia
     sound
     steam
