@@ -1,8 +1,7 @@
-{
-  kb_layout,
-  timezone,
-  locales,
-  ...
+{ kb_layout
+, timezone
+, locales
+, ...
 }:
 
 let

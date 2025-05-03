@@ -1,8 +1,7 @@
-{
-  system,
-  inputs,
-  pkgs,
-  ...
+{ system
+, inputs
+, pkgs
+, ...
 }:
 
 {

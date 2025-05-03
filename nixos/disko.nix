@@ -1,6 +1,5 @@
-{
-  mydrive ? "/dev/nvme0n1",
-  ...
+{ mydrive ? "/dev/nvme0n1"
+, ...
 }:
 {
   disko.devices.disk.main = {

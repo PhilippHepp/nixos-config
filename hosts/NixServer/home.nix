@@ -1,8 +1,7 @@
-{
-  inputs,
-  username,
-  lib,
-  ...
+{ inputs
+, username
+, lib
+, ...
 }:
 
 {

@@ -1,7 +1,6 @@
-{
-  hostname,
-  pkgs,
-  ...
+{ hostname
+, pkgs
+, ...
 }:
 {
   networking.networkmanager.enable = true;

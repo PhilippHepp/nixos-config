@@ -1,7 +1,6 @@
-{
-  config,
-  dotfiles,
-  ...
+{ config
+, dotfiles
+, ...
 }:
 
 let

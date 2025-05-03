@@ -1,8 +1,9 @@
+{ username, ... }:
 {
   services.displayManager = {
     enable = true;
     autoLogin.enable = true;
-    autoLogin.user = "philipp";
+    autoLogin.user = "${username}";
     defaultSession = "hyprland";
   };
 
@@ -12,7 +13,7 @@
     settings = {
       AutoLogin = {
         Session = "hyprland";
-        User = "philipp";
+        User = "${username}";
       };
     };
     wayland.enable = true;

@@ -17,6 +17,7 @@
     jq
     lazygit
     lf
+    nixpkgs-fmt
     nmap
     openssl
     pkg-config

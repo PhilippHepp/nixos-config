@@ -1,8 +1,7 @@
-{
-  pkgs,
-  shellPrompt,
-  shell,
-  ...
+{ pkgs
+, shellPrompt
+, shell
+, ...
 }:
 {
   fonts.packages = with pkgs; [

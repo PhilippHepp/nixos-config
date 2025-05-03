@@ -1,7 +1,6 @@
-{
-  pkgs,
-  username,
-  ...
+{ pkgs
+, username
+, ...
 }:
 let
   yazi-plugins = pkgs.fetchFromGitHub {
@@ -24,9 +23,7 @@ in
         max_width = 1000;
         max_height = 1000;
       };
-      opener = {
-
-      };
+      opener = { };
     };
     plugins = {
       chmod = "${yazi-plugins}/chmod.yazi";

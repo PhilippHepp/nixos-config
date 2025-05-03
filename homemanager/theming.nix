@@ -1,10 +1,9 @@
-{
-  config,
-  inputs,
-  pkgs,
-  theme,
-  lib,
-  ...
+{ config
+, inputs
+, pkgs
+, theme
+, lib
+, ...
 }:
 
 let
@@ -75,13 +74,11 @@ in
     };
   };
   home.packages = with pkgs; [
-    libsForQt5.qt5ct
     qt6ct
   ];
   qt = {
     enable = true;
-    platformTheme.name = "adwaita";
-    style.name = "adwaita-dark";
+    platformTheme.name = "qt6ct";
   };
   gtk = {
     enable = true;

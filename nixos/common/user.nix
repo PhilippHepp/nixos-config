@@ -1,10 +1,9 @@
-{
-  pkgs,
-  username,
-  shell,
-  lib,
-  config,
-  ...
+{ pkgs
+, username
+, shell
+, lib
+, config
+, ...
 }:
 {
   users.users.${username} = {

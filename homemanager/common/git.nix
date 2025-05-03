@@ -1,7 +1,6 @@
-{
-  username,
-  email,
-  ...
+{ username
+, email
+, ...
 }:
 {
   programs.git = {

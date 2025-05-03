@@ -1,9 +1,8 @@
-{
-  pkgs,
-  username,
-  inputs,
-  system,
-  ...
+{ pkgs
+, username
+, inputs
+, system
+, ...
 }:
 {
   programs.firefox = {
@@ -41,8 +40,8 @@
       ];
     };
   };
+
   home.packages = with pkgs; [
     bombadillo
-    ladybird
   ];
 }

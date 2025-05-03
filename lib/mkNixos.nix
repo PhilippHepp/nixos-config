@@ -1,9 +1,9 @@
 # ./lib/mkNixos.nix
-{
-  inputs,
-  system,
-  pkgs,
-  pkgs-stable,
+{ inputs
+, system
+, pkgs
+, pkgs-stable
+,
 }:
 
 settingsPath:
