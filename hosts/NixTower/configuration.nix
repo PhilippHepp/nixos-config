@@ -2,7 +2,8 @@
   inputs,
   pkgs,
   ...
-}: {
+}:
+{
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     inputs.disko.nixosModules.disko
@@ -10,14 +11,14 @@
     disko
     displaymanager
     hardwarecontrol
-    # locales
+    locales
     networking
-    # nh
+    nh
     nvidia
     sound
     steam
-    # terminalbase
-    # user
+    terminalbase
+    user
     windowmanager
   ];
 

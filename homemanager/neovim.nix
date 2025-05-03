@@ -47,7 +47,7 @@
 
           nix = {
             enable = true;
-            format.type = "alejandra";
+            format.type = "nixfmt";
             lsp.server = "nixd";
             treesitter.enable = true;
           };
