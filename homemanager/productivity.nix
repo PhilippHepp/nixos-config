@@ -1,5 +1,8 @@
-{ pkgs, email, ... }:
 {
+  pkgs,
+  email,
+  ...
+}: {
   home.packages = with pkgs; [
     obsidian
     zeal

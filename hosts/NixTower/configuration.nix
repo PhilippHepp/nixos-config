@@ -1,8 +1,8 @@
-{ inputs
-, pkgs
-, ...
-}:
 {
+  inputs,
+  pkgs,
+  ...
+}: {
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     inputs.disko.nixosModules.disko

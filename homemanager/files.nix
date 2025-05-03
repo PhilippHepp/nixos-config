@@ -1,16 +1,15 @@
-{ pkgs
-, username
-, ...
-}:
-let
+{
+  pkgs,
+  username,
+  ...
+}: let
   yazi-plugins = pkgs.fetchFromGitHub {
     owner = "yazi-rs";
     repo = "plugins";
     rev = "864a0210d9ba1e8eb925160c2e2a25342031d8d3";
     hash = "sha256-m3709h7/AHJAtoJ3ebDA40c77D+5dCycpecprjVqj/k=";
   };
-in
-{
+in {
   programs.yazi = {
     enable = true;
     shellWrapperName = "y";
@@ -23,7 +22,7 @@ in
         max_width = 1000;
         max_height = 1000;
       };
-      opener = { };
+      opener = {};
     };
     plugins = {
       chmod = "${yazi-plugins}/chmod.yazi";

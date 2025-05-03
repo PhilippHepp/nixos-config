@@ -1,11 +1,11 @@
-{ pkgs
-, username
-, shell
-, lib
-, config
-, ...
-}:
 {
+  pkgs,
+  username,
+  shell,
+  lib,
+  config,
+  ...
+}: {
   users.users.${username} = {
     isNormalUser = true;
     description = username;
@@ -19,7 +19,7 @@
     ];
     shell = pkgs.${shell};
     initialPassword = "qwertz";
-    openssh.authorizedKeys.keys = [ ];
+    openssh.authorizedKeys.keys = [];
   };
   nix.settings.trusted-users = [
     "root"

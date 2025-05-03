@@ -10,7 +10,6 @@ rec {
   dotfiles = "/home/${username}/.config";
 
   userSSHKeys = [
-
   ];
 
   locales = {

@@ -1,11 +1,11 @@
-{ dotfiles
-, theme
-, config
-, pkgs
-, lib
-, ...
-}:
 {
+  dotfiles,
+  theme,
+  config,
+  pkgs,
+  lib,
+  ...
+}: {
   services = {
     hypridle = {
       enable = true;

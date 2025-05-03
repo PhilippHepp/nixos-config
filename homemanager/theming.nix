@@ -1,16 +1,14 @@
-{ config
-, inputs
-, pkgs
-, theme
-, lib
-, ...
-}:
-
-let
-  scheme = "${pkgs.base16-schemes}/share/themes/${theme.colorscheme}.yaml";
-in
 {
-  imports = [ inputs.stylix.homeManagerModules.stylix ];
+  config,
+  inputs,
+  pkgs,
+  theme,
+  lib,
+  ...
+}: let
+  scheme = "${pkgs.base16-schemes}/share/themes/${theme.colorscheme}.yaml";
+in {
+  imports = [inputs.stylix.homeManagerModules.stylix];
 
   stylix = {
     enable = true;
@@ -49,7 +47,7 @@ in
     iconTheme = {
       enable = true;
       dark = "Papirus-Dark";
-      package = pkgs.catppuccin-papirus-folders.override { flavor = "macchiato"; };
+      package = pkgs.catppuccin-papirus-folders.override {flavor = "macchiato";};
     };
     opacity = {
       applications = 0.7;
@@ -59,7 +57,7 @@ in
     };
     targets = {
       firefox = {
-        profileNames = [ "philipp" ];
+        profileNames = ["philipp"];
         colorTheme.enable = true;
       };
       nvf = {

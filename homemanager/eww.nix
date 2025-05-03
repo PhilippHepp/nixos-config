@@ -1,13 +1,10 @@
-{ config
-, dotfiles
-, ...
-}:
-
-let
-  palette = config.lib.stylix.colors;
-in
-
 {
+  config,
+  dotfiles,
+  ...
+}: let
+  palette = config.lib.stylix.colors;
+in {
   programs.eww = {
     enable = true;
     enableZshIntegration = true;
@@ -80,7 +77,7 @@ in
         .unmuted, .volume {
           color: $teal;
         }
-      } 
+      }
 
       .source {
         .unmuted, .volume {
@@ -100,5 +97,4 @@ in
       }
     '';
   };
-
 }

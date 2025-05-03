@@ -1,12 +1,12 @@
-{ pkgs
-, monitor
-, dotfiles
-, theme
-, username
-, kb_layout
-, ...
-}:
 {
+  pkgs,
+  monitor,
+  dotfiles,
+  theme,
+  username,
+  kb_layout,
+  ...
+}: {
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland = {
     xwayland.enable = true;

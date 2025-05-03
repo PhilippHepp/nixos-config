@@ -1,7 +1,7 @@
-{ pkgs, ... }:
-{
+{pkgs, ...}: {
   home.packages = with pkgs; [
     # CLI Tools
+    alejandra
     bat
     btop
     devenv

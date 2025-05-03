@@ -1,10 +1,9 @@
-{ inputs
-, username
-, lib
-, ...
-}:
-
 {
+  inputs,
+  username,
+  lib,
+  ...
+}: {
   imports = with inputs.self.homeManagerModules; [
     git
     neovim

@@ -1,9 +1,9 @@
-{ inputs
-, pkgs
-, username
-, ...
-}:
 {
+  inputs,
+  pkgs,
+  username,
+  ...
+}: {
   imports = [
     inputs.nvf.homeManagerModules.nvf
     ./vimbinds.nix
@@ -47,7 +47,7 @@
 
           nix = {
             enable = true;
-            format.type = "nixfmt";
+            format.type = "alejandra";
             lsp.server = "nixd";
             treesitter.enable = true;
           };

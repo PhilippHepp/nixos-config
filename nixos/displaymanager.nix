@@ -1,5 +1,4 @@
-{ username, ... }:
-{
+{username, ...}: {
   services.displayManager = {
     enable = true;
     autoLogin.enable = true;

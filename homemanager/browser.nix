@@ -1,10 +1,10 @@
-{ pkgs
-, username
-, inputs
-, system
-, ...
-}:
 {
+  pkgs,
+  username,
+  inputs,
+  system,
+  ...
+}: {
   programs.firefox = {
     enable = true;
     languagePacks = [
@@ -27,7 +27,7 @@
           }
         ];
         icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-        definedAliases = [ "@nix" ];
+        definedAliases = ["@nix"];
       };
       search.force = true;
       extensions.force = true;
