@@ -23,15 +23,13 @@
   ];
 
   environment.systemPackages = with pkgs; [
-    # Programs
-    toipe
-    ascii-image-converter
-    #  WARN: Do not remove:
     home-manager
   ];
 
+  boot.kernelPackages = pkgs.linuxPackages_latest;
+
   fileSystems = {
-    "/home/philipp/Arch" = {
+    "/home/philipp/Windows" = {
       device = "dev/disk/by-uuid/3E40DDEE40DDAD41";
       fsType = "ntfs-3g";
       options = [
@@ -56,7 +54,7 @@
   swapDevices = [
     {
       device = "/swapfile";
-      size = 17 * 1024; # 16GB
+      size = 16 * 1024; # 16GB
     }
   ];
 

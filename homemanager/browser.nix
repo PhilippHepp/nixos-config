@@ -43,5 +43,6 @@
   };
   home.packages = with pkgs; [
     bombadillo
+    ladybird
   ];
 }

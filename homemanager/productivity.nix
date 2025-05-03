@@ -2,6 +2,8 @@
 {
   home.packages = with pkgs; [
     obsidian
+    zeal
+    toipe
   ];
 
   programs.rbw = {
