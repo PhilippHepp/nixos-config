@@ -11,7 +11,7 @@
     eww
     files
     gaming
-    git
+    # git
     hypraddons
     hyprland
     kde
@@ -23,10 +23,10 @@
     neovim
     oh-my-zsh
     productivity
-    terminal
+    # terminal
     theming
     tuis
-    zsh
+    # zsh
   ];
 
   home = {

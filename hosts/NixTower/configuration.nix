@@ -11,14 +11,14 @@
     disko
     displaymanager
     hardwarecontrol
-    locales
+    # locales
     networking
-    nh
+    # nh
     nvidia
     sound
     steam
-    terminalbase
-    user
+    # terminalbase
+    # user
     windowmanager
   ];
 
