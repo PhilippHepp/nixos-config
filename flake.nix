@@ -10,8 +10,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    flake-utils.url = "github:numtide/flake-utils";
-
     disko = {
       url = "github:nix-community/disko/latest";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -33,48 +31,31 @@
   outputs =
     {
       self,
-      nixpkgs,
-      home-manager,
-      flake-utils,
       ...
     }@inputs:
-    flake-utils.lib.eachDefaultSystem (
-      system:
-      let
-        pkgs = import inputs.nixpkgs {
-          inherit system;
-          config.allowUnfree = true;
-          # TODO: Add overlays
-        };
-        pkgs-stable = import inputs.nixpkgs-stable {
-          inherit system;
-          config.allowUnfree = true;
-        };
+    let
+      system = "x86_64-linux";
 
-        lib = nixpkgs.lib;
-        buildModules = import ./lib/getModules.nix { inherit lib; };
+      pkgs = import inputs.nixpkgs {
+        inherit system overlays;
+        config.allowUnfree = true;
+      };
+      overlays = import ./nixos/overlays.nix { inherit pkgs; };
+      buildModules = import ./lib/getModules.nix { lib = inputs.nixpkgs.lib; };
+      mkNixos = import ./lib/mkNixos.nix {
+        inherit inputs system pkgs;
+      };
 
-        mkNixos = import ./lib/mkNixos.nix {
-          inherit
-            inputs
-            system
-            pkgs
-            pkgs-stable
-            lib
-            ;
-        };
-        nixosModules = buildModules ./nixos;
-        homeManagerModules = buildModules ./homemanager;
-      in
-      {
-        inherit nixosModules homeManagerModules;
+    in
+    {
+      nixosModules = buildModules ./nixos;
+      homeManagerModules = buildModules ./homemanager;
 
-        nixosConfigurations = {
-          nixtower = mkNixos ./hosts/NixTower;
-          nixserver = mkNixos ./hosts/NixServer;
-          nixwsl = mkNixos ./hosts/NixWSL;
-          nixpc = mkNixos ./hosts/NixPC;
-        };
-      }
-    );
+      nixosConfigurations = {
+        nixtower = mkNixos ./hosts/NixTower;
+        nixserver = mkNixos ./hosts/NixServer;
+        nixwsl = mkNixos ./hosts/NixWSL;
+        nixpc = mkNixos ./hosts/NixPC;
+      };
+    };
 }

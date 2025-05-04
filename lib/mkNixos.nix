@@ -2,33 +2,24 @@
 {
   inputs,
   system,
-  pkgs,
-  pkgs-stable,
-  lib,
 }:
 settingsPath:
 let
-  conf = import "${settingsPath}/configuration.nix" specialArgs;
-
+  conf = import "${settingsPath}/configuration.nix";
   home = import "${settingsPath}/home.nix";
-
   settings = import "${settingsPath}/settings.nix";
 
   specialArgs = {
-    inherit
-      system
-      pkgs
-      pkgs-stable
-      inputs
-      lib
-      ;
+    inherit inputs system;
   } // settings;
-
 in
 inputs.nixpkgs.lib.nixosSystem {
   inherit specialArgs;
   modules =
-    [ conf ]
+    [
+      inputs.nixpkgs.nixosModules.readOnlyPkgs
+      conf
+    ]
     ++ [
       inputs.home-manager.nixosModules.home-manager
       {
