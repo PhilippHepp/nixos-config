@@ -2,6 +2,7 @@
 {
   inputs,
   system,
+  pkgs,
 }:
 settingsPath:
 let
@@ -10,7 +11,7 @@ let
   settings = import "${settingsPath}/settings.nix";
 
   specialArgs = {
-    inherit inputs system;
+    inherit inputs system pkgs;
   } // settings;
 in
 inputs.nixpkgs.lib.nixosSystem {
