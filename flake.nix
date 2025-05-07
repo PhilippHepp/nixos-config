@@ -3,7 +3,6 @@
 
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-stable.url = "github:nixos/nixpkgs/nixos-24.11";
 
     home-manager = {
       url = "github:nix-community/home-manager";
@@ -31,17 +30,18 @@
   outputs =
     {
       self,
+      nixpkgs,
       ...
     }@inputs:
     let
       system = "x86_64-linux";
 
-      pkgs = import inputs.nixpkgs {
+      pkgs = import nixpkgs {
         inherit system overlays;
         config.allowUnfree = true;
       };
       overlays = import ./nixos/overlays.nix { inherit pkgs; };
-      buildModules = import ./lib/getModules.nix { lib = inputs.nixpkgs.lib; };
+      buildModules = import ./lib/getModules.nix { lib = nixpkgs.lib; };
       mkNixos = import ./lib/mkNixos.nix {
         inherit inputs system pkgs;
       };

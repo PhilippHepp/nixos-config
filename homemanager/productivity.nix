@@ -2,7 +2,8 @@
   pkgs,
   email,
   ...
-}: {
+}:
+{
   home.packages = with pkgs; [
     obsidian
     zeal
@@ -12,7 +13,9 @@
   programs.rbw = {
     enable = true;
     settings = {
-      inherit email;
+      email = "philipp.hepp@protonmail.com";
+      base_url = "https://vault.bitwarden.eu/";
+      pinentry = pkgs.pinentry-rofi;
     };
   };
 }

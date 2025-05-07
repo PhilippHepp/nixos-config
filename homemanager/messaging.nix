@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   services.mako = {
     enable = true;
     layer = "overlay";
@@ -12,7 +13,9 @@
     vesktop
     gurk-rs
     nchat
+    zapzap
     tuisky
-    wasistlos
+    # wasistlos # BUG: schließt sich immer der HUSO
   ];
+
 }
