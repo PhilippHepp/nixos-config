@@ -3,7 +3,8 @@
   pkgs,
   username,
   ...
-}: {
+}:
+{
   imports = [
     inputs.nvf.homeManagerModules.nvf
     ./vimbinds.nix
@@ -24,6 +25,7 @@
           softtabstop = shiftwidth;
         };
         lsp = {
+          enable = true;
           formatOnSave = true;
           lspkind.enable = true;
           lightbulb.enable = true;
@@ -41,7 +43,6 @@
         languages = {
           enableDAP = true;
           enableExtraDiagnostics = true;
-          enableLSP = true;
           enableFormat = true;
           enableTreesitter = true;
 

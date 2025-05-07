@@ -37,10 +37,9 @@
       system = "x86_64-linux";
 
       pkgs = import nixpkgs {
-        inherit system overlays;
+        inherit system;
         config.allowUnfree = true;
       };
-      overlays = import ./nixos/overlays.nix { inherit pkgs; };
       buildModules = import ./lib/getModules.nix { lib = nixpkgs.lib; };
       mkNixos = import ./lib/mkNixos.nix {
         inherit inputs system pkgs;
@@ -53,7 +52,7 @@
       services = buildModules ./nixos/services;
 
       nixosConfigurations = {
-        nixtower = mkNixos ./hosts/NixTower;
+        nixtower = mkNixos { settingsPath = ./hosts/NixTower; };
         nixserver = mkNixos ./hosts/NixServer;
         nixwsl = mkNixos ./hosts/NixWSL;
         nixpc = mkNixos ./hosts/NixPC;
