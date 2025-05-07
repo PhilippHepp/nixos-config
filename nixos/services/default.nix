@@ -1,5 +1,7 @@
+{ inputs, ... }:
 {
-  services.vaultwarden = {
-    enable = true;
-  };
+  imports = with inputs.self.services; [
+    homepage
+    vaultwarden
+  ];
 }

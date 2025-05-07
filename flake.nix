@@ -50,6 +50,7 @@
     {
       nixosModules = buildModules ./nixos;
       homeManagerModules = buildModules ./homemanager;
+      services = buildModules ./nixos/services;
 
       nixosConfigurations = {
         nixtower = mkNixos ./hosts/NixTower;
