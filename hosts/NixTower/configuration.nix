@@ -20,6 +20,7 @@
     terminalbase
     user
     windowmanager
+    services
   ];
 
   environment.systemPackages = with pkgs; [
