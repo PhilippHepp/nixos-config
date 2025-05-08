@@ -4,11 +4,7 @@
   system,
   pkgs,
 }:
-{
-  settingsPath,
-  server ? false,
-  wsl ? false,
-}:
+settingsPath:
 let
   conf = import "${settingsPath}/configuration.nix";
   home = import "${settingsPath}/home.nix";
@@ -22,23 +18,17 @@ inputs.nixpkgs.lib.nixosSystem {
   inherit specialArgs;
   modules =
     [
-      inputs.nixpkgs.nixosModules.readOnlyPkgs
       conf
     ]
-    ++ (
-      if server then
-        [ ]
-      else
-        [
-          inputs.home-manager.nixosModules.home-manager
-          {
-            home-manager = {
-              useGlobalPkgs = true;
-              useUserPackages = true;
-              extraSpecialArgs = specialArgs;
-              users.${settings.username}.imports = [ home ];
-            };
-          }
-        ]
-    );
+    ++ [
+      inputs.home-manager.nixosModules.home-manager
+      {
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          extraSpecialArgs = specialArgs;
+          users.${settings.username}.imports = [ home ];
+        };
+      }
+    ];
 }
