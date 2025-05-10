@@ -52,7 +52,7 @@
       services = buildModules ./nixos/services;
 
       nixosConfigurations = {
-        nixtower = mkNixos { settingsPath = ./hosts/NixTower; };
+        nixtower = mkNixos ./hosts/NixTower;
         nixserver = mkNixos ./hosts/NixServer;
         nixwsl = mkNixos ./hosts/NixWSL;
         nixpc = mkNixos ./hosts/NixPC;

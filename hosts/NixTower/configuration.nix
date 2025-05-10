@@ -7,6 +7,7 @@
   imports = with inputs.self.nixosModules; [
     ./hardware-configuration.nix
     inputs.disko.nixosModules.disko
+    ai
     bootloader
     disko
     displaymanager

@@ -17,9 +17,7 @@ in
 inputs.nixpkgs.lib.nixosSystem {
   inherit specialArgs;
   modules =
-    [
-      conf
-    ]
+    [ conf ]
     ++ [
       inputs.home-manager.nixosModules.home-manager
       {
