@@ -4,7 +4,8 @@
   inputs,
   system,
   ...
-}: {
+}:
+{
   programs.firefox = {
     enable = true;
     languagePacks = [
@@ -27,7 +28,7 @@
           }
         ];
         icon = "${pkgs.nixos-icons}/share/icons/hicolor/scalable/apps/nix-snowflake.svg";
-        definedAliases = ["@nix"];
+        definedAliases = [ "@nix" ];
       };
       search.force = true;
       extensions.force = true;
@@ -41,7 +42,15 @@
     };
   };
 
-  home.packages = with pkgs; [
-    bombadillo
+  imports = [
+    inputs.zen-browser.homeModules.twilight
   ];
+  programs.zen-browser = {
+    enable = true;
+    policies = {
+      DisableAppUpdate = true;
+      DisableTelemetry = true;
+    };
+  };
+
 }

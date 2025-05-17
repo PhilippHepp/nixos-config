@@ -2,11 +2,12 @@
   username,
   email,
   ...
-}: {
+}:
+{
   programs.git = {
     enable = true;
-    userName = username;
-    userEmail = email;
+    userName = "LSTR-261";
+    userEmail = "lstr-261@proton.me";
   };
   programs.lazygit = {
     enable = true;

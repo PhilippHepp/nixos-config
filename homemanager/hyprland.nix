@@ -6,7 +6,8 @@
   username,
   kb_layout,
   ...
-}: {
+}:
+{
   wayland.windowManager.hyprland.enable = true;
   wayland.windowManager.hyprland = {
     xwayland.enable = true;
@@ -155,9 +156,9 @@
       };
 
       bind = [
-        "$mainMod, Return, exec, ${pkgs.kitty}/bin/kitty"
-        "$mainMod, E, exec, kitty -e yazi"
-        "$mainMod, B, exec, ${pkgs.firefox}/bin/firefox"
+        "$mainMod, Return, exec, ${pkgs.ghostty}/bin/ghostty"
+        "$mainMod, E, exec, ghostty -e yazi"
+        "$mainMod, B, exec, zen"
         # Application Launcher
         # "$mainMod, space, exec, rofi -show drun -show-icons"
         "$mainMod, space, exec, albert toggle"

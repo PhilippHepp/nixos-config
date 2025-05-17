@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   home.packages = with pkgs; [
     # CLI Tools
     alejandra
@@ -15,6 +16,7 @@
     htop
     imagemagick
     jq
+    jujutsu
     lazygit
     lf
     nixpkgs-fmt
@@ -37,6 +39,11 @@
   programs.kitty = {
     enable = true;
     shellIntegration.enableZshIntegration = true;
+  };
+
+  programs.ghostty = {
+    enable = true;
+
   };
 
   programs.neovim = {

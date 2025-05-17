@@ -21,6 +21,7 @@
     messaging
     music
     neovim
+    nushell
     oh-my-zsh
     productivity
     terminal
